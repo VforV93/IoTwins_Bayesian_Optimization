@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to IoTwins-AI/Sim-Services’s documentation! &#8212; IoTwins-AI/Sim-Services  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-iotwins-ai-sim-services-s-documentation">
+<h1>Welcome to IoTwins-AI/Sim-Services’s documentation!<a class="headerlink" href="#welcome-to-iotwins-ai-sim-services-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-src.utils.ae_utils"></span><div class="section" id="ae-utils-py">
+<h2>ae_utils.py<a class="headerlink" href="#ae-utils-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing miscellaneous utility functions for the anomaly detection
+method based on both the i) semi-supervised autoencoder and the ii) unsupervised
+autoencoder plus the supervised classifier</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum Università
+di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.ae_utils.assign_class_sup">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">assign_class_sup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_predicted_probabilities</span></em>, <em class="sig-param"><span class="n">_threshold</span><span class="o">=</span><span class="default_value">0.5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.assign_class_sup" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.assign_class_sup::Assign the corresponding class (normal or
+anomaly) to the prediction made by the NN classifier</p>
+<dl class="simple">
+<dt>:param _predicted_probabilities<span class="classifier">Python list/numpy array</span></dt><dd><p>predictions made by the NN classifier</p>
+</dd>
+<dt>:param _threshold<span class="classifier">float</span></dt><dd><p>classifying threshold - predictions higher than this value correspond to
+anomalies, normal points otherwise</p>
+</dd>
+<dt>:return<span class="classifier">numpy array</span></dt><dd><p>list of classes assigned to the input examples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.autoencoder">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">autoencoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_n_features</span></em>, <em class="sig-param"><span class="n">_hparams</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.autoencoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.autoencoder::Build the autoencoder models</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_n_features</strong> – int
+number of input features of the data</p></li>
+<li><p><strong>_hparams</strong> – dict
+network hyperparameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Keras model
+the build autoencoder</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Keras model
+the build encoder</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.create_classifier_on_encoder">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">create_classifier_on_encoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_n_features</span></em>, <em class="sig-param"><span class="n">_hparams</span></em>, <em class="sig-param"><span class="n">_encoder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.create_classifier_on_encoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.create_classifier_on_encoder::Build a binary classifier layers on
+top of an existing encoder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_n_features</strong> – int
+number of input features of the data</p></li>
+<li><p><strong>_hparams</strong> – dict
+network hyperparameters</p></li>
+<li><p><strong>_encoder</strong> – Keras model
+the trained encoder</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Keras model
+the built classifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.detection_exploreThresholds">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">detection_exploreThresholds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">actual_normal</span></em>, <em class="sig-param"><span class="n">pred_normal</span></em>, <em class="sig-param"><span class="n">actual_anomal</span></em>, <em class="sig-param"><span class="n">pred_anomal</span></em>, <em class="sig-param"><span class="n">actual_normal_all</span></em>, <em class="sig-param"><span class="n">pred_normal_all</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.detection_exploreThresholds" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.detection_exploreThresholds::Analyse reconstruction errors
+distributions and explore varying detection thresholds.</p>
+<dl class="simple">
+<dt>:params actual_normal<span class="classifier">numpy array</span></dt><dd><p>true values of normal data points (only those not used to train the
+model)</p>
+</dd>
+<dt>:params pred_normal<span class="classifier">numpy array</span></dt><dd><p>predicted values for normal data points (only those not used to train
+the model)</p>
+</dd>
+<dt>:params actual_anomal<span class="classifier">numpy array</span></dt><dd><p>true values of anomalous data points</p>
+</dd>
+<dt>:params pred_anomal<span class="classifier">numpy array</span></dt><dd><p>predicted values for anomalous data points</p>
+</dd>
+<dt>:params actual_normal_all<span class="classifier">numpy array</span></dt><dd><p>true values of normal data points (both those used to train the model
+and those used to test it)</p>
+</dd>
+<dt>:params pred_normal_all<span class="classifier">numpy array</span></dt><dd><p>predicted values for normal data points (both those used to train the
+model and those used to test it)</p>
+</dd>
+<dt>:return<span class="classifier">int</span></dt><dd><p>best percentile threshold</p>
+</dd>
+<dt>:return<span class="classifier">Python dictionary</span></dt><dd><p>recap statistics obtained with the best threshold</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.detection_withThreshold">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">detection_withThreshold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">percentile</span></em>, <em class="sig-param"><span class="n">actual_normal</span></em>, <em class="sig-param"><span class="n">pred_normal</span></em>, <em class="sig-param"><span class="n">actual_anomal</span></em>, <em class="sig-param"><span class="n">pred_anomal</span></em>, <em class="sig-param"><span class="n">actual_normal_all</span></em>, <em class="sig-param"><span class="n">pred_normal_all</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.detection_withThreshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.detection_withThreshold::Analyse reconstruction errors
+distributions and explore varying detection thresholds.</p>
+<dl class="simple">
+<dt>:params percentile<span class="classifier">int</span></dt><dd><p>the percentile to be used to compute the detection threshold</p>
+</dd>
+<dt>:params actual_normal<span class="classifier">numpy array</span></dt><dd><p>true values of normal data points (only those not used to train the
+model)</p>
+</dd>
+<dt>:params pred_normal<span class="classifier">numpy array</span></dt><dd><p>predicted values for normal data points (only those not used to train
+the model)</p>
+</dd>
+<dt>:params actual_anomal<span class="classifier">numpy array</span></dt><dd><p>true values of anomalous data points</p>
+</dd>
+<dt>:params pred_anomal<span class="classifier">numpy array</span></dt><dd><p>predicted values for anomalous data points</p>
+</dd>
+<dt>:params actual_normal_all<span class="classifier">numpy array</span></dt><dd><p>true values of normal data points (both those used to train the model
+and those used to test it)</p>
+</dd>
+<dt>:params pred_normal_all<span class="classifier">numpy array</span></dt><dd><p>predicted values for normal data points (both those used to train the
+model and those used to test it)</p>
+</dd>
+<dt>:return<span class="classifier">Python dictionary</span></dt><dd><p>recap statistics obtained with the given threshold</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.drop_stuff">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">drop_stuff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">features_to_be_dropped</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.drop_stuff" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.:drop_stuff:Drop unused features and rows with NaN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – dataframe
+the data</p></li>
+<li><p><strong>features_to_be_dropped</strong> – list of strings
+list of features/column to be dropped</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dataframe
+cleaned up data frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.evaluate_predictions_semisup">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">evaluate_predictions_semisup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">predicted</span></em>, <em class="sig-param"><span class="n">actual</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.evaluate_predictions_semisup" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.evaluate_predictions_semisup::Evaluate prediction of the
+semi-supervised autoencoder</p>
+<dl class="simple">
+<dt>:param predicted<span class="classifier">numpy array</span></dt><dd><p>autoencoder predicted labels</p>
+</dd>
+<dt>:param actual<span class="classifier">numpy array</span></dt><dd><p>true labels</p>
+</dd>
+<dt>:return<span class="classifier">Python dictionary</span></dt><dd><p>the detailed evaluation metrics computed on the autoencoder</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.evaluate_predictions_sup">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">evaluate_predictions_sup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">predicted</span></em>, <em class="sig-param"><span class="n">actual</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.evaluate_predictions_sup" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.evaluate_predictions_sup::Evaluate prediction of the
+supervised model (autoencoder + classifier)</p>
+<dl class="simple">
+<dt>:param predicted<span class="classifier">numpy array</span></dt><dd><p>autoencoder predicted labels</p>
+</dd>
+<dt>:param actual<span class="classifier">numpy array</span></dt><dd><p>true labels</p>
+</dd>
+<dt>:return<span class="classifier">Python dictionary</span></dt><dd><p>the detailed evaluation metrics computed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.find_gaps_timeseries">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">find_gaps_timeseries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timestamps</span></em>, <em class="sig-param"><span class="n">sampling_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.find_gaps_timeseries" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.find_gaps_timeseries::Find gaps in time series. Given a set of time
+stamps, find missing values</p>
+<dl class="simple">
+<dt>:param timestamps<span class="classifier">Datetime list</span></dt><dd><p>list of timestamps</p>
+</dd>
+<dt>:param sampling_time<span class="classifier">int</span></dt><dd><p>the sampling time of the timeseries timestamp (in seconds)</p>
+</dd>
+<dt>:return<span class="classifier">list</span></dt><dd><p>the list of the gaps in the time-series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.is_in_timeseries">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">is_in_timeseries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timestamps</span></em>, <em class="sig-param"><span class="n">ts</span></em>, <em class="sig-param"><span class="n">sampling_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.is_in_timeseries" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.is_in_timeseries::Check if a particular datetime is inside a
+time-series of timestamps</p>
+<dl class="simple">
+<dt>:param timestamps<span class="classifier">Datetime list</span></dt><dd><p>list of timestamps present in the time-series</p>
+</dd>
+<dt>:param ts<span class="classifier">datetime</span></dt><dd><p>the timestamp to be searched for in the time-series</p>
+</dd>
+<dt>:param sampling_time<span class="classifier">int</span></dt><dd><p>the sampling time of the timeseries timestamp (in seconds)</p>
+</dd>
+<dt>:return<span class="classifier">bool</span></dt><dd><p>True if the timestamp is present, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.millis_unix_time">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">millis_unix_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">millis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.millis_unix_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.millis_unix_time::convert from milliseconds to UNIX date time</p>
+<dl class="simple">
+<dt>:param millis<span class="classifier">int</span></dt><dd><p>date time in milliseconds</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>datetime
+date time converted in UNIX date time</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.pairwise">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">pairwise</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.pairwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.pairwise::Convert a list in a iterable collection of pairwise
+tuples: from s = [s0, s1, s2, s3, s4,  ..] to s = (s0, s1), (s1, s2), (s2,
+s3), …</p>
+<dl class="simple">
+<dt>:param iterable<span class="classifier">list</span></dt><dd><p>the list</p>
+</dd>
+<dt>:return<span class="classifier">Python iterable</span></dt><dd><p>iterable collection of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.split_dataset_semisup">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">split_dataset_semisup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">labels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.split_dataset_semisup" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.split_dataset::Randomly split data sets in training and test set.
+Create a set of subsets for later reuse; it separates normal points that are
+going to be used for training from anomalous ones (semisupervised approach)</p>
+<dl class="simple">
+<dt>:param df<span class="classifier">dataframe</span></dt><dd><p>data to be split (no labels)</p>
+</dd>
+<dt>:param labels<span class="classifier">Panda series</span></dt><dd><p>the labels corresponding to the data</p>
+</dd>
+<dt>:return<span class="classifier">python lists and dataframe</span></dt><dd><p>split subsets</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.ae_utils.unix_time_millis">
+<code class="sig-prename descclassname">src.utils.ae_utils.</code><code class="sig-name descname">unix_time_millis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.ae_utils.unix_time_millis" title="Permalink to this definition">¶</a></dt>
+<dd><p>ae_utils.unix_time_millis::convert from UNIX date time to milliseconds</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dt</strong> – datetime
+date time in UNIX time</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int
+date time converted in milliseconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">IoTwins-AI/Sim-Services</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, IoTwins Consortium.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

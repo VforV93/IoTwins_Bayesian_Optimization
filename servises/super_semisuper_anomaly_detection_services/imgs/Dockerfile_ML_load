@@ -1,0 +1,10 @@
+# Start our image from the python v3 one.
+FROM python:3-alpine
+# Set up the working directory
+WORKDIR /src
+# copy the python script in our Docker image
+COPY src/base_services.py /src/
+COPY data/ /data
+# Set up the command which will be executed at the Docker run
+CMD ["python", "base_services.py","0"]
+

@@ -1,0 +1,15 @@
+# Start our image from the python v3 one.
+FROM python:3
+# Set up the working directory
+WORKDIR /src
+RUN pip install sklearn numpy pandas tensorflow joblib 
+RUN pip install imblearn
+# copy the python script in our Docker image
+COPY src/*.py /src/
+COPY src/utils/ /src/utils
+COPY data/ /data
+COPY trained_models/ /trained_models
+COPY out/ /out
+# Set up the command which will be executed at the Docker run
+ENTRYPOINT ["python", "anomalyDetection.py","2"]
+

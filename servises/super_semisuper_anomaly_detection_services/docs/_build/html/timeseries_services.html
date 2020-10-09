@@ -1,0 +1,1434 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timeseries_services module &#8212; IoTwins-AI/Sim-Services  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-src.utils.tcn_preprocessing_utils">
+<span id="timeseries-services-module"></span><h1>timeseries_services module<a class="headerlink" href="#module-src.utils.tcn_preprocessing_utils" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tcn-preprocessing-utils-py">
+<h2>tcn_preprocessing_utils.py<a class="headerlink" href="#tcn-preprocessing-utils-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing miscellaneous utility functions for the fault prediction
+model based on TCN (data pre-processing functions)</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.tcn_preprocessing_utils.rising_edge_updating_labels">
+<code class="sig-prename descclassname">src.utils.tcn_preprocessing_utils.</code><code class="sig-name descname">rising_edge_updating_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em>, <em class="sig-param"><span class="n">data_to_ignore_label</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.tcn_preprocessing_utils.rising_edge_updating_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>tcn_preprocessing_utils.split_into_continuos_ts::add anomaly rows. Specific
+to be used in case of supervised anomaly prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> – Pandas dataframe
+timeseries dataframe A</p></li>
+<li><p><strong>data_to_ignore_label</strong> – integer
+value of labels that need to be ignored</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with added label column</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.tcn_preprocessing_utils.split_into_continuos_ts">
+<code class="sig-prename descclassname">src.utils.tcn_preprocessing_utils.</code><code class="sig-name descname">split_into_continuos_ts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.tcn_preprocessing_utils.split_into_continuos_ts" title="Permalink to this definition">¶</a></dt>
+<dd><p>tcn_preprocessing_utils.split_into_continuos_ts::split dataframe in a list
+of continuous partial dataframes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset</strong> – Pandas dataframe
+timeseries data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of Pandas dataframes
+list of continuous timeseries dataframes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.tcn_preprocessing_utils.to_categorical_label">
+<code class="sig-prename descclassname">src.utils.tcn_preprocessing_utils.</code><code class="sig-name descname">to_categorical_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.tcn_preprocessing_utils.to_categorical_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>tcn_preprocessing_utils.to_categorical_label::convert label from integer
+value to categorical encoding</p>
+<p>add anomaly rows. Specific
+to be used in case of supervised anomaly prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset</strong> – Pandas dataframe
+timeseries dataframe A</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with categorically encoded labels</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.model_evaluation_utils"></span><div class="section" id="model-evaluation-utils-py">
+<h2>model_evaluation_utils.py<a class="headerlink" href="#model-evaluation-utils-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for computing metrics to evaluate model</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.model_evaluation_utils.assign_class_rising_anomaly">
+<code class="sig-prename descclassname">src.utils.model_evaluation_utils.</code><code class="sig-name descname">assign_class_rising_anomaly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rising_anomaly_predicted_probabilities</span></em>, <em class="sig-param"><span class="n">lb_threshold</span></em>, <em class="sig-param"><span class="n">ub_threshold</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.model_evaluation_utils.assign_class_rising_anomaly" title="Permalink to this definition">¶</a></dt>
+<dd><p>model_evaluation_utils.assign_class_rising_anomaly::Assign classes to
+predicted results, thresholding probabilities generated by
+categorical_crossentropy loss function Positive class assigned to values
+between lower bound threshold (lb_threshold) and upper bound threshold
+(ub_threshold)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rising_anomaly_predicted_probabilities</strong> – numpy array
+the predicted results, that is the probability of having a rising edge</p></li>
+<li><p><strong>lb_threshold</strong> – float
+lower bound threshold</p></li>
+<li><p><strong>ub_threshold</strong> – float
+upper bound threshold</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy array
+predictions as classes (0.0 or 1.0 values)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.model_evaluation_utils.compute_best_threhsold">
+<code class="sig-prename descclassname">src.utils.model_evaluation_utils.</code><code class="sig-name descname">compute_best_threhsold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">real_y</span></em>, <em class="sig-param"><span class="n">predicted_y</span></em>, <em class="sig-param"><span class="n">receptive_field</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">stop</span></em>, <em class="sig-param"><span class="n">num_steps</span></em>, <em class="sig-param"><span class="n">strategy</span><span class="o">=</span><span class="default_value">'linear'</span></em>, <em class="sig-param"><span class="n">growth_mode</span><span class="o">=</span><span class="default_value">'same'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.model_evaluation_utils.compute_best_threhsold" title="Permalink to this definition">¶</a></dt>
+<dd><p>model_evaluation_utils.compute_best_threhsold::Compute best threshold for
+the given predictions (predicted_y) according to real class values (real_y),
+choosing between threshold bounds from ‘start’ to ‘stop’ computed according
+to the given strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real_y</strong> – numpy array
+true labels (ground truth)</p></li>
+<li><p><strong>predicted_y</strong> – numpy array
+predicted labels</p></li>
+<li><p><strong>receptive_field</strong> – integer
+number of temporal steps considered in the analysis</p></li>
+<li><p><strong>start</strong> – float
+lower bound probability threshold</p></li>
+<li><p><strong>stop</strong> – float
+upper bound probability threshold</p></li>
+<li><p><strong>num_steps</strong> – int
+number of steps</p></li>
+<li><p><strong>strategy</strong> – string
+chosen strategy</p></li>
+<li><p><strong>growth_mode</strong> – string
+chosen growth mode</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list
+list of threshold values closer to the lower bound</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list
+list of threshold values closer to the upper bound</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.model_evaluation_utils.compute_metrics">
+<code class="sig-prename descclassname">src.utils.model_evaluation_utils.</code><code class="sig-name descname">compute_metrics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tn</span></em>, <em class="sig-param"><span class="n">fp</span></em>, <em class="sig-param"><span class="n">fn</span></em>, <em class="sig-param"><span class="n">tp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.model_evaluation_utils.compute_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>model_evaluation_utils.compute_metrics::compute and print accuracy metrics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tn</strong> – int
+true negatives number</p></li>
+<li><p><strong>fp</strong> – int
+false positives number</p></li>
+<li><p><strong>fn</strong> – int
+false negatives number</p></li>
+<li><p><strong>tp</strong> – int
+true positives number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Python dictionary
+computed metrics</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.model_evaluation_utils.get_best_score_info">
+<code class="sig-prename descclassname">src.utils.model_evaluation_utils.</code><code class="sig-name descname">get_best_score_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lb_thresholds</span></em>, <em class="sig-param"><span class="n">ub_thresholds</span></em>, <em class="sig-param"><span class="n">predicted_y</span></em>, <em class="sig-param"><span class="n">real_y</span></em>, <em class="sig-param"><span class="n">metric</span><span class="o">=</span><span class="default_value">'f1_score'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.model_evaluation_utils.get_best_score_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>model_evaluation_utils.get_best_score_info::Compute best score evaluating
+passed lower bounds and upper bounds threshold values as probability bounds
+for the given predictions Metrics could be ‘accuracy’, ‘precision’, ‘recall’
+and ‘f1_score’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lb_thresholds</strong> – list
+list of threshold values closer to the lower bound</p></li>
+<li><p><strong>ub_thresholds</strong> – list
+list of threshold values closer to the upper bound</p></li>
+<li><p><strong>real_y</strong> – numpy array
+true labels (ground truth)</p></li>
+<li><p><strong>predicted_y</strong> – numpy array
+predicted labels</p></li>
+<li><p><strong>metric</strong> – string
+chosen metric</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Python dictionary
+computed accuracy statistics</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.model_evaluation_utils.get_thresholds_values">
+<code class="sig-prename descclassname">src.utils.model_evaluation_utils.</code><code class="sig-name descname">get_thresholds_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">stop</span></em>, <em class="sig-param"><span class="n">num_steps</span></em>, <em class="sig-param"><span class="n">strategy</span><span class="o">=</span><span class="default_value">'linear'</span></em>, <em class="sig-param"><span class="n">growth_mode</span><span class="o">=</span><span class="default_value">'same'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.model_evaluation_utils.get_thresholds_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>model_evaluation_utils.get_thresholds_values::Split threshold values between
+start and stop according to the chosen strategy.  Growth_mode could be
+‘same’, ‘increment_ub’or ‘increment_lb’: I) ‘same’ means taking equal length
+intervals, II) ‘increment_ub’ means increment upper_bounds and fix
+lower_bound, III) ‘increment_lb’ means increment lower_bounds and fix
+upper_bound. The strategy could be ‘linear’ or ‘log’ (base 10)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – float
+lower bound probability threshold</p></li>
+<li><p><strong>stop</strong> – float
+upper bound probability threshold</p></li>
+<li><p><strong>num_steps</strong> – int
+number of steps</p></li>
+<li><p><strong>strategy</strong> – string
+chosen strategy</p></li>
+<li><p><strong>growth_mode</strong> – string
+chosen growth mode</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list
+list of threshold values closer to the lower bound</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list
+list of threshold values closer to the upper bound</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.model_evaluation_utils.print_info">
+<code class="sig-prename descclassname">src.utils.model_evaluation_utils.</code><code class="sig-name descname">print_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.model_evaluation_utils.print_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>model_evaluation_utils.print_info::print previously computed accuracy
+statistics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>info</strong> – Python dictionary
+computed accuracy statistics</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.categorical_features_parsing"></span><div class="section" id="categorical-features-parsing-py">
+<h2>categorical_features_parsing.py<a class="headerlink" href="#categorical-features-parsing-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing functions for categorical transformation using the
+One-Hot-Encoding technique</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.categorical_features_parsing.align_sampling_to_minutes">
+<code class="sig-prename descclassname">src.utils.categorical_features_parsing.</code><code class="sig-name descname">align_sampling_to_minutes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">aggregation_minutes</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.categorical_features_parsing.align_sampling_to_minutes" title="Permalink to this definition">¶</a></dt>
+<dd><p>categorical_features_parsing.align_sampling_to_minutes::align sampling
+intervals to minute-based sample rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – Pandas dataframe
+time-series data to be aligned</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>: param aggregation_minutes: int</dt><dd><p>sampling rate used to average the time-series data</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Pandas dataframe
+time-series data after alignment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.categorical_features_parsing.drop_unchanged_columns">
+<code class="sig-prename descclassname">src.utils.categorical_features_parsing.</code><code class="sig-name descname">drop_unchanged_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.categorical_features_parsing.drop_unchanged_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>categorical_features_parsing.drop_unchanged_columns::drop features that
+remained constant during the whole time-series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas dataframe
+time-series data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series data cleaned of constant features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.categorical_features_parsing.get_columns_names">
+<code class="sig-prename descclassname">src.utils.categorical_features_parsing.</code><code class="sig-name descname">get_columns_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_name</span></em>, <em class="sig-param"><span class="n">how_many</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.categorical_features_parsing.get_columns_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>categorical_features_parsing.get_columns_names::get the columns names in a
+data frame. The columns names are created with a specific format</p>
+<dl class="simple">
+<dt>:param column_name<span class="classifier">string</span></dt><dd><p>prefix of the name of the columns to be returned</p>
+</dd>
+<dt>:param how_many<span class="classifier">integer</span></dt><dd><p>number of the features in the dataframe</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list
+list of strings with the column names</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.categorical_features_parsing.one_hot_encode_values">
+<code class="sig-prename descclassname">src.utils.categorical_features_parsing.</code><code class="sig-name descname">one_hot_encode_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">values_name</span><span class="o">=</span><span class="default_value">'x'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.categorical_features_parsing.one_hot_encode_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>categorical_features_parsing.one_hot_encode_values::apply one-hot encoding
+to a single column time-series dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> – Pandas dataframe
+time-series data - must be a pandas Dataframe with just one column</p></li>
+<li><p><strong>values_name</strong> – string
+column to be encoded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series data with one-hot encoded categorical feature</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.categorical_features_parsing.one_hot_encoding_categorical_data">
+<code class="sig-prename descclassname">src.utils.categorical_features_parsing.</code><code class="sig-name descname">one_hot_encoding_categorical_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">aggregation_minutes</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.categorical_features_parsing.one_hot_encoding_categorical_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>categorical_features_parsing.one_hot_encoding_categorical_data::encode
+categorical data with one-hot encoding policy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Pandas dataframe
+time-series data to be encoded</p></li>
+<li><p><strong>aggregation_minutes</strong> – int
+sampling rate used to average the time-series data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series data after one-hot-encoding of categorical data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.categorical_features_parsing.round_categorical_columns">
+<code class="sig-prename descclassname">src.utils.categorical_features_parsing.</code><code class="sig-name descname">round_categorical_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.categorical_features_parsing.round_categorical_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>categorical_features_parsing.round_categorical_columns::Round categorical
+columns to nearest integer (0 or 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset</strong> – Pandas dataframe
+time-series data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series data after rounding</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.compact"></span><div class="section" id="compact-py">
+<h2>compact.py<a class="headerlink" href="#compact-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for data compacting (from raw format to tabular)</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.compact.compact_features">
+<code class="sig-prename descclassname">src.utils.compact.</code><code class="sig-name descname">compact_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.compact.compact_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>compact.compact_features::transform data from raw list of values to pandas
+data frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – list
+time-series samples</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.compact.compact_single_feature">
+<code class="sig-prename descclassname">src.utils.compact.</code><code class="sig-name descname">compact_single_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.compact.compact_single_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>compact.compact_single_features::transform data from raw list of values to
+pandas data frame – applicable to a single feature</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – list
+time-series samples</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series data</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.dataset_holes_utils"></span><div class="section" id="dataset-holes-utils-py">
+<h2>dataset_holes_utils.py<a class="headerlink" href="#dataset-holes-utils-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for dealing with holes in the time-series (e.g.
+missing data)</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.dataset_holes_utils.fill_hole">
+<code class="sig-prename descclassname">src.utils.dataset_holes_utils.</code><code class="sig-name descname">fill_hole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prev_ts</span></em>, <em class="sig-param"><span class="n">foll_ts</span></em>, <em class="sig-param"><span class="n">dataset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.dataset_holes_utils.fill_hole" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataset_holes_utils.fill_hole::fills hole in dataframe; holes are filled
+with values that linearly grows according to previous and following
+timestamp difference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prev_ts</strong> – datetime
+previous timestamp</p></li>
+<li><p><strong>foll_ts</strong> – datetime
+following timestamp</p></li>
+<li><p><strong>dataset</strong> – Pandas dataframe
+time-series dataframe</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>datetime list
+list of new timestamps</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Pandas dataframe
+time-series dataframe with holes filled</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.dataset_holes_utils.fill_small_holes">
+<code class="sig-prename descclassname">src.utils.dataset_holes_utils.</code><code class="sig-name descname">fill_small_holes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.dataset_holes_utils.fill_small_holes" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataset_holes_utils.fill_small_holes::fills small holes in dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset</strong> – Pandas dataframe
+time-series dataframe</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series dataframe with small holes filled</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.dataset_holes_utils.find_holes_in_time_series">
+<code class="sig-prename descclassname">src.utils.dataset_holes_utils.</code><code class="sig-name descname">find_holes_in_time_series</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">full_dataset_sorted</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.dataset_holes_utils.find_holes_in_time_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataset_holes_utils.find_holes_in_time_series::identify holes in the time
+series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>full_dataset_sorted</strong> – Pandas dataframe
+time-series dataframe with possible holes (must be sorted by timestamp)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series dataframe having &lt;timestamp, is_hole&gt; columns</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.dataset_holes_utils.get_holes_boundaries">
+<code class="sig-prename descclassname">src.utils.dataset_holes_utils.</code><code class="sig-name descname">get_holes_boundaries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">holes_ts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.dataset_holes_utils.get_holes_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataset_holes_utils.get_holes_boundaries::create a dataframe containing
+holes interval and duration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>holes_ts</strong> – Pandas dataframe
+time-series dataframe having &lt;timestamp, is_hole&gt; columns</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series dataframe consisting of holes interval and duration</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.dataset_holes_utils.update_hole_labels">
+<code class="sig-prename descclassname">src.utils.dataset_holes_utils.</code><code class="sig-name descname">update_hole_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em>, <em class="sig-param"><span class="n">receptive_field</span></em>, <em class="sig-param"><span class="n">data_to_ignore_label</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.dataset_holes_utils.update_hole_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataset_holes_utils.update_hole_labels::update labels - label value becomes
+-1 when observation is less than &lt;receptive field&gt; steps away from an hole</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> – Pandas dataframe
+time-series dataframe</p></li>
+<li><p><strong>receptive_field</strong> – int
+receptive field, number of observations to be considered</p></li>
+<li><p><strong>data_to_ignore_label</strong> – int
+samples with this label value (an integer) must be ignored</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Python list
+list of modified labels</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.features_extraction"></span><div class="section" id="features-extraction-py">
+<h2>features_extraction.py<a class="headerlink" href="#features-extraction-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for feature extraction</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.features_extraction.fill_all_none_values">
+<code class="sig-prename descclassname">src.utils.features_extraction.</code><code class="sig-name descname">fill_all_none_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.features_extraction.fill_all_none_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>features_extraction.fill_all_none_values::fills backwards None values (from
+most recent to less recent)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – Pandas dataframe
+timeseries dataframe</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+dataframe with None filled</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.features_extraction.fill_none_column">
+<code class="sig-prename descclassname">src.utils.features_extraction.</code><code class="sig-name descname">fill_none_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.features_extraction.fill_none_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>features_extraction.fill_all_none_values::fills backwards None values (from
+most recent to less recent) – fills a single column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – Pandas dataframe
+timeseries dataframe</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+dataframe with None filled – a single column</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.features_extraction.merge_data_on_timestamp">
+<code class="sig-prename descclassname">src.utils.features_extraction.</code><code class="sig-name descname">merge_data_on_timestamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.features_extraction.merge_data_on_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>features_extraction.merge_data_on_timestamp::merge multiple dataframes using
+the timestamp as key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – list of Pandas dataframe
+list of dataframes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+merged dataframes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.features_extraction.parse_categorical_data">
+<code class="sig-prename descclassname">src.utils.features_extraction.</code><code class="sig-name descname">parse_categorical_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">categorical_data</span></em>, <em class="sig-param"><span class="n">aggregation_minutes</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.features_extraction.parse_categorical_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>features_extraction.parse_categorical_data::parse categorical data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>categorical_data</strong> – Pandas dataframe
+timeseries dataframe containing categorical features</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+dataframe with one hot encoding computed on numerical values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.features_extraction.parse_numerical_data">
+<code class="sig-prename descclassname">src.utils.features_extraction.</code><code class="sig-name descname">parse_numerical_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">numerical_data</span></em>, <em class="sig-param"><span class="n">aggregation_minutes</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.features_extraction.parse_numerical_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>features_extraction.parse_numerical_data::parse numerical data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>numerical_data</strong> – Pandas dataframe
+timeseries dataframe containing numerical features</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+dataframe with average and variance computed on numerical values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.date_utils"></span><div class="section" id="date-utils-py">
+<h2>date_utils.py<a class="headerlink" href="#date-utils-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for basic utilities for managing time</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.date_utils.align_timestamp_to_minutes">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">align_timestamp_to_minutes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">minutes</span><span class="o">=</span><span class="default_value">15</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.align_timestamp_to_minutes" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.align_timestamp_to_minutes::remove excess minutes by “rounding”
+timestamps to the closest sampling points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Pandas dataframe
+time-series dataframe with possible holes</p></li>
+<li><p><strong>minutes</strong> – integer
+sampling rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series dataframe aligned based on the minute-expressed interval</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.convert_timestamp_column_as_date">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">convert_timestamp_column_as_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">column_name</span><span class="o">=</span><span class="default_value">'timestamp'</span></em>, <em class="sig-param"><span class="n">new_column_name</span><span class="o">=</span><span class="default_value">'date'</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.convert_timestamp_column_as_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.convert_timestamp_column_as_date::converts timestamp column in
+dataframe to a column composed of dates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Pandas dataframe
+time-series dataframe</p></li>
+<li><p><strong>column_name</strong> – string
+columns identifying the timestamps</p></li>
+<li><p><strong>new_column_name</strong> – string
+name of the new column added to the dataframe</p></li>
+<li><p><strong>inplace</strong> – boolean
+determines working with a copy of the original dataframe or the original
+itself</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series dataframe with new column with datetimes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.extract_dates_from_timestamps">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">extract_dates_from_timestamps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timestamps</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.extract_dates_from_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.extract_dates_from_timestamps::converts timestamps to datetime</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timestamps</strong> – list
+list of timestamp</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Series of datetimes
+list of datetimes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.extract_first_ts_of_minutes">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">extract_first_ts_of_minutes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ts</span></em>, <em class="sig-param"><span class="n">minutes</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.extract_first_ts_of_minutes" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.extract_first_ts_of_minutes::extracts the previous timestamp that
+is aligned to &lt;minutes&gt; minutes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ts</strong> – Datetime
+timestamp</p></li>
+<li><p><strong>minutes</strong> – integer
+alignment for previous timestamp to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Datetime
+previous timestamp</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.generate_previous_dates">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">generate_previous_dates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datetime</span></em>, <em class="sig-param"><span class="n">how_many</span></em>, <em class="sig-param"><span class="n">minutes</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.generate_previous_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.generate_previous_dates::returns a series of timestamps earlier
+than a given timestamp</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datetime</strong> – datetime
+starting date</p></li>
+<li><p><strong>how_many</strong> – integer
+number of dates to be computed</p></li>
+<li><p><strong>minutes</strong> – integer
+amount of minutes to subtract</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas series
+series of datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.generate_timestamps">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">generate_timestamps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">minute_step</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.generate_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.generate_timestamps::generates all timestamps between “start” and
+“end” using “minute_step” as pace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – datetime
+start datetime</p></li>
+<li><p><strong>end</strong> – datetime
+end datetime</p></li>
+<li><p><strong>minute_step</strong> – integer
+sampling rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Series of datetimes
+list of datetimes in the specified interval</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.get_curr_time">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">get_curr_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.get_curr_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.get_curr_time::get current time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Datetime
+current time</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.parse_timestamp">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">parse_timestamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.parse_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.parse_timestamp::convert string to datetim</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string_time</strong> – string
+string representing a date</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>datetime
+converted string in datetime object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.remove_microsecods_and_align_to_5_second">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">remove_microsecods_and_align_to_5_second</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">column_name</span><span class="o">=</span><span class="default_value">'timestamp'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.remove_microsecods_and_align_to_5_second" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.remove_microsecods_and_align_to_5_second::remove microsecond
+precision and align every timestamp to 5 seconds intervals</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Pandas dataframe
+time-series dataframe with possible holes</p></li>
+<li><p><strong>column_name</strong> – string
+name of the column indicating the timestamp</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+time-series dataframe aligned and with no microseconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.remove_seconds_and_microseconds_from_timestamp">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">remove_seconds_and_microseconds_from_timestamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">column_name</span><span class="o">=</span><span class="default_value">'timestamp'</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.remove_seconds_and_microseconds_from_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.remove_seconds_and_microseconds_from_timestamp::remove seconds
+and microseconds from timeseries dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Pandas dataframe
+time-series dataframe with possible holes</p></li>
+<li><p><strong>column_name</strong> – string
+name of the column indicating the timestamp</p></li>
+<li><p><strong>inplace</strong> – boolean
+change the original dataset performing in-place transformation or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe without microseconds and seconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.split_into_N_minute_chunks">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">split_into_N_minute_chunks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">N</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.split_into_N_minute_chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.split_into_N_minute_chunks::split a timeseries dataframe in N
+chunks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Pandas dataframe
+time-series dataframe with possible holes</p></li>
+<li><p><strong>N</strong> – integer
+number of chunks</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dataframe list
+list of Pandas dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.date_utils.transform_values_from_timestamp_to_date">
+<code class="sig-prename descclassname">src.utils.date_utils.</code><code class="sig-name descname">transform_values_from_timestamp_to_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timestamps</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.date_utils.transform_values_from_timestamp_to_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>date_utils.transform_values_from_timestamp_to_date::converts timestamps to
+datetime</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timestamps</strong> – list
+list of timestamp</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Series of datetimes
+list of datetimes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.general_utils"></span><div class="section" id="general-utils-py">
+<h2>general_utils.py<a class="headerlink" href="#general-utils-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for general utilities</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.general_utils.build_edge_cols">
+<code class="sig-prename descclassname">src.utils.general_utils.</code><code class="sig-name descname">build_edge_cols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.general_utils.build_edge_cols" title="Permalink to this definition">¶</a></dt>
+<dd><p>general_utils.build_edge_cols::compute “rising edge” column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset</strong> – Pandas dataframe
+timeseries dataframe</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+dataframe with added rising edge column</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.general_utils.flatten_series">
+<code class="sig-prename descclassname">src.utils.general_utils.</code><code class="sig-name descname">flatten_series</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">series</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.general_utils.flatten_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>general_utils.flatten_series::flatten series</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>series</strong> – Panda series
+series to flatten</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list
+flattened list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.general_utils.get_distances_from_next_rising_anomaly">
+<code class="sig-prename descclassname">src.utils.general_utils.</code><code class="sig-name descname">get_distances_from_next_rising_anomaly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.general_utils.get_distances_from_next_rising_anomaly" title="Permalink to this definition">¶</a></dt>
+<dd><p>general_utils.get_distances_from_next_rising_anomaly::compute distances from
+next rising anomaly</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset</strong> – Pandas dataframe
+timeseries dataframe</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list
+list of distances from next rising anomaly</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.general_utils.get_timeseries_df_from_csv">
+<code class="sig-prename descclassname">src.utils.general_utils.</code><code class="sig-name descname">get_timeseries_df_from_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fn</span></em>, <em class="sig-param"><span class="n">dir_base</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.general_utils.get_timeseries_df_from_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>general_utils.get_timeseries_df_from_csv::obtain dataframe from csv</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fn</strong> – string
+filename</p></li>
+<li><p><strong>dir_base</strong> – string
+path of the directory containing the csv file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+dataframe read from the csv file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.general_utils.merge_dataframes">
+<code class="sig-prename descclassname">src.utils.general_utils.</code><code class="sig-name descname">merge_dataframes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.general_utils.merge_dataframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>general_utils.merge_dataframes::merge dataframes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df_list</strong> – list Pandas dataframes
+list of timeseries dataframes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+merged dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.general_utils.reduce_dataset_on_rising_anomaly_distances">
+<code class="sig-prename descclassname">src.utils.general_utils.</code><code class="sig-name descname">reduce_dataset_on_rising_anomaly_distances</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em>, <em class="sig-param"><span class="n">distances</span></em>, <em class="sig-param"><span class="n">max_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.general_utils.reduce_dataset_on_rising_anomaly_distances" title="Permalink to this definition">¶</a></dt>
+<dd><p>general_utils.reduce_dataset_on_rising_anomaly_distances::Reduce dataset
+based on observations distance from next rising anomaly. Compress the
+dataframe by removing time-periods where no change happen (no rising edges)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> – Pandas dataframe
+timeseries dataframe</p></li>
+<li><p><strong>distances</strong> – list
+list of distances from next rising anomaly</p></li>
+<li><p><strong>max_distance</strong> – int
+maximum distance to consider</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+compressed dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.normalization_utils"></span><div class="section" id="normalization-utils-py">
+<h2>normalization_utils.py<a class="headerlink" href="#normalization-utils-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for normalization</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.normalization_utils.normalize_array">
+<code class="sig-prename descclassname">src.utils.normalization_utils.</code><code class="sig-name descname">normalize_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.normalization_utils.normalize_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>normalization_utils.normalize_array::normalize numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> – numpy array
+numpy array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>numpy array
+normalized numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.normalization_utils.normalize_data">
+<code class="sig-prename descclassname">src.utils.normalization_utils.</code><code class="sig-name descname">normalize_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.normalization_utils.normalize_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>normalization_utils.normalize_data::normalize timeseries dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas dataframe
+timeseries data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+normalized timeseries dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.numerical_features_parsing"></span><div class="section" id="numerical-features-parsing-py">
+<h2>numerical_features_parsing.py<a class="headerlink" href="#numerical-features-parsing-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for weighted average and weighted variance computing</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.add_row_every_N_minute">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">add_row_every_N_minute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">N</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.add_row_every_N_minute" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.add_row_every_N_minute::Create new rows with
+timestamps aligned to N minutes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – Pandas dataframe
+timeseries data containing</p></li>
+<li><p><strong>N</strong> – integer
+time window used to aggregate the timeseries data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with new and aligned rows</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.calculate_weighted_average_and_variance">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">calculate_weighted_average_and_variance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.calculate_weighted_average_and_variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.calculate_weighted_average_and_variance::Compute
+weighted mean and variance for the whole chunk</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas dataframe
+timeseries dataframe</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with aggregated values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.compute_avg_and_var">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">compute_avg_and_var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.compute_avg_and_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.compute_avg_and_var::Compute weighted mean and
+variance for a single column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – Pandas dataframe
+timeseries dataframe</p></li>
+<li><p><strong>column_name</strong> – string
+column over which to compute mean and variance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with aggregated values for the selected column</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.compute_weights">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">compute_weights</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">aggregation_minutes</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.compute_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.compute_weights::compute weights over specified
+time window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – Pandas dataframe
+timeseries data containing</p></li>
+<li><p><strong>aggregation_minutes</strong> – integer
+time window used to aggregate the timeseries data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with weighted data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.extract_weighted_data_from_timestamps">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">extract_weighted_data_from_timestamps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">aggregation_minutes</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.extract_weighted_data_from_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.extract_weighted_data_from_timestamps::compute
+values aggregated over the specified time period</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – Pandas dataframe
+timeseries data containing</p></li>
+<li><p><strong>aggregation_minutes</strong> – integer
+time window used to aggregate the timeseries data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with aggregated values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.get_average_and_variance_on_numerical_features">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">get_average_and_variance_on_numerical_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">aggregation_minutes</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.get_average_and_variance_on_numerical_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.get_average_and_variance_on_numerical_features::
+compute average and variance on numerical features</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Pandas dataframe
+timeseries data containing numerical features</p></li>
+<li><p><strong>aggregation_minutes</strong> – integer
+time window used to aggregate the timeseries data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with average and variance computed over the time
+window</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.get_weighted_avg_and_var">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">get_weighted_avg_and_var</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">weights</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.get_weighted_avg_and_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.get_weighted_avg_and_var::get weighted average
+and variance over an array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> – numpy array
+data array</p></li>
+<li><p><strong>weights</strong> – numpy array
+weights array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>float
+weighted average</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>float
+weighted variance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.join_df_list">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">join_df_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.join_df_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.join_df_list::merge multiple dataframes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df_list</strong> – Pandas dataframe list
+list of timeseries dataframes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+merged timeseries dataframes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.merge_chunks">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">merge_chunks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">chunks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.merge_chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.merge_chunks::merge multiple dataframes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>chunks</strong> – Pandas dataframe list
+list of timeseries dataframes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframes merged in one single dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.numerical_features_parsing.propagate_last_timestamp">
+<code class="sig-prename descclassname">src.utils.numerical_features_parsing.</code><code class="sig-name descname">propagate_last_timestamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.numerical_features_parsing.propagate_last_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>numerical_features_parsing.propagate_last_timestamp::propagate the last
+timestamp of a chunk, as it is the timestamp of the entire chunk time window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df_list</strong> – Pandas dataframe list
+list of timeseries dataframes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe list
+timeseries dataframes with assigned last timestamp</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<span class="target" id="module-src.utils.split_features"></span><div class="section" id="split-features-py">
+<h2>split_features.py<a class="headerlink" href="#split-features-py" title="Permalink to this headline">¶</a></h2>
+<p>The module containing APIs for features splitting into numerical and categorical
+sets</p>
+<p>Copyright 2020 - The IoTwins Project Consortium, Alma Mater Studiorum
+Università di Bologna. All rights reserved.</p>
+<dl class="py function">
+<dt id="src.utils.split_features.convert_dataframe_columns_to_numeric">
+<code class="sig-prename descclassname">src.utils.split_features.</code><code class="sig-name descname">convert_dataframe_columns_to_numeric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.split_features.convert_dataframe_columns_to_numeric" title="Permalink to this definition">¶</a></dt>
+<dd><p>split_features.convert_dataframe_columns_to_numeric::convert dataframe
+columns to numerical features</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas dataframe
+timeseries data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe converted to numerical</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.split_features.detect_column_type">
+<code class="sig-prename descclassname">src.utils.split_features.</code><code class="sig-name descname">detect_column_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.split_features.detect_column_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>split_features.detect_column_type::detect column type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – Pandas series
+timeseries dataframe column</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>boolean
+specify if the column contains numerical values</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean
+specify if the column contains categorical values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.split_features.detect_columns_type">
+<code class="sig-prename descclassname">src.utils.split_features.</code><code class="sig-name descname">detect_columns_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.split_features.detect_columns_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>split_features.detect_columns_type::add column type to dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – Pandas dataframe
+timeseries data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries data with the addition of the column type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.split_features.extract_columns_types">
+<code class="sig-prename descclassname">src.utils.split_features.</code><code class="sig-name descname">extract_columns_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">is_numerical</span></em>, <em class="sig-param"><span class="n">is_categorical</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.split_features.extract_columns_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>split_features.extract_columns_types::get column types</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – Pandas dataframe
+timeseries data</p></li>
+<li><p><strong>is_numerical</strong> – boolean
+select whether to consider numerical columns</p></li>
+<li><p><strong>is_categorical</strong> – boolean
+select whether to consider categorical columns</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of string
+list of column types</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.split_features.get_categorical_features">
+<code class="sig-prename descclassname">src.utils.split_features.</code><code class="sig-name descname">get_categorical_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.split_features.get_categorical_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>split_features.get_categorical_features::get only categorical features from
+a timeseries dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas dataframe
+timeseries data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with only categorical features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.split_features.get_not_numerical_features">
+<code class="sig-prename descclassname">src.utils.split_features.</code><code class="sig-name descname">get_not_numerical_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.split_features.get_not_numerical_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>split_features.get_not_numerical_features::get data frame without numerical
+columns</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas dataframe
+timeseries data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries data without numerical columns</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.utils.split_features.get_numerical_features">
+<code class="sig-prename descclassname">src.utils.split_features.</code><code class="sig-name descname">get_numerical_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.utils.split_features.get_numerical_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>split_features.get_numerical_features::get only numerical features from a
+timeseries dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas dataframe
+timeseries data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe
+timeseries dataframe with only numerical features</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">IoTwins-AI/Sim-Services</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, IoTwins Consortium.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/timeseries_services.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

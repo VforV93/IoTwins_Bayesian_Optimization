@@ -1,0 +1,40 @@
+timeseries\_services module
+===========================
+
+.. automodule:: src.utils.tcn_utils
+    :members:
+
+.. automodule:: src.utils.tcn_preprocessing_utils
+    :members:
+
+.. automodule:: src.utils.model_evaluation_utils
+    :members:
+
+.. automodule:: src.utils.categorical_features_parsing
+    :members:
+
+.. automodule:: src.utils.compact
+    :members:
+
+.. automodule:: src.utils.dataset_holes_utils
+    :members:
+
+.. automodule:: src.utils.features_extraction
+    :members:
+
+.. automodule:: src.utils.date_utils
+    :members:
+
+.. automodule:: src.utils.general_utils
+    :members:
+
+.. automodule:: src.utils.normalization_utils
+    :members:
+
+.. automodule:: src.utils.numerical_features_parsing
+    :members:
+
+.. automodule:: src.utils.split_features
+    :members:
+
+

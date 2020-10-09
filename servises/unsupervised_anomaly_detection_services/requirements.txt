@@ -1,0 +1,18 @@
+plotly>= 4.6.0
+dash==1.14
+dash-table==4.9
+dash-upload-components==0.0.2
+dash-core-components==1.10.1
+dash-html-components==1.0.3
+Flask==1.1.2
+boto3==1.14.36
+botocore==1.17.36
+numpy==1.19.1
+pandas==1.1.0
+scipy==1.5.2
+gunicorn==19.9.0
+scikit-learn==0.23.2
+urllib3==1.25.10
+dill==0.3.2
+adtk==0.6.2
+cufflinks==0.17.3
