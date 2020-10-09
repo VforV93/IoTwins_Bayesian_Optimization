@@ -10,11 +10,6 @@ Università di Bologna. All rights reserved.
 #!/usr/bin/python3.6
 
 import os
-import sys
-sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(0, os.path.abspath('../src'))
-sys.path.insert(0, os.path.abspath('../src/utils'))
-
 import numpy as np
 import pandas as pd
 from sklearn import preprocessing as sklpre
@@ -22,8 +17,8 @@ from sklearn import model_selection as sklms
 from tensorflow.python.keras.optimizers import Adam, Adadelta
 from tensorflow.python.keras.callbacks import Callback, EarlyStopping
 from tensorflow.python.keras.callbacks import ReduceLROnPlateau
-import servises.super_semisuper_anomaly_detection_services.src.utils.ae_utils as ae
-import servises.super_semisuper_anomaly_detection_services.src.general_services as gs
+import utils.ae_utils as ae
+import general_services as gs
 import sys
 import joblib
 
@@ -62,10 +57,10 @@ default_hparams_semisup = {
 
 """
 default_hparams_semisup = {
-    'epochs': 10,           # number of training epochs
-    'batch_size': 1,       # batch size
+    'epochs': 50,           # number of training epochs
+    'batch_size': 32,       # batch size
     'shuffle': True,        # shuffle data during training
-    'overcomplete': True,   # the autoencoder can be overcomplete or
+    'overcomplete': False,   # the autoencoder can be overcomplete or
                             # undercomplete
     'nl_o': 3,              # number of layers in the overcomplete case
     'nl_u': 4,              # number of layers in the undercomplete case
@@ -82,7 +77,7 @@ default_hparams_semisup = {
     'lr': 0.0001,           # learning rate
     'optimizer': 'adam',    # optimizer
     'drop_enabled': False,  # add Dropout layer
-    'drop_factor':0.1       # Dropout rate (only if drop==True)
+    'drop_factor': 0.1       # Dropout rate (only if drop==True)
 }
 
 
@@ -326,7 +321,7 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
     history = ae_model.fit(x_train, x_train, epochs=hparams['epochs'], 
             batch_size=hparams['batch_size'], shuffle=hparams['shuffle'], 
             callbacks=[early_stopping, reduce_lr],
-            validation_split=0.1, verbose=0)
+            validation_split=0.1, verbose=1)
 
     print("[adssae:semisup_autoencoder] Training concluded")
 
@@ -350,8 +345,8 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
     pred_stats = ae.evaluate_predictions_semisup(
             decoded_features, df_tensor)
 
-    #print("[adssae:semisup_autoencoder] Accuracy Statistics")
-    #print(acc_stats)
+    print("[adssae:semisup_autoencoder] Accuracy Statistics")
+    print(acc_stats)
     #print(pred_stats)
 
     ae_stats = {**acc_stats, **pred_stats}
