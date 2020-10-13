@@ -10,6 +10,7 @@ di Bologna. All rights reserved.
 '''
 import os
 import sys
+import tensorflow as tf
 import math
 from decimal import *
 import collections
@@ -30,6 +31,7 @@ from tensorflow.python.keras.losses import mse, binary_crossentropy
 import pandas as pd
 import time
 import subprocess
+
 import numpy as np
 import itertools as it
 
@@ -93,7 +95,7 @@ def autoencoder(_n_features, _hparams):
         
     output_layer = Dense(_n_features, activation=_hparams['actv'])(hidden)
     autoencoder = Model(input_layer, output_layer)
-    autoencoder.compile(optimizer=_hparams['optimizer'], loss=loss_func)
+    autoencoder.compile(optimizer=_hparams['optimizer'], loss=loss_func, metrics=['accuracy', 'mae'])
     
     return autoencoder, encoder
 

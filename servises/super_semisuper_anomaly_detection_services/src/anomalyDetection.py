@@ -57,7 +57,7 @@ default_hparams_semisup = {
 
 """
 default_hparams_semisup = {
-    'epochs': 50,           # number of training epochs
+    'epochs': 100,           # number of training epochs
     'batch_size': 32,       # batch size
     'shuffle': True,        # shuffle data during training
     'overcomplete': False,   # the autoencoder can be overcomplete or
@@ -74,10 +74,10 @@ default_hparams_semisup = {
     'loss': 'mae',          # loss function
     'l1_reg': 0.00001,      # l1 regularization factor (only for overcomplete
                             # case)
-    'lr': 0.0001,           # learning rate
+    'lr': 0.0015,           # learning rate
     'optimizer': 'adam',    # optimizer
     'drop_enabled': False,  # add Dropout layer
-    'drop_factor': 0.1       # Dropout rate (only if drop==True)
+    'drop_factor': 0.1      # Dropout rate (only if drop==True)
 }
 
 
@@ -233,7 +233,7 @@ def _load_trained_model(model_name):
     return model, stats, scaler
 
 def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0', 
-        hparams_file=None, n_percentile=-1):
+        hparams_file=None, n_percentile=-1, save=True):
     '''
     anomalyDetection.semisup_autoencoder::creates a semi-supervised autoencoder
     to detect anomalies; the idea is to train the autoencoder on the normal data
@@ -292,7 +292,8 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
         hparams = default_hparams_semisup
     # read hyperparameters from binary file (pickle object)
     else:
-        hparams = gs.load_py_obj(hparams_file)
+        # hparams = gs.load_py_obj(hparams_file)  TODO just for testing purpose I can pass the params as a dictionary
+        hparams = hparams_file
 
     df.columns = df.columns.str.replace(' ', '')
     df, labels, scaler = gs._preprocess(df, 'label')
@@ -318,7 +319,7 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
 
     print("[adssae:semisup_autoencoder] Begin training")
 
-    history = ae_model.fit(x_train, x_train, epochs=hparams['epochs'], 
+    history = ae_model.fit(x_train, x_train, epochs=hparams['epochs'],
             batch_size=hparams['batch_size'], shuffle=hparams['shuffle'], 
             callbacks=[early_stopping, reduce_lr],
             validation_split=0.1, verbose=1)
@@ -349,16 +350,18 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
     print(acc_stats)
     #print(pred_stats)
 
-    ae_stats = {**acc_stats, **pred_stats}
+    # ae_stats = {**acc_stats, **pred_stats}  cambiata!
+    ae_stats = {**acc_stats, **pred_stats, 'val_loss': history.history['val_loss']}
 
     # save the trained model and associated statistics
     print("[adssae:semisup_autoencoder] Saving model and stats")
     ae_model_name = 'semisup_ae_{}_{}'.format(user_id, task_id)
 
-    ae_model_fname, ae_stats_file, ae_scaler_file = _save_trained_model(
-            ae_model_name, ae_model, ae_stats, scaler)
+    if save:
+        ae_model_fname, ae_stats_file, ae_scaler_file = _save_trained_model(ae_model_name, ae_model, ae_stats, scaler)
+        return ae_model_fname, ae_scaler_file, ae_stats_file
 
-    return ae_model_fname, ae_scaler_file, ae_stats_file
+    return ae_model, scaler, ae_stats
 
 
 def semisup_detection_inference(df_fname, model_name, sep=',', 
@@ -447,13 +450,14 @@ def semisup_detection_inference(df_fname, model_name, sep=',',
         else:
             labels.append(0)
 
-    print("[adssae:semisup_detection_inference] Predicted labels:")
-    print(labels)
+    #print("[adssae:semisup_detection_inference] Predicted labels:")
+    #print(labels)
 
     print("[adssae:semisup_detection_inference] Saving labels")
     # save the predicted labels
     labels_file = '{}{}_predLabels.pickle'.format(out_dir, model_name)
     gs.serialize_py_obj(labels, labels_file)
+    return labels
 
 
 def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0', 
