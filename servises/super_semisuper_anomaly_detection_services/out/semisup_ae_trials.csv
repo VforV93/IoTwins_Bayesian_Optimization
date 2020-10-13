@@ -1,2 +1,0 @@
-loss,params,iteration,train_time
-0.09263741653265915,"{'actv': 'relu', 'batch_size': 48, 'drop_enabled': True, 'epochs': 100, 'loss': 'mae', 'lr': 0.10944063418741538, 'optimizer': 'adam', 'overcomplete': True, 'shuffle': False, 'drop_factor': 0.2, 'l1_reg': 2e-05, 'nl_o': 7, 'nnl_o': 11, 'nl_u': 4, 'nnl_u': 2}",1,257.9444198

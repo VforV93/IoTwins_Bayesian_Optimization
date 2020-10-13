@@ -33,6 +33,10 @@ print('[TESTING]Tot:4000	0:3762(94.05%)	1:238(5.95%)')  # [TESTING]Tot:4000	0:37
 global ITERATION
 ITERATION = 0
 
+def load_trials():
+    pass
+
+
 def data_distr():
     df_train = pd.read_csv('../data/{}'.format(file_name))
     df_test = pd.read_csv('../data/{}'.format(file_name_inference))
@@ -81,12 +85,17 @@ def objective(params):
     params['drop_enabled'] = params['drop_enabled']['drop_enabled']
     params['drop_factor'] = drop_factor
     # Extract overcomplete
-    params['l1_reg'] = params['overcomplete']['l1_reg']
+
+    if params['overcomplete']['overcomplete']:
+        params['l1_reg'] = params['overcomplete']['l1_reg']
+        params['l1_reg'] = round(params['l1_reg'], 5)
+
     params['nl_o'] = params['overcomplete']['nl_o']
     params['nnl_o'] = params['overcomplete']['nnl_o']
     params['nl_u'] = params['overcomplete']['nl_u']
     params['nnl_u'] = params['overcomplete']['nnl_u']
     params['overcomplete'] = params['overcomplete']['overcomplete']
+
 
     params['batch_size'] = int(params['batch_size'])
     params['nl_o'] = int(params['nl_o'])
@@ -94,9 +103,6 @@ def objective(params):
     params['nl_u'] = int(params['nl_u'])
     params['nnl_u'] = int(params['nnl_u'])
     params['drop_factor'] = round(params['drop_factor'], 2)
-    if 'l1_reg' in params:
-        params['l1_reg'] = round(params['l1_reg'], 5)
-
 
     start = timer()
 
@@ -150,7 +156,7 @@ space = {
         'lr': hp.loguniform('lr', np.log(0.01), np.log(0.2)),
         'optimizer': 'adam',
         'drop_enabled': hp.choice('drop_enabled',
-                                  [{'drop_enabled': True, 'drop_factor': hp.quniform('drop_factor', 0.1, 1, 0.1)},
+                                  [{'drop_enabled': True, 'drop_factor': hp.quniform('drop_factor', 0.1, 0.9, 0.1)},
                                    {'drop_enabled': False, 'drop_factor': 0.1}])
     }
 '''
@@ -188,7 +194,7 @@ def get_params():
         'lr': hp.loguniform('lr', np.log(0.01), np.log(0.2)),
         'optimizer': 'adam',
         'drop_enabled': hp.choice('drop_enabled',
-                                  [{'drop_enabled': True, 'drop_factor': hp.quniform('drop_factor', 0.1, 1, 0.1)},
+                                  [{'drop_enabled': True, 'drop_factor': hp.quniform('drop_factor', 0.1, 0.9, 0.1)},
                                    {'drop_enabled': False, 'drop_factor': 0.1}])
     }
 
