@@ -2,14 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_2.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_4.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_10.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_100.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_15.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_20.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_25.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_30.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_35.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_40.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_45.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_5.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_50.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_55.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_60.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_65.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_70.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_75.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_80.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_85.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_90.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_95.p" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/IoTwins.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoTwins.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/error in training.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +142,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -143,11 +159,12 @@
       <workItem from="1602492009891" duration="21632000" />
       <workItem from="1602577657987" duration="1404000" />
       <workItem from="1602589806738" duration="8290000" />
+      <workItem from="1602599197151" duration="3409000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -205,11 +222,11 @@
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534143" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602256051784" />
-    <state x="2381" y="162" key="SettingsEditor" timestamp="1602590053830">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1602599206139">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602590053830" />
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602248226166" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602599206139" />
     <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1602238101966">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -233,6 +250,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1602595413330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1602599380128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
   </component>
 </project>

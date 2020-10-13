@@ -15,8 +15,8 @@ from hyperopt import tpe
 from hyperopt import Trials
 from hyperopt import fmin
 
-TOTAL_EVALS = 10
-SAVE_TRIAL_EVERY = 2
+TOTAL_EVALS = 100
+SAVE_TRIAL_EVERY = 5
 
 volume_dir = 'data/'
 out_dir = '../out/'
@@ -225,8 +225,8 @@ writer.writerow(['loss', 'params', 'iteration', 'train_time'])
 of_connection.close()
 
 # Run optimization
-count_optimization = 4
-bayes_trials = load_trials(out_dir+'trials_{}.p'.format(count_optimization))
+count_optimization = 0
+# bayes_trials = load_trials(out_dir+'trials_{}.p'.format(count_optimization))
 for i in range(int(count_optimization/SAVE_TRIAL_EVERY)+1, int(TOTAL_EVALS/SAVE_TRIAL_EVERY)+1):
 
     best = fmin(fn=objective, space=space, algo=tpe.suggest, max_evals=i*SAVE_TRIAL_EVERY,
