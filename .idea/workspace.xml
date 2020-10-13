@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/error in training.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials_22-500_error_in_training.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_2.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_4.p" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/IoTwins.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoTwins.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/error in training.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" afterDir="false" />
     </list>
@@ -125,7 +126,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -140,13 +141,13 @@
       <workItem from="1602241832167" duration="2984000" />
       <workItem from="1602330054896" duration="8687000" />
       <workItem from="1602492009891" duration="21632000" />
-      <workItem from="1602577657987" duration="747000" />
-      <workItem from="1602578884909" duration="3699000" />
+      <workItem from="1602577657987" duration="1404000" />
+      <workItem from="1602589806738" duration="8290000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -164,51 +165,51 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1559" height="625" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602513315791" />
-    <state width="1877" height="458" key="GridCell.Tab.0.bottom" timestamp="1602580014691">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="245" key="GridCell.Tab.0.bottom" timestamp="1602579063049">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534142" />
-    <state width="1877" height="458" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602580014691" />
-    <state width="1877" height="458" key="GridCell.Tab.0.center" timestamp="1602580014690">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602579063049" />
+    <state width="1877" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602341350973" />
+    <state width="1877" height="245" key="GridCell.Tab.0.center" timestamp="1602579063049">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534142" />
-    <state width="1877" height="458" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602580014690" />
-    <state width="1877" height="458" key="GridCell.Tab.0.left" timestamp="1602580014690">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602579063049" />
+    <state width="1877" height="251" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602341350973" />
+    <state width="1877" height="245" key="GridCell.Tab.0.left" timestamp="1602579063049">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534142" />
-    <state width="1877" height="458" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602580014690" />
-    <state width="1877" height="458" key="GridCell.Tab.0.right" timestamp="1602580014691">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602579063049" />
+    <state width="1877" height="251" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602341350973" />
+    <state width="1877" height="245" key="GridCell.Tab.0.right" timestamp="1602579063049">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534142" />
-    <state width="1877" height="458" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602580014691" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1602579958362">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602579063049" />
+    <state width="1877" height="251" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602341350973" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1602528534143">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534143" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602579958362" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1602579958362">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602256051784" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1602528534143">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534143" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602579958362" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1602579958362">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602256051784" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1602528534142">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534142" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602579958362" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1602579958362">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602256051784" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1602528534143">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602528534143" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602579958362" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1602578897701">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602256051784" />
+    <state x="2381" y="162" key="SettingsEditor" timestamp="1602590053830">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601914242166" />
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602578897701" />
+    <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602590053830" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602248226166" />
     <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1602238101966">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -224,34 +225,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py</url>
-          <line>326</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py</url>
-          <line>356</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py</url>
           <line>51</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/Anaconda3/envs/IoTwins/Lib/site-packages/tensorflow/python/ops/nn_ops.py</url>
-          <line>2273</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/Anaconda3/envs/IoTwins/Lib/site-packages/tensorflow/python/ops/nn_ops.py</url>
-          <line>2306</line>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1602580014681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1602595413330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
   </component>
 </project>

@@ -57,7 +57,7 @@ default_hparams_semisup = {
 
 """
 default_hparams_semisup = {
-    'epochs': 100,           # number of training epochs
+    'epochs': 20,           # number of training epochs
     'batch_size': 32,       # batch size
     'shuffle': True,        # shuffle data during training
     'overcomplete': False,   # the autoencoder can be overcomplete or
