@@ -322,7 +322,7 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
     history = ae_model.fit(x_train, x_train, epochs=hparams['epochs'],
             batch_size=hparams['batch_size'], shuffle=hparams['shuffle'], 
             callbacks=[early_stopping, reduce_lr],
-            validation_split=0.1, verbose=0)
+            validation_split=0.1, verbose=1)
 
     print("[adssae:semisup_autoencoder] Training concluded")
 
@@ -354,10 +354,9 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
     ae_stats = {**acc_stats, **pred_stats, 'val_loss': history.history['val_loss']}
 
     # save the trained model and associated statistics
-    print("[adssae:semisup_autoencoder] Saving model and stats")
-    ae_model_name = 'semisup_ae_{}_{}'.format(user_id, task_id)
-
     if save:
+        print("[adssae:semisup_autoencoder] Saving model and stats")
+        ae_model_name = 'semisup_ae_{}_{}'.format(user_id, task_id)
         ae_model_fname, ae_stats_file, ae_scaler_file = _save_trained_model(ae_model_name, ae_model, ae_stats, scaler)
         return ae_model_fname, ae_scaler_file, ae_stats_file
 

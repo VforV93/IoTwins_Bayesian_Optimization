@@ -1,22 +1,28 @@
 #!/usr/bin/python3.6
+#import os
+o#s.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import pandas as pd
 import csv
+import ast
 from timeit import default_timer as timer
 import pickle
 from sklearn.metrics import roc_auc_score, accuracy_score
-from anomalyDetection import semisup_autoencoder, semisup_detection_inference
+from anomalyDetection import _save_trained_model, semisup_autoencoder, semisup_detection_inference
 from hyperopt import hp
 from hyperopt.pyll.stochastic import sample
 from hyperopt import STATUS_OK
 from hyperopt import tpe
 from hyperopt import Trials
 from hyperopt import fmin
+import tensorflow as tf
+
 
 TOTAL_EVALS = 100
-SAVE_TRIAL_EVERY = 5
+SAVE_TRIAL_EVERY = 10
 
 volume_dir = 'data/'
 out_dir = '../out/'
@@ -28,8 +34,9 @@ out_file = 'semisup_ae_trials.csv'
 print('[TRAINING]Tot:5822	0:5474(94.02%)	1:348(5.98%)')  # [TRAINING]Tot:5822	0:5474(94.02%)	1:348(5.98%)
 print('[TESTING]Tot:4000	0:3762(94.05%)	1:238(5.95%)')  # [TESTING]Tot:4000	0:3762(94.05%)	1:238(5.95%)
 
-global ITERATION
+global ITERATION, BEST_LOSS_THRESHOLD
 ITERATION = 0
+BEST_LOSS_THRESHOLD = 1
 
 
 def load_trials(file_name):
@@ -130,6 +137,7 @@ def get_params():
 def objective(params):
     """Objective function for SemiSup Autoencoder Hyperparameter Optimization"""
 
+    global BEST_LOSS_THRESHOLD
     # Keep track of evals
     global ITERATION
     ITERATION += 1
@@ -168,23 +176,34 @@ def objective(params):
 
     run_time = timer() - start
 
+    # Filtering stats
+    key_stats = ['precision_N', 'recall_N', 'fscore_N', 'precision_A', 'recall_A', 'precision_W',
+                 'recall_W', 'fscore_W', 'err_threshold', 'n_perc']
+    filtered_stats = {}
+    for i, (k, v) in enumerate(ae_stats.items()):
+        if k in key_stats:
+            filtered_stats[k] = v
+
     # Extract the best score, since we are using the mse metric the best score is the minimum 'loss' value obtained
     best_score = np.min(ae_stats['val_loss'])
+
+    # every best score obtained save the model
+    if best_score < BEST_LOSS_THRESHOLD:
+        print('new best loss score({}), saving model...'.format(round(best_score, 5)))
+        BEST_LOSS_THRESHOLD = best_score
+        ae_model_name = 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
+        ae_model_fname, ae_stats_file, ae_scaler_file = _save_trained_model(ae_model_name, ae_model, ae_stats, scaler)
 
     # Loss must be minimized
     loss = best_score
 
-    # Boosting rounds that returned the highest cv score
-    #n_estimators = int(np.argmax(cv_results['auc-mean']) + 1)
-
     # Write to the csv file ('a' means append)
     of_connection = open(out_dir+out_file, 'a', newline='')
     writer = csv.writer(of_connection)
-    writer.writerow([loss, params, ITERATION, run_time])
+    writer.writerow([loss, params, filtered_stats, ITERATION, run_time])
 
     # Dictionary with information for evaluation
-    return {'loss': loss, 'params': params, 'iteration': ITERATION,
-            # 'estimators': n_estimators,
+    return {'loss': loss, 'params': params, 'stats': filtered_stats, 'iteration': ITERATION,
             'train_time': run_time, 'status': STATUS_OK}
 
 
@@ -211,42 +230,58 @@ space = {
     }
 
 
-# optimization algorithm
-tpe_algorithm = tpe.suggest
+def bayesian_optimization():
+    # optimization algorithm
+    tpe_algorithm = tpe.suggest
 
-# Keep track of results
-bayes_trials = Trials()
+    # Keep track of results
+    bayes_trials = Trials()
 
-# File to save first results
-of_connection = open(out_dir+out_file, 'w', newline='')
-writer = csv.writer(of_connection)
-# Write the headers to the file
-writer.writerow(['loss', 'params', 'iteration', 'train_time'])
-of_connection.close()
+    # File to save first results
+    of_connection = open(out_dir+out_file, 'w', newline='')
+    writer = csv.writer(of_connection)
+    # Write the headers to the file
+    writer.writerow(['loss', 'params', 'stats', 'iteration', 'train_time'])
+    of_connection.close()
 
-# Run optimization
-count_optimization = 0
-# bayes_trials = load_trials(out_dir+'trials_{}.p'.format(count_optimization))
-for i in range(int(count_optimization/SAVE_TRIAL_EVERY)+1, int(TOTAL_EVALS/SAVE_TRIAL_EVERY)+1):
+    # Run optimization
+    count_optimization = 0
+    # bayes_trials = load_trials(out_dir+'trials_{}.p'.format(count_optimization))
+    for i in range(int(count_optimization/SAVE_TRIAL_EVERY)+1, int(TOTAL_EVALS/SAVE_TRIAL_EVERY)+1):
+        best = fmin(fn=objective, space=space, algo=tpe_algorithm, max_evals=i*SAVE_TRIAL_EVERY,
+                    trials=bayes_trials, rstate=np.random.RandomState(50))
 
-    best = fmin(fn=objective, space=space, algo=tpe.suggest, max_evals=i*SAVE_TRIAL_EVERY,
-                trials=bayes_trials, rstate=np.random.RandomState(50))
+        # Trials saving
+        save_trials(bayes_trials, out_dir+'trials_{}.p'.format(i*SAVE_TRIAL_EVERY))
+        count_optimization += 1
 
-    # Trials saving
-    save_trials(bayes_trials, out_dir+'trials_{}.p'.format(i*SAVE_TRIAL_EVERY))
-    count_optimization += 1
-
-# Sort the trials with lowest loss (highest AUC) first
-bayes_trials_results = sorted(bayes_trials.results, key=lambda x: x['loss'])
-print(bayes_trials_results[:10])
-
-
+    # Sort the trials with lowest loss first
+    bayes_trials_results = sorted(bayes_trials.results, key=lambda x: x['loss'])
+    print(bayes_trials_results[:10])
 
 
+bayesian_optimization()
 '''
-model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',', hparams_file=params)
+
+data_folder = '../out/run/13_10_20'
+trials_file = 'semisup_ae_trials(100)_13-10.csv'
+
+results = pd.read_csv('{}/{}'.format(data_folder, trials_file))
+
+# Sort with best scores on top and reset index for slicing
+results.sort_values('loss', ascending=True, inplace=True)
+results.reset_index(inplace=True, drop=True)
+print(results.head())
+
+# Convert from a string to a dictionary
+best_bayes_params = ast.literal_eval(results.loc[0, 'params']).copy()
+
+model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',', hparams_file=best_bayes_params)
+
+#model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',')
 test_labels = get_label(file_name_inference)
 predictions = semisup_detection_inference(volume_dir+file_name_inference, 'semisup_ae_default_00', sep=',')
+print(predictions)
 auc = roc_auc_score(test_labels, predictions)
 accuracy = accuracy_score(test_labels, predictions)
 

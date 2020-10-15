@@ -20,6 +20,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.metrics import mean_squared_error, median_absolute_error
 from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import roc_auc_score
+from keras import backend as K
 from sklearn.metrics import explained_variance_score, confusion_matrix
 from sklearn.metrics import precision_recall_fscore_support
 from tensorflow.python.keras.models import load_model, Sequential, Model
@@ -34,6 +36,32 @@ import subprocess
 
 import numpy as np
 import itertools as it
+
+# define roc_callback, inspired by https://github.com/keras-team/keras/issues/6050#issuecomment-329996505
+def auc_roc(y_true, y_pred):
+    # any tensorflow metric
+    value, update_op = tf.metrics.auc(y_true, y_pred)  # tf.contrib.metrics.streaming_auc(y_pred, y_true)
+
+    # find all variables created for this metric
+    metric_vars = [i for i in tf.local_variables() if 'auc_roc' in i.name.split('/')[1]]
+
+    # Add metric variables to GLOBAL_VARIABLES collection.
+    # They will be initialized for new session.
+    for v in metric_vars:
+        tf.add_to_collection(tf.GraphKeys.GLOBAL_VARIABLES, v)
+
+    # force to update metric values
+    with tf.control_dependencies([update_op]):
+        value = tf.identity(value)
+        return value
+
+def auroc(y_true, y_pred):
+    return tf.py_func(roc_auc_score, (y_true, y_pred), tf.double)
+
+def auc(y_true, y_pred):
+    auc = tf.metrics.auc(y_true, y_pred)[1]
+    K.get_session().run(tf.local_variables_initializer())
+    return auc
 
 def autoencoder(_n_features, _hparams):
     ''' 
@@ -95,7 +123,7 @@ def autoencoder(_n_features, _hparams):
         
     output_layer = Dense(_n_features, activation=_hparams['actv'])(hidden)
     autoencoder = Model(input_layer, output_layer)
-    autoencoder.compile(optimizer=_hparams['optimizer'], loss=loss_func, metrics=['accuracy', 'mae'])
+    autoencoder.compile(optimizer=_hparams['optimizer'], loss='mae', metrics=['accuracy'])
     
     return autoencoder, encoder
 
