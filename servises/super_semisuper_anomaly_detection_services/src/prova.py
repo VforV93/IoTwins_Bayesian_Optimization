@@ -1,6 +1,6 @@
 #!/usr/bin/python3.6
 #import os
-o#s.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -185,7 +185,8 @@ def objective(params):
             filtered_stats[k] = v
 
     # Extract the best score, since we are using the mse metric the best score is the minimum 'loss' value obtained
-    best_score = np.min(ae_stats['val_loss'])
+    # best_score = np.min(ae_stats['val_loss'])
+    best_score = 1 - np.max(ae_stats['recall_A'])
 
     # every best score obtained save the model
     if best_score < BEST_LOSS_THRESHOLD:
@@ -261,8 +262,8 @@ def bayesian_optimization():
 
 
 bayesian_optimization()
-'''
 
+'''
 data_folder = '../out/run/13_10_20'
 trials_file = 'semisup_ae_trials(100)_13-10.csv'
 
@@ -279,9 +280,10 @@ best_bayes_params = ast.literal_eval(results.loc[0, 'params']).copy()
 model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',', hparams_file=best_bayes_params)
 
 #model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',')
+
 test_labels = get_label(file_name_inference)
-predictions = semisup_detection_inference(volume_dir+file_name_inference, 'semisup_ae_default_00', sep=',')
-print(predictions)
+predictions = semisup_detection_inference(volume_dir+file_name_inference, 'bayesian_opt_model(score_0.0187)', sep=',')
+print(predictions.value_counts())
 auc = roc_auc_score(test_labels, predictions)
 accuracy = accuracy_score(test_labels, predictions)
 
