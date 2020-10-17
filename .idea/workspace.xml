@@ -2,8 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_modelscore_086207_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.94845)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.95455)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.96)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.97059)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_021359_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_093578_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_093939_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/semisup_ae_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_10.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_100.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_20.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_30.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_40.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_50.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_60.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_70.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_80.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_90.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_086207.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_086207_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.96).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.96)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093578.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093578_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093939.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093939_scaler.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_model(score_0.93578)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_model(score_0.93939)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_model(score_0.94845)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_model(score_0.95455)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_model(score_0.96)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_model(score_0.97059)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_10.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_100.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_20.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_30.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_40.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_50.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_60.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_70.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_80.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_90.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.93578).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.93578)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.93939).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.93939)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.94845).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.94845)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.95455).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.95455)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.96).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.96)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.97059).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_model(score_0.97059)_scaler.save" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +183,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -142,11 +206,12 @@
       <workItem from="1602761039238" duration="5345000" />
       <workItem from="1602841505174" duration="6023000" />
       <workItem from="1602855826282" duration="197000" />
+      <workItem from="1602935307609" duration="1846000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -156,10 +221,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601911905575" />
-    <state x="2632" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601915119524">
+    <state x="2632" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602858748631">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2632" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601915119524" />
+    <state x="2632" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602858748631" />
     <state width="1559" height="625" key="DebuggerActiveHint" timestamp="1602684302998">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -168,45 +233,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602855823746" />
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1602855824910">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1602937177562">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602759970771" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602937177562" />
     <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602855824910" />
-    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1602855824910">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1602937177562">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602759970771" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602937177562" />
     <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602855824910" />
-    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1602855824910">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1602937177562">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602759970771" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602937177562" />
     <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602855824910" />
-    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1602855824910">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1602937177562">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602759970771" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602937177562" />
     <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602855824910" />
-    <state width="1877" height="187" key="GridCell.Tab.1.bottom" timestamp="1602855824907">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1602937177563">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602756437238" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602937177563" />
     <state width="1877" height="187" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602855824907" />
-    <state width="1877" height="187" key="GridCell.Tab.1.center" timestamp="1602855824907">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1602937177562">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602756437238" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602937177562" />
     <state width="1877" height="187" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602855824907" />
-    <state width="1877" height="187" key="GridCell.Tab.1.left" timestamp="1602855824907">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1602937177562">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602756437238" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602937177562" />
     <state width="1877" height="187" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602855824907" />
-    <state width="1877" height="187" key="GridCell.Tab.1.right" timestamp="1602855824907">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1602937177562">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602756437238" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602937177562" />
     <state width="1877" height="187" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602855824907" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1602761047332">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -233,19 +298,24 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py</url>
-          <line>160</line>
-          <option name="timeStamp" value="30" />
+          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py</url>
+          <line>171</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py</url>
-          <line>163</line>
-          <option name="timeStamp" value="31" />
+          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py</url>
+          <line>177</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py</url>
+          <line>182</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1602842604056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1602936926742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
   </component>
 </project>

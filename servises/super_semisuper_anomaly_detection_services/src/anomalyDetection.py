@@ -322,7 +322,7 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
     history = ae_model.fit(x_train, x_train, epochs=hparams['epochs'],
             batch_size=hparams['batch_size'], shuffle=hparams['shuffle'], 
             callbacks=[early_stopping, reduce_lr],
-            validation_split=0.1, verbose=1)
+            validation_split=0.1, verbose=0)
 
     print("[adssae:semisup_autoencoder] Training concluded")
 

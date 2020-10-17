@@ -12,6 +12,7 @@ from timeit import default_timer as timer
 import pickle
 from sklearn.metrics import roc_auc_score, accuracy_score
 from anomalyDetection import _save_trained_model, semisup_autoencoder, semisup_detection_inference
+import general_services as gs
 from hyperopt import hp
 from hyperopt.pyll.stochastic import sample
 from hyperopt import STATUS_OK
@@ -168,16 +169,18 @@ def objective(params):
     params['nnl_u'] = int(params['nnl_u'])
     params['drop_factor'] = round(params['drop_factor'], 2)
 
+    n_percentile = int(params.pop('n_percentile'))
+
     start = timer()
 
     # Perform n_folds cross validation
     # cv_results = lgb.cv(params, train_set, num_boost_round=10000, nfold=n_folds,early_stopping_rounds=100, metrics='auc', seed=50)
-    ae_model, scaler, ae_stats = semisup_autoencoder(volume_dir + file_name, sep=',', hparams_file=params, save=False)
+    ae_model, scaler, ae_stats = semisup_autoencoder(volume_dir + file_name, sep=',', hparams_file=params, save=False, n_percentile=n_percentile)
 
     run_time = timer() - start
 
     # Filtering stats
-    key_stats = ['precision_N', 'recall_N', 'fscore_N', 'precision_A', 'recall_A', 'precision_W',
+    key_stats = ['precision_N', 'recall_N', 'fscore_N', 'precision_A', 'recall_A', 'fscore_A', 'precision_W',
                  'recall_W', 'fscore_W', 'err_threshold', 'n_perc']
     filtered_stats = {}
     for i, (k, v) in enumerate(ae_stats.items()):
@@ -193,7 +196,7 @@ def objective(params):
         print('new best loss score({}), saving model...'.format(round(best_score, 5)))
         BEST_LOSS_THRESHOLD = best_score
         ae_model_name = 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
-        ae_model_fname, ae_stats_file, ae_scaler_file = _save_trained_model(ae_model_name, ae_model, ae_stats, scaler)
+        ae_model_fname, ae_stats_file, ae_scaler_file = _save_trained_model(gs.sanitize(ae_model_name), ae_model, ae_stats, scaler)
 
     # Loss must be minimized
     loss = best_score
@@ -227,7 +230,8 @@ space = {
         'optimizer': 'adam',
         'drop_enabled': hp.choice('drop_enabled',
                                   [{'drop_enabled': True, 'drop_factor': hp.quniform('drop_factor', 0.1, 0.9, 0.1)},
-                                   {'drop_enabled': False, 'drop_factor': 0.1}])
+                                   {'drop_enabled': False, 'drop_factor': 0.1}]),
+        'n_percentile': hp.quniform('n_percentile', 40, 99, 1)
     }
 
 
@@ -263,7 +267,7 @@ def bayesian_optimization():
 
 bayesian_optimization()
 
-'''
+'''   
 data_folder = '../out/run/13_10_20'
 trials_file = 'semisup_ae_trials(100)_13-10.csv'
 
@@ -282,8 +286,8 @@ model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',', hparams_
 #model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',')
 
 test_labels = get_label(file_name_inference)
-predictions = semisup_detection_inference(volume_dir+file_name_inference, 'bayesian_opt_model(score_0.0187)', sep=',')
-print(predictions.value_counts())
+predictions = semisup_detection_inference(volume_dir+file_name_inference, 'bayesian_opt_modelscore_093939', sep=',')
+print(predictions)
 auc = roc_auc_score(test_labels, predictions)
 accuracy = accuracy_score(test_labels, predictions)
 

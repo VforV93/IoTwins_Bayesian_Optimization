@@ -534,7 +534,7 @@ def detection_exploreThresholds(actual_normal, pred_normal,
 
     recap_stat = {'precision_N' : precision_N_best, 'recall_N': recall_N_best,
             'fscore_N': fscore_N_best, 'precision_A': precision_A_best,
-            'recall_A': recall_A_best, 'fscore_N': fscore_N_best, 
+            'recall_A': recall_A_best, 'fscore_A': fscore_A_best,
             'precision_W': precision_W_best, 'recall_W': recall_W_best,
             'fscore_W': fscore_W_best, 'err_threshold': best_err_threshold,
             'n_perc': best_threshold}
@@ -674,7 +674,7 @@ def detection_withThreshold(percentile, actual_normal, pred_normal,
 
     recap_stat = {'precision_N' : precision_N, 'recall_N': recall_N,
             'fscore_N': fscore_N, 'precision_A': precision_A,
-            'recall_A': recall_A, 'fscore_N': fscore_N, 
+            'recall_A': recall_A, 'fscore_A': fscore_A,
             'precision_W': precision_W, 'recall_W': recall_W,
             'fscore_W': fscore_W, 'err_threshold': error_threshold,
             'n_perc': n_perc}
