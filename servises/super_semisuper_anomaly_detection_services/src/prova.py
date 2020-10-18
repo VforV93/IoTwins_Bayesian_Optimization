@@ -22,7 +22,7 @@ from hyperopt import fmin
 import tensorflow as tf
 
 
-TOTAL_EVALS = 100
+TOTAL_EVALS = 200
 SAVE_TRIAL_EVERY = 10
 
 volume_dir = 'data/'
@@ -265,7 +265,7 @@ def bayesian_optimization():
     print(bayes_trials_results[:10])
 
 
-bayesian_optimization()
+#bayesian_optimization()
 
 '''   
 data_folder = '../out/run/13_10_20'
@@ -284,13 +284,15 @@ best_bayes_params = ast.literal_eval(results.loc[0, 'params']).copy()
 model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',', hparams_file=best_bayes_params)
 
 #model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',')
-
+'''
 test_labels = get_label(file_name_inference)
-predictions = semisup_detection_inference(volume_dir+file_name_inference, 'bayesian_opt_modelscore_093939', sep=',')
+print('True labels:')
+print(test_labels)
+predictions = semisup_detection_inference(volume_dir+file_name_inference, 'bayesian_opt_modelscore_087963', sep=',')
+print('Predicted labels:')
 print(predictions)
 auc = roc_auc_score(test_labels, predictions)
 accuracy = accuracy_score(test_labels, predictions)
 
 print('The baseline auc score on the test set is {:.4f}'.format(auc))
 print('The baseline accuracy score on the test set is {:.4f}'.format(accuracy))
-'''
