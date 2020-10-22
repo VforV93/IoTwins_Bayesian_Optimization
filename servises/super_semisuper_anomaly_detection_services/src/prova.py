@@ -1,7 +1,6 @@
 #!/usr/bin/python3.6
-#import os
-#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
@@ -11,7 +10,7 @@ import ast
 from timeit import default_timer as timer
 import pickle
 from sklearn.metrics import roc_auc_score, accuracy_score
-from anomalyDetection import _save_trained_model, semisup_autoencoder, semisup_detection_inference
+from anomalyDetection import _save_trained_model, semisup_autoencoder, semisup_detection_inference, sup_autoencoder_classr
 import general_services as gs
 from hyperopt import hp
 from hyperopt.pyll.stochastic import sample
@@ -19,11 +18,10 @@ from hyperopt import STATUS_OK
 from hyperopt import tpe
 from hyperopt import Trials
 from hyperopt import fmin
-import tensorflow as tf
+from functools import partial
 
-
-TOTAL_EVALS = 200
-SAVE_TRIAL_EVERY = 10
+TOTAL_EVALS = 2
+SAVE_TRIAL_EVERY = 1
 
 volume_dir = 'data/'
 out_dir = '../out/'
@@ -33,7 +31,7 @@ file_name = 'train_caravan-insurance-challenge.csv'
 file_name_inference = 'test_caravan-insurance-challenge.csv'
 out_file = 'semisup_ae_trials.csv'
 print('[TRAINING]Tot:5822	0:5474(94.02%)	1:348(5.98%)')  # [TRAINING]Tot:5822	0:5474(94.02%)	1:348(5.98%)
-print('[TESTING]Tot:4000	0:3762(94.05%)	1:238(5.95%)')  # [TESTING]Tot:4000	0:3762(94.05%)	1:238(5.95%)
+print('[TESTING]Tot:4000	0:3762(94.05%)	1:238(5.95%)')  # [TESTING]Tot:4000	    0:3762(94.05%)	1:238(5.95%)
 
 global ITERATION, BEST_LOSS_THRESHOLD
 ITERATION = 0
@@ -41,11 +39,11 @@ BEST_LOSS_THRESHOLD = 1
 
 
 def load_trials(file_name):
-    return pickle.load(open(file_name, "rb"))
+    return gs.load_py_obj(file_name)
 
 
 def save_trials(trial, file_name):
-    pickle.dump(trial, open(file_name, "wb"))
+    gs.serialize_py_obj(trial, file_name)
     print('[prova] trial saved')
 
 
@@ -135,9 +133,10 @@ def get_params():
     return x
 
 
-def objective(params):
+def objective(params, user_id='default', task_id='0.0'):
     """Objective function for SemiSup Autoencoder Hyperparameter Optimization"""
-
+    print(user_id)
+    print(task_id)
     global BEST_LOSS_THRESHOLD
     # Keep track of evals
     global ITERATION
@@ -161,7 +160,6 @@ def objective(params):
     params['nnl_u'] = params['overcomplete']['nnl_u']
     params['overcomplete'] = params['overcomplete']['overcomplete']
 
-
     params['batch_size'] = int(params['batch_size'])
     params['nl_o'] = int(params['nl_o'])
     params['nnl_o'] = int(params['nnl_o'])
@@ -173,10 +171,8 @@ def objective(params):
 
     start = timer()
 
-    # Perform n_folds cross validation
-    # cv_results = lgb.cv(params, train_set, num_boost_round=10000, nfold=n_folds,early_stopping_rounds=100, metrics='auc', seed=50)
-    ae_model, scaler, ae_stats = semisup_autoencoder(volume_dir + file_name, sep=',', hparams_file=params, save=False, n_percentile=n_percentile)
-
+    ae_model, scaler, ae_stats = semisup_autoencoder(volume_dir+file_name, sep=',', hparams_file=params, save=False, n_percentile=n_percentile)
+    # ae_model, scaler, ae_stats = sup_autoencoder_classr(volume_dir + file_name, sep=',', hparams_file_ae=params)
     run_time = timer() - start
 
     # Filtering stats
@@ -212,13 +208,13 @@ def objective(params):
 
 
 space = {
-        'epochs': 100,
+        'epochs': 1,
         'batch_size': hp.quniform('batch_size', 8, 64, 8),
         'shuffle': hp.choice('shuffle', [True, False]),
         'overcomplete': hp.choice('overcomplete',
                                   [{'overcomplete': True, 'nl_o': hp.quniform('nl_o', 2, 10, 1),
                                     'nnl_o': hp.quniform('nnl_o', 5, 15, 1),
-                                    'l1_reg': hp.quniform('l1_reg', 0.00001, 0.00003, 0.00001),
+                                    'l1_reg': hp.quniform('l1_reg', 0.00001, 0.01, 0.0004995),
                                     'nl_u': 4, 'nnl_u': 2},
                                    {'overcomplete': False, 'nl_o': 3, 'nnl_o': 10,
                                     #'l1_reg': hp.quniform('l1_reg', 0.00001, 0.00003, 0.00001),
@@ -235,29 +231,42 @@ space = {
     }
 
 
-def bayesian_optimization():
+def bayesian_optimization(result_fname,  opt_algorithm=None, header_file=None,
+                          save_trial_every=None, total_evals=100, trials_name=None, user_id='default', task_id='0.0'):
     # optimization algorithm
-    tpe_algorithm = tpe.suggest
+    if opt_algorithm is None:
+        tpe_algorithm = tpe.suggest  # default value
+    # header trials results file
+    if header_file is None:
+        header_file = ['loss', 'params', 'stats', 'iteration', 'train_time']  # default header
+    # save Trials every tot step
+    if save_trial_every is None or save_trial_every > total_evals:
+        save_trial_every = total_evals
 
-    # Keep track of results
-    bayes_trials = Trials()
-
-    # File to save first results
-    of_connection = open(out_dir+out_file, 'w', newline='')
+    # File to save first results - overwrite if already present
+    of_connection = open(result_fname, 'w', newline='')
     writer = csv.writer(of_connection)
     # Write the headers to the file
-    writer.writerow(['loss', 'params', 'stats', 'iteration', 'train_time'])
+    writer.writerow(header_file)
     of_connection.close()
 
+    # Keep track of results
+    if trials_name is None:
+        bayes_trials = Trials()
+        count_optimization = 0
+    else:
+        bayes_trials = load_trials(trials_name)
+        count_optimization = len(bayes_trials.trials)
+
     # Run optimization
-    count_optimization = 0
-    # bayes_trials = load_trials(out_dir+'trials_{}.p'.format(count_optimization))
-    for i in range(int(count_optimization/SAVE_TRIAL_EVERY)+1, int(TOTAL_EVALS/SAVE_TRIAL_EVERY)+1):
-        best = fmin(fn=objective, space=space, algo=tpe_algorithm, max_evals=i*SAVE_TRIAL_EVERY,
+    fmin_objective = partial(objective, user_id=user_id, task_id=task_id)
+
+    for i in range(int(count_optimization/save_trial_every)+1, int(total_evals/save_trial_every)+1):
+        best = fmin(fn=fmin_objective, space=space, algo=tpe_algorithm, max_evals=i*save_trial_every,
                     trials=bayes_trials, rstate=np.random.RandomState(50))
 
         # Trials saving
-        save_trials(bayes_trials, out_dir+'trials_{}.p'.format(i*SAVE_TRIAL_EVERY))
+        save_trials(bayes_trials, out_dir+'trials_{}_{}_{}.p'.format(i*save_trial_every, user_id, task_id))
         count_optimization += 1
 
     # Sort the trials with lowest loss first
@@ -265,7 +274,7 @@ def bayesian_optimization():
     print(bayes_trials_results[:10])
 
 
-#bayesian_optimization()
+bayesian_optimization(result_fname=out_dir+out_file, total_evals=1, trials_name=out_dir+'run/17_10_20/trials_10.p')
 
 '''   
 data_folder = '../out/run/13_10_20'
@@ -284,7 +293,7 @@ best_bayes_params = ast.literal_eval(results.loc[0, 'params']).copy()
 model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',', hparams_file=best_bayes_params)
 
 #model, scaler, sum = semisup_autoencoder(volume_dir+file_name, sep=',')
-'''
+
 test_labels = get_label(file_name_inference)
 print('True labels:')
 print(test_labels)
@@ -296,3 +305,4 @@ accuracy = accuracy_score(test_labels, predictions)
 
 print('The baseline auc score on the test set is {:.4f}'.format(auc))
 print('The baseline accuracy score on the test set is {:.4f}'.format(accuracy))
+'''

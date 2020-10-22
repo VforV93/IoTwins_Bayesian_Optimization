@@ -23,6 +23,7 @@ import sys
 import joblib
 
 volume_dir = '..'  # '/root/mlservice_volume'
+data_dir = '{}/data'.format(volume_dir)
 trained_models_dir = '{}/trained_models/'.format(volume_dir)
 out_dir = '{}/out/'.format(volume_dir)
 
@@ -106,7 +107,7 @@ default_hparams_sup = {
     'lr': 0.0001,           # learning rate
     'optimizer': 'adam',    # optimizer
     'drop_enabled': True,   # add Dropout layer
-    'drop_factor':0.1       # Dropout rate (only if drop==True)
+    'drop_factor': 0.1       # Dropout rate (only if drop==True)
 }
 
 '''
@@ -125,7 +126,7 @@ default_hparams_classr_sup = {
     'lr': 0.0001,                   # learning rate
     'optimizer': 'adam',            # optimizer
     'drop_enabled': False,          # add Dropout layer
-    'drop_factor':0.1               # Dropout rate (only if drop==True)
+    'drop_factor': 0.1               # Dropout rate (only if drop==True)
 }
 
 
@@ -232,6 +233,7 @@ def _load_trained_model(model_name):
 
     return model, stats, scaler
 
+
 def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0', 
         hparams_file=None, n_percentile=-1, save=True):
     '''
@@ -285,7 +287,7 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
     task_id = gs.sanitize(task_id)
 
     # read data from file
-    df_fname = '{}/{}'.format(volume_dir, df_fname)
+    df_fname = '{}/{}'.format(data_dir, df_fname)
     df = pd.read_csv(df_fname, sep=sep)
 
     if hparams_file == None:
@@ -509,7 +511,8 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
         hparams_ae = default_hparams_sup
     # read hyperparameters for autoencoder from binary file (pickle object)
     else:
-        hparams_ae = gs.load_py_obj(hparams_file_ae)
+        # hparams_ae = gs.load_py_obj(hparams_file_ae) TODO just for testing purpose I can pass the params as a dictionary
+        hparams_ae = hparams_file_ae
 
     if hparams_file_classr == None:
         hparams_classr = default_hparams_classr_sup
@@ -586,7 +589,6 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
     return model_fname, scaler_file, stats_file
 
 
-
 def sup_detection_inference(df_fname, model_name, sep=',', 
         user_id='default', task_id='0.0', scaler=None):
     '''
@@ -644,7 +646,7 @@ def sup_detection_inference(df_fname, model_name, sep=',',
     labels_file = '{}{}_predLabels.pickle'.format(out_dir, model_name)
     gs.serialize_py_obj(pred_classes, labels_file)
 
-   
+
 if __name__ == '__main__':
     service_type = int(sys.argv[1])
     service_args = sys.argv[2:]
@@ -743,9 +745,3 @@ if __name__ == '__main__':
 
     else:
         print('[adssae] Unsupported option')
-
-
-
-            
- 
-
