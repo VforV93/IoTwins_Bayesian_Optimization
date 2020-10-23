@@ -31,7 +31,7 @@ def save_trials(trial, file_name):
 
 
 def _bayesian_save_model(model_name, best_score, stats, model, scaler):
-    print('_bayesian_save_model')
+    print('[_bayesian_save_model] saving {} with score:{}'.format(model_name, best_score))
     return _save_trained_model(model_name, model, stats, scaler)
 
 
@@ -63,8 +63,6 @@ def objective(params, function_to_optimize, trial_fname, iteration_gen, space_fu
               others_params={}, save_model_func=_bayesian_save_model):
     """Objective function for SemiSup Autoencoder Hyperparameter Optimization"""
     iteration = next(iteration_gen)
-    if best_loss_threshold is None:
-        best_loss_threshold = Best_loss_in_run()
 
     print('best_loss_threshold: {}, iteration: {}'.format(best_loss_threshold.best_loss, iteration))
     # Conditional logic to assign top-level keys
@@ -80,7 +78,7 @@ def objective(params, function_to_optimize, trial_fname, iteration_gen, space_fu
 
     ''' '''
     # every best score obtained save the model
-    if best_loss_threshold.update(best_score):
+    if best_loss_threshold is not None and best_loss_threshold.update(best_score):
         print('new best loss score({}), saving model...'.format(round(best_score, 5)))
         model_name = 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
         # ae_model_fname, ae_stats_file, ae_scaler_file = _save_trained_model(gs.sanitize(ae_model_name), ae_model, ae_stats, scaler)
@@ -124,6 +122,7 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
         # Write the headers to the file
         writer.writerow(header_file)
         of_connection.close()
+        best_loss_threshold = Best_loss_in_run()
     else:
         bayes_trials = load_trials('{}/{}'.format(out_dir, trials_name))
         if bayes_trials is None:
@@ -203,20 +202,20 @@ def my_save_model(stats, **model_scaler):
 
 
 s = {
-        'epochs': 2,
+        'epochs': 50,
         'batch_size': hp.quniform('batch_size', 8, 64, 8),
         'shuffle': hp.choice('shuffle', [True, False]),
         'overcomplete': hp.choice('overcomplete',
-                                  [{'overcomplete': True, 'nl_o': hp.quniform('nl_o', 2, 10, 1),
-                                    'nnl_o': hp.quniform('nnl_o', 5, 15, 1),
+                                  [{'overcomplete': True, 'nl_o': hp.quniform('nl_o', 1, 10, 1),
+                                    'nnl_o': hp.quniform('nnl_o', 1, 15, 1),
                                     'l1_reg': hp.quniform('l1_reg', 0.00001, 0.01, 0.0004995),
                                     'nl_u': 4, 'nnl_u': 2},
                                    {'overcomplete': False, 'nl_o': 3, 'nnl_o': 10,
-                                    'nl_u': hp.quniform('nl_u', 2, 10, 1),
-                                    'nnl_u': hp.quniform('nnl_u', 2, 10, 1)}]),
+                                    'nl_u': hp.quniform('nl_u', 1, 10, 1),
+                                    'nnl_u': hp.quniform('nnl_u', 1, 15, 1)}]),
         'actv': 'relu',
         'loss': 'mae',
-        'lr': hp.loguniform('lr', np.log(0.01), np.log(0.2)),
+        'lr': hp.loguniform('lr', np.log(0.001), np.log(0.02)),
         'optimizer': 'adam',
         'drop_enabled': hp.choice('drop_enabled',
                                   [{'drop_enabled': True, 'drop_factor': hp.quniform('drop_factor', 0.1, 0.9, 0.1)},
@@ -226,7 +225,7 @@ s = {
 df_n = 'train_caravan-insurance-challenge.csv'  # trial_fname
 out_file = 'semisup_ae_trials.csv'              # trial_fname
 s_t_e = None                                    # save_trial_every
-t_e = 4                                         # total_evals
+t_e = 20                                         # total_evals
 f_to_o = semisup_autoencoder_filter_stats       # function_to_optimize
 o_p = {'df_fname': df_n, 'sep': ',', 'save': False,
        'user_id': 'default', 'task_id': '0.0'}  # others_params
