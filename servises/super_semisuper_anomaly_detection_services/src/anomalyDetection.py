@@ -547,7 +547,7 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
     history = ae_model.fit(x_train, x_train, epochs=hparams_ae['epochs'], 
             batch_size=hparams_ae['batch_size'], shuffle=hparams_ae['shuffle'], 
             callbacks=[early_stopping, reduce_lr],
-            validation_split=0.1, verbose=1)
+            validation_split=0.1, verbose=0)
 
     print("[adssae:sup_autoencoder_classr] Unsupervised training concluded")
 
@@ -568,7 +568,7 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
             batch_size=hparams_classr['batch_size'], 
             shuffle=hparams_classr['shuffle'], 
             callbacks=[early_stopping, reduce_lr],
-            validation_split=0.1, verbose=1)
+            validation_split=0.1, verbose=0)
 
     print("[adssae:sup_autoencoder_classr] Classifier training concluded")
 

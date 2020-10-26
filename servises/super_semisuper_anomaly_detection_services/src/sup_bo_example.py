@@ -1,10 +1,10 @@
-import os
+# import os
 import numpy as np
 from bayesianOptimization import bayesian_optimization
 from anomalyDetection import sup_autoencoder_classr
 from hyperopt import hp
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 
 def s_f_p(params):
