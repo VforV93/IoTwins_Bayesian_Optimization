@@ -779,7 +779,7 @@ def evaluate_predictions_sup(predicted, actual):
         else:
             fp += 1
     accuracy=(tp+tn)/(tp+tn+fp+fn)
-    precision=tp/(tp+fp)
+    precision= 0 if tp == 0 else tp/(tp+fp)              # ERROR divisione per 0 nel caso di tp=0 & fp=0
     recall=tp/(tp+fn)
     if (precision + recall) == 0:
         f1_score = 0

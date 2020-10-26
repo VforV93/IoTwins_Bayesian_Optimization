@@ -115,7 +115,7 @@ anomalyDetection.default_hparams_classr_sup::Default parameters for supervised
 classifier
 '''
 default_hparams_classr_sup = {
-    'epochs': 10,                   # number of training epochs
+    'epochs': 1,                   # number of training epochs
     'batch_size': 32,               # batch size
     'shuffle': True,                # shuffle data during training
     'nl': 2,                        # number of layers 
@@ -462,7 +462,7 @@ def semisup_detection_inference(df_fname, model_name, sep=',',
 
 
 def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0', 
-        hparams_file_ae=None, hparams_file_classr=None, n_percentile=-1):
+        hparams_file_ae=None, hparams_file_classr=None, n_percentile=-1, save=True):
     '''
     anomalyDetection.sup_autoencoder_classr::Creates a supervised model for
     anomaly detection composed by an unsupervised autoencoder (feature
@@ -504,7 +504,7 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
     task_id = gs.sanitize(task_id)
 
     # read data from file
-    df_fname = '{}/{}'.format(volume_dir, df_fname)
+    df_fname = '{}/{}'.format(data_dir, df_fname)
     df = pd.read_csv(df_fname, sep=sep)
 
     if hparams_file_ae == None:
@@ -518,7 +518,8 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
         hparams_classr = default_hparams_classr_sup
     # read hyperparameters for classifier from binary file (pickle object)
     else:
-        hparams_classr = gs.load_py_obj(hparams_file_classr)
+        #hparams_classr = gs.load_py_obj(hparams_file_classr) TODO just for testing purpose I can pass the params as a dictionary
+        hparams_classr = hparams_file_classr
 
     df.columns = df.columns.str.replace(' ', '')
     df, labels, scaler = gs._preprocess(df, 'label')
@@ -546,7 +547,7 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
     history = ae_model.fit(x_train, x_train, epochs=hparams_ae['epochs'], 
             batch_size=hparams_ae['batch_size'], shuffle=hparams_ae['shuffle'], 
             callbacks=[early_stopping, reduce_lr],
-            validation_split=0.1, verbose=0)
+            validation_split=0.1, verbose=1)
 
     print("[adssae:sup_autoencoder_classr] Unsupervised training concluded")
 
@@ -567,7 +568,7 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
             batch_size=hparams_classr['batch_size'], 
             shuffle=hparams_classr['shuffle'], 
             callbacks=[early_stopping, reduce_lr],
-            validation_split=0.1, verbose=0)
+            validation_split=0.1, verbose=1)
 
     print("[adssae:sup_autoencoder_classr] Classifier training concluded")
 
@@ -576,17 +577,18 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
     pred_classes = ae.assign_class_sup(preds)
 
     print("[adssae:sup_autoencoder_classr] Accuracy Statistics")
-    pred_stats = ae.evaluate_predictions_sup(
-            pred_classes, y_test.tolist())
+    pred_stats = ae.evaluate_predictions_sup(pred_classes, y_test.tolist())
     print(pred_stats)
 
-    # save the trained model and associated statistics
-    print("[adssae:sup_autoencoder_classr] Saving model and stats")
-    model_name = 'sup_ae_clssr_{}_{}'.format(user_id, task_id)
 
-    model_fname, stats_file, scaler_file = _save_trained_model(
-            model_name, classr_model, pred_stats, scaler)
-    return model_fname, scaler_file, stats_file
+    # save the trained model and associated statistics
+    if save:
+        print("[adssae:sup_autoencoder_classr] Saving model and stats")
+        model_name = 'sup_ae_clssr_{}_{}'.format(user_id, task_id)
+
+        model_fname, stats_file, scaler_file = _save_trained_model(model_name, classr_model, pred_stats, scaler)
+
+    return classr_model, scaler, pred_stats
 
 
 def sup_detection_inference(df_fname, model_name, sep=',', 

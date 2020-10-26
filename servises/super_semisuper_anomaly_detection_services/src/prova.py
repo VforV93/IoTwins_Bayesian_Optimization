@@ -274,8 +274,8 @@ def bayesian_optimization(result_fname,  opt_algorithm=None, header_file=None,
     print(bayes_trials_results[:10])
 
 
-bayesian_optimization(result_fname=out_dir+out_file, total_evals=1, trials_name=out_dir+'run/17_10_20/trials_10.p')
-
+#bayesian_optimization(result_fname=out_dir+out_file, total_evals=1, trials_name=out_dir+'run/17_10_20/trials_10.p')
+sup_autoencoder_classr(volume_dir+file_name)
 '''   
 data_folder = '../out/run/13_10_20'
 trials_file = 'semisup_ae_trials(100)_13-10.csv'
