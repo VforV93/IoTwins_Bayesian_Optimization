@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_modelscore_084404_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_084404.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_084404_scaler.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/bayesianOptimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/bayesianOptimization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/semisup_bo_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/semisup_bo_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/sup_bo_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/sup_bo_example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +162,9 @@
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -189,9 +190,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.semisup_bo_example" />
+        <item itemvalue="Python.bayesianOptimization" />
         <item itemvalue="Python.sup_bo_example" />
         <item itemvalue="Python.prova" />
-        <item itemvalue="Python.bayesianOptimization" />
         <item itemvalue="Python.general_services" />
       </list>
     </recent_temporary>
@@ -225,7 +226,9 @@
       <workItem from="1603096186512" duration="26862000" />
       <workItem from="1603272201373" duration="31922000" />
       <workItem from="1603460880127" duration="1519000" />
-      <workItem from="1603704331092" duration="18505000" />
+      <workItem from="1603704331092" duration="19036000" />
+      <workItem from="1603791262222" duration="16041000" />
+      <workItem from="1603890838203" duration="11325000" />
     </task>
     <servers />
   </component>
@@ -252,46 +255,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602855823746" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1603723371146">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1603730710374">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="142" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603100610683" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1603723371145">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710374" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1603730710374">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371145" />
-    <state width="1877" height="142" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603100610683" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1603723371145">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710374" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1603730710374">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371145" />
-    <state width="1877" height="142" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603100610683" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1603723371146">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710374" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1603730710374">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="142" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603100610683" />
-    <state width="1877" height="295" key="GridCell.Tab.1.bottom" timestamp="1603723371146">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710374" />
+    <state width="1877" height="295" key="GridCell.Tab.1.bottom" timestamp="1603730710375">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="142" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603100619497" />
-    <state width="1877" height="295" key="GridCell.Tab.1.center" timestamp="1603723371146">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710375" />
+    <state width="1877" height="295" key="GridCell.Tab.1.center" timestamp="1603730710375">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="142" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603100619496" />
-    <state width="1877" height="295" key="GridCell.Tab.1.left" timestamp="1603723371146">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710375" />
+    <state width="1877" height="295" key="GridCell.Tab.1.left" timestamp="1603730710375">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="142" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603100619496" />
-    <state width="1877" height="295" key="GridCell.Tab.1.right" timestamp="1603723371146">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710375" />
+    <state width="1877" height="295" key="GridCell.Tab.1.right" timestamp="1603730710375">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="142" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603100619497" />
+    <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710375" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1603025472205">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

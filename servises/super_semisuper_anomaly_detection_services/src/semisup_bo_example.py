@@ -1,10 +1,10 @@
-# import os
+import os
 import numpy as np
 from bayesianOptimization import bayesian_optimization
 from anomalyDetection import semisup_autoencoder
 from hyperopt import hp
 
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 
 def s_f_p(params):
@@ -37,6 +37,7 @@ def s_f_p(params):
 
 
 def semisup_autoencoder_filter_stats(**params):
+    """Objective function for SemiSup Autoencoder Hyperparameter Optimization"""
     model, scaler, stats = semisup_autoencoder(**params)
 
     # Filtering stats
@@ -52,7 +53,7 @@ def semisup_autoencoder_filter_stats(**params):
 
 
 s = {
-        'epochs': 50,
+        'epochs': 1,
         'batch_size': hp.quniform('batch_size', 8, 64, 8),
         'shuffle': hp.choice('shuffle', [True, False]),
         'overcomplete': hp.choice('overcomplete',
@@ -76,10 +77,10 @@ s = {
 df_n = 'train_caravan-insurance-challenge.csv'  # dataset_fname
 out_file = 'semisup_ae_trials.csv'              # trial_fname
 s_t_e = None                                    # save_trial_every
-t_e = 20                                        # total_evals
+t_e = 6                                        # total_evals
 f_to_o = semisup_autoencoder_filter_stats       # function_to_optimize
 o_p = {'df_fname': df_n, 'sep': ',', 'save': False,
        'user_id': 'default', 'task_id': '0.0'}  # others_params
 
 bayesian_optimization(function_to_optimize=f_to_o, space_func_process=s_f_p, trial_fname=out_file, space=s,
-                      save_trial_every=s_t_e, total_evals=t_e, others_params=o_p)  # , trials_name='trials_3_default_0.0.p')
+                      save_trial_every=s_t_e, total_evals=t_e, others_params=o_p, trials_name='trials_2_default_0.0')

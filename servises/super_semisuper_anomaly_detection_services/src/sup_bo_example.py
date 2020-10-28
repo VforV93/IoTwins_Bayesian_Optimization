@@ -53,6 +53,7 @@ def s_f_p(params):
 
 
 def sup_autoencoder_filter_stats(**params):
+    """Objective function for Sup Autoencoder+Classr Hyperparameter Optimization"""
     model, scaler, stats = sup_autoencoder_classr(**params)
     score = 1 - np.max(stats['recall'])
     return score, stats, {'model': model, 'scaler': scaler}
