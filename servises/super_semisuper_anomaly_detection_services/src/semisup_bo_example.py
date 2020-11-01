@@ -1,4 +1,8 @@
-import os
+import os, sys
+currDir = os.path.dirname(os.path.realpath(__file__))
+rootDir = os.path.abspath(os.path.join(currDir, '..'))
+if rootDir not in sys.path:  # add parent dir to paths
+    sys.path.append(rootDir)
 import numpy as np
 from bayesianOptimization import bayesian_optimization
 from anomalyDetection import semisup_autoencoder
@@ -53,7 +57,7 @@ def semisup_autoencoder_filter_stats(**params):
 
 
 s = {
-        'epochs': 1,
+        'epochs': 100,
         'batch_size': hp.quniform('batch_size', 8, 64, 8),
         'shuffle': hp.choice('shuffle', [True, False]),
         'overcomplete': hp.choice('overcomplete',
@@ -63,9 +67,9 @@ s = {
                                     'nl_u': 4, 'nnl_u': 2},
                                    {'overcomplete': False, 'nl_o': 3, 'nnl_o': 10,
                                     'nl_u': hp.quniform('nl_u', 1, 10, 1),
-                                    'nnl_u': hp.quniform('nnl_u', 1, 15, 1)}]),
-        'actv': 'relu',
-        'loss': 'mae',
+                                    'nnl_u': hp.quniform('nnl_u', 1, 5, 1)}]),
+        'actv': 'sigmoid',  # 'relu',
+        'loss': 'binary_crossentropy',  # 'mae',
         'lr': hp.loguniform('lr', np.log(0.001), np.log(0.02)),
         'optimizer': 'adam',
         'drop_enabled': hp.choice('drop_enabled',
@@ -74,13 +78,13 @@ s = {
         'n_percentile': hp.quniform('n_percentile', 40, 99, 1)
     }
 
-df_n = 'train_caravan-insurance-challenge.csv'  # dataset_fname
+df_n = 'mammography.csv'  # 'train_caravan-insurance-challenge.csv'  # dataset_fname
 out_file = 'semisup_ae_trials.csv'              # trial_fname
 s_t_e = None                                    # save_trial_every
-t_e = 6                                        # total_evals
+t_e = 150                                       # total_evals
 f_to_o = semisup_autoencoder_filter_stats       # function_to_optimize
 o_p = {'df_fname': df_n, 'sep': ',', 'save': False,
        'user_id': 'default', 'task_id': '0.0'}  # others_params
 
 bayesian_optimization(function_to_optimize=f_to_o, space_func_process=s_f_p, trial_fname=out_file, space=s,
-                      save_trial_every=s_t_e, total_evals=t_e, others_params=o_p, trials_name='trials_2_default_0.0')
+                      save_trial_every=s_t_e, total_evals=t_e, others_params=o_p)  # , trials_name='trials_2_default_0.0')

@@ -1,18 +1,25 @@
 #!/usr/bin/python3.6
+import os, sys
+currDir = os.path.dirname(os.path.realpath(__file__))
+rootDir = os.path.abspath(os.path.join(currDir, '..'))
+if rootDir not in sys.path:  # add parent dir to paths
+    sys.path.append(rootDir)
+
 import numpy as np
 import csv
 from timeit import default_timer as timer
-from anomalyDetection import _save_trained_model, semisup_autoencoder, semisup_detection_inference, \
-    sup_autoencoder_classr
-import general_services as gs
+from servises.super_semisuper_anomaly_detection_services.src.anomalyDetection import _save_trained_model, \
+    semisup_autoencoder, semisup_detection_inference, sup_autoencoder_classr
+# from anomalyDetection import _save_trained_model, semisup_autoencoder, semisup_detection_inference, sup_autoencoder_classr
+import servises.super_semisuper_anomaly_detection_services.src.general_services as gs
 from hyperopt import STATUS_OK
 from hyperopt import tpe
 from hyperopt import Trials
 from hyperopt import fmin
 from functools import partial
 
-volume_dir = '../data'
-out_dir = '../out'
+volume_dir = '../data'  # 'servises/super_semisuper_anomaly_detection_services/data'
+out_dir = '../out'  # 'servises/super_semisuper_anomaly_detection_services/out'
 
 
 # internal function for loading previous saved Trials object
@@ -143,7 +150,7 @@ def __objective(params, function_to_optimize, trial_fname, iteration_gen, space_
     run_time = timer() - start
 
     # every best score obtained save the model
-    if best_loss_threshold is not None and best_loss_threshold.update(best_score):
+    if save_model_func is not None and best_loss_threshold is not None and best_loss_threshold.update(best_score):
         print('new best loss score({}), saving model...'.format(round(best_score, 5)))
         model_name = 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
         save_params = save_model_func(gs.sanitize(model_name), best_score, stats, **others_func_params)
@@ -265,11 +272,11 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
     # header trials results file
     header_file = ['loss', 'params', 'stats', 'iteration', 'train_time']  # default header(only choice)
     # save Trials every tot step/evaluations/iterations
+    if save_trial_every is None or save_trial_every > total_evals:  # never saving trials while running the bayesian optimization
+        save_trial_every = total_evals                              # if not specified or is greater then the max number of evaluations
     if save_trial_every <= 0:
         raise ValueError('the number of evaluations after which to save the Trials object, save_trial_every({}) '
                          'must be strictly positive'.format(save_trial_every))
-    if save_trial_every is None or save_trial_every > total_evals:  # never saving trials while running the bayesian optimization
-        save_trial_every = total_evals                              # if not specified or is greater then the max number of evaluations
 
     # Keep track of the results
     if trials_name is None:     # starting from evaluation 0, no Trials object loaded
@@ -316,7 +323,7 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
         count_optimization += 1
 
     # Sort the trials with lowest loss first and print the best 10 ones
-    bayes_trials_results = sorted(bayes_trials.results, key=lambda x: x['loss'])
-    print(bayes_trials_results[:10])
+    # bayes_trials_results = sorted(bayes_trials.results, key=lambda x: x['loss'])
+    # print(bayes_trials_results[:10])
 
     return best, trial_fname

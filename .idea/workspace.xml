@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayesian Optimization Service - Basic Example 1-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayesian Optimization Service - Basic Example-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 1.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_modelscore_02_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_modelscore_038889_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_3_default_0.0.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/.ipynb_checkpoints/Bayesian Optimization Service - Basic Example 1-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/Bayesian Optimization Service - Basic Example - Copy.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_02.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_02_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_038889.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_038889_scaler.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduction to Bayesian Optimization with Hyperopt.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction to Bayesian Optimization with Hyperopt.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/bayesianOptimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/bayesianOptimization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/semisup_bo_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/semisup_bo_example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/sup_bo_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/sup_bo_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +244,10 @@
       <workItem from="1603460880127" duration="1519000" />
       <workItem from="1603704331092" duration="19036000" />
       <workItem from="1603791262222" duration="16041000" />
-      <workItem from="1603890838203" duration="11325000" />
+      <workItem from="1603890838203" duration="12841000" />
+      <workItem from="1603968562952" duration="10975000" />
+      <workItem from="1604234521513" duration="4299000" />
+      <workItem from="1604249399333" duration="3462000" />
     </task>
     <servers />
   </component>
@@ -247,54 +266,55 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2632" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602858748631" />
-    <state width="1559" height="625" key="DebuggerActiveHint" timestamp="1603366837340">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1559" height="625" key="DebuggerActiveHint" timestamp="1604253996199">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1559" height="625" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603366837340" />
+    <state width="1559" height="625" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1604253996199" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602855823746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602855823746" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1603730710374">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1604253933622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710374" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1603730710374">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604253933622" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1604253933622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371145" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710374" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1603730710374">
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604253933622" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1604253933622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371145" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710374" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1603730710374">
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604253933622" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1604253933622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710374" />
-    <state width="1877" height="295" key="GridCell.Tab.1.bottom" timestamp="1603730710375">
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604253933622" />
+    <state width="1877" height="295" key="GridCell.Tab.1.bottom" timestamp="1604253948914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710375" />
-    <state width="1877" height="295" key="GridCell.Tab.1.center" timestamp="1603730710375">
+    <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604253948914" />
+    <state width="1877" height="295" key="GridCell.Tab.1.center" timestamp="1604253948914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710375" />
-    <state width="1877" height="295" key="GridCell.Tab.1.left" timestamp="1603730710375">
+    <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604253948914" />
+    <state width="1877" height="295" key="GridCell.Tab.1.left" timestamp="1604253948914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710375" />
-    <state width="1877" height="295" key="GridCell.Tab.1.right" timestamp="1603730710375">
+    <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604253948914" />
+    <state width="1877" height="295" key="GridCell.Tab.1.right" timestamp="1604253948914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603730710375" />
+    <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604253948914" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1603025472205">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -317,6 +337,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py</url>
+          <line>125</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="javascript-exception" />
         <breakpoint enabled="true" type="django-exception">
@@ -332,6 +359,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$semisup_bo_example.coverage" NAME="semisup_bo_example Coverage Results" MODIFIED="1604253933193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$sup_bo_example.coverage" NAME="sup_bo_example Coverage Results" MODIFIED="1603721744307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$bayesianOptimization.coverage" NAME="bayesianOptimization Coverage Results" MODIFIED="1603372735629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1603711994177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />

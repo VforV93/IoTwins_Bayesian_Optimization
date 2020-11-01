@@ -17,10 +17,11 @@ from sklearn import model_selection as sklms
 from tensorflow.python.keras.optimizers import Adam, Adadelta
 from tensorflow.python.keras.callbacks import Callback, EarlyStopping
 from tensorflow.python.keras.callbacks import ReduceLROnPlateau
-import utils.ae_utils as ae
-import general_services as gs
+import servises.super_semisuper_anomaly_detection_services.src.utils.ae_utils as ae
+import servises.super_semisuper_anomaly_detection_services.src.general_services as gs
 import sys
 import joblib
+
 
 volume_dir = '..'  # '/root/mlservice_volume'
 data_dir = '{}/data'.format(volume_dir)

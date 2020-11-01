@@ -123,7 +123,7 @@ def autoencoder(_n_features, _hparams):
         
     output_layer = Dense(_n_features, activation=_hparams['actv'])(hidden)
     autoencoder = Model(input_layer, output_layer)
-    autoencoder.compile(optimizer=_hparams['optimizer'], loss='mae', metrics=['accuracy'])
+    autoencoder.compile(optimizer=_hparams['optimizer'], loss=_hparams['loss'], metrics=['accuracy'])
     
     return autoencoder, encoder
 
