@@ -2,26 +2,248 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayesian Optimization Service - Basic Example 1-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayesian Optimization Service - Basic Example-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 1.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_modelscore_02_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/bayesian_opt_modelscore_038889_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/semisup_ae_trials.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/trials_3_default_0.0.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/.ipynb_checkpoints/Bayesian Optimization Service - Basic Example 1-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/Bayesian Optimization Service - Basic Example - Copy.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_02.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_02_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_038889.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/bayesian_opt_modelscore_038889_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayesian Optimization Service - Basic Example 2 - Rosenbrock function-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayesian Optimization Service - Example 3 - Machine Learning Model Example-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 2 - Rosenbrock function.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604591143.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604591332.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604592013.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604592154.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604592161.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/ae_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/ae_test_inference.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/ae_test_no_time.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/flights.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/mammography.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/mammography.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/test_caravan-insurance-challenge.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/train_caravan-insurance-challenge.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/semisup_ae_trials(100)_13-10.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_10.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_100.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_15.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_20.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_25.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_30.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_35.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_40.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_45.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_5.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_50.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_55.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_60.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_65.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_70.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_75.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_80.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_85.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_90.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_95.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.0187)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.043)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.05823)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.09065)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.09103)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/semisup_ae_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_10.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_100.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_20.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_30.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_40.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_50.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_60.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_70.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_80.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_90.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_model(score_0.94845)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_model(score_0.95455)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_model(score_0.96)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_model(score_0.97059)_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_modelscore_021359_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_modelscore_093578_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_modelscore_093939_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/semisup_ae_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_10.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_100.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_20.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_30.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_40.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_50.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_60.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_70.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_80.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_90.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/bayesian_opt_modelscore_000926_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/bayesian_opt_modelscore_002105_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/bayesian_opt_modelscore_017925_stats.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/semisup_ae_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_10.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_100.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_110.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_120.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_130.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_140.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_150.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_160.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_20.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_30.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_40.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_50.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_60.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_70.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_80.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_90.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/bayesianOptimization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/prova.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/semisup_bo_example.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/sup_bo_example.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.0187).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.0187)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.043).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.043)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.05823).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.05823)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.09065).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.09065)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.96).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.96)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059).h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059)_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_modelscore_093578.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_modelscore_093578_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_modelscore_093939.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_modelscore_093939_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_000926.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_000926_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_002105.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_002105_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_017925.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_017925_scaler.save" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Introduction to Bayesian Optimization with Hyperopt.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Introduction to Bayesian Optimization with Hyperopt.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/bayesianOptimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/bayesianOptimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/semisup_bo_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/semisup_bo_example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayesian Hyperparameter Optimization of Gradient Boosting Machine.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Introduction to Bayesian Optimization with Hyperopt.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Process_Data_for_IoTwins.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Untitled.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-example/caravan-insurance-challenge.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/bayes_params.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/gbm_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/random_params.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/trials.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/data_norm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/semisup_ae_trials(100)_13-10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_10.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_100.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_15.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_20.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_25.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_30.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_35.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_40.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_45.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_5.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_50.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_55.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_60.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_65.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_70.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_75.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_80.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_85.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_90.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_95.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.0187)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.043)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.05823)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.09065)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.09103)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/semisup_ae_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_10.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_100.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_20.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_30.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_40.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_50.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_60.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_70.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_80.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_90.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.94845)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.95455)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.96)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.97059)_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_021359_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_093578_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_093939_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/semisup_ae_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_10.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_100.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_20.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_30.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_40.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_50.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_60.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_70.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_80.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_90.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/bayesian_opt_modelscore_000926_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/bayesian_opt_modelscore_002105_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/bayesian_opt_modelscore_017925_stats.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/semisup_ae_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_10.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_100.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_110.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_120.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_130.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_140.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_150.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_160.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_20.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_30.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_40.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_50.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_60.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_70.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_80.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_90.p" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/Bayesian Optimization Service - Basic Example - Copy.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/bayesianOptimization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/semisup_bo_example.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/sup_bo_example.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.0187).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.0187)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.043).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.043)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.05823).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.05823)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.09065).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.09065)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.96).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.96)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059).h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059)_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093578.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093578_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093939.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093939_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_000926.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_000926_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_002105.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_002105_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_017925.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_017925_scaler.save" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +288,26 @@
       <recent name="C:\Users\Filippo\Documents\Python\IoTwins\servises\super_semisuper_anomaly_detection_services\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.semisup_bo_example">
+  <component name="RunManager" selected="Python.Example3_iris_classifier_bo">
+    <configuration name="Example3_iris_classifier_bo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IoTwins" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Example3_iris_classifier_bo.py" />
+      <option name="PARAMETERS" value="1 prova" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,28 +352,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="general_services" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="IoTwins" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/general_services.py" />
-      <option name="PARAMETERS" value="1 flights.csv" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="prova" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,6 +378,9 @@
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -197,19 +419,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.general_services" />
       <item itemvalue="Python.prova" />
       <item itemvalue="Python.bayesianOptimization" />
       <item itemvalue="Python.sup_bo_example" />
       <item itemvalue="Python.semisup_bo_example" />
+      <item itemvalue="Python.Example3_iris_classifier_bo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Example3_iris_classifier_bo" />
         <item itemvalue="Python.semisup_bo_example" />
         <item itemvalue="Python.bayesianOptimization" />
         <item itemvalue="Python.sup_bo_example" />
         <item itemvalue="Python.prova" />
-        <item itemvalue="Python.general_services" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +469,10 @@
       <workItem from="1603890838203" duration="12841000" />
       <workItem from="1603968562952" duration="10975000" />
       <workItem from="1604234521513" duration="4299000" />
-      <workItem from="1604249399333" duration="3462000" />
+      <workItem from="1604249399333" duration="3956000" />
+      <workItem from="1604315623909" duration="2537000" />
+      <workItem from="1604395965863" duration="14235000" />
+      <workItem from="1604572023227" duration="5625000" />
     </task>
     <servers />
   </component>
@@ -275,46 +500,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602855823746" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1604253933622">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1604254506180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604253933622" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1604253933622">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1604254506180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371145" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604253933622" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1604253933622">
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1604254506180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371145" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604253933622" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1604253933622">
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1604254506180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604253933622" />
-    <state width="1877" height="295" key="GridCell.Tab.1.bottom" timestamp="1604253948914">
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
+    <state width="1877" height="295" key="GridCell.Tab.1.bottom" timestamp="1604254506180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604253948914" />
-    <state width="1877" height="295" key="GridCell.Tab.1.center" timestamp="1604253948914">
+    <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
+    <state width="1877" height="295" key="GridCell.Tab.1.center" timestamp="1604254506180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604253948914" />
-    <state width="1877" height="295" key="GridCell.Tab.1.left" timestamp="1604253948914">
+    <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
+    <state width="1877" height="295" key="GridCell.Tab.1.left" timestamp="1604254506180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604253948914" />
-    <state width="1877" height="295" key="GridCell.Tab.1.right" timestamp="1604253948914">
+    <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
+    <state width="1877" height="295" key="GridCell.Tab.1.right" timestamp="1604254506180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
-    <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604253948914" />
+    <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1603025472205">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -337,13 +562,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/utils/ae_utils.py</url>
-          <line>125</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="javascript-exception" />
         <breakpoint enabled="true" type="django-exception">

@@ -1,10 +1,4 @@
 #!/usr/bin/python3.6
-import os, sys
-currDir = os.path.dirname(os.path.realpath(__file__))
-rootDir = os.path.abspath(os.path.join(currDir, '..'))
-if rootDir not in sys.path:  # add parent dir to paths
-    sys.path.append(rootDir)
-
 import numpy as np
 import csv
 from timeit import default_timer as timer
@@ -18,8 +12,8 @@ from hyperopt import Trials
 from hyperopt import fmin
 from functools import partial
 
-volume_dir = '../data'  # 'servises/super_semisuper_anomaly_detection_services/data'
-out_dir = '../out'  # 'servises/super_semisuper_anomaly_detection_services/out'
+volume_dir = 'servises/bayesian_optimization/data'  # '../data'
+out_dir = 'servises/bayesian_optimization/out'  # '../out'
 
 
 # internal function for loading previous saved Trials object
