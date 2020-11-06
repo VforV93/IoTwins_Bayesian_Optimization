@@ -2,248 +2,162 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayesian Optimization Service - Basic Example 2 - Rosenbrock function-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayesian Optimization Service - Example 3 - Machine Learning Model Example-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 2 - Rosenbrock function.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604591143.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604591332.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604592013.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604592154.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604592161.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/ae_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/ae_test_inference.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/ae_test_no_time.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/flights.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/mammography.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/mammography.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/test_caravan-insurance-challenge.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/data/train_caravan-insurance-challenge.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593035.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593044.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593053.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593059.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593070.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593084.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593097.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593114.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593130.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593144.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593169.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593185.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593201.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593225.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593248.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593271.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593296.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593324.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593356.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593384.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593415.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593447.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593480.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593515.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593550.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593586.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593622.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593662.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593700.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593743.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593784.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593826.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593876.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593916.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593964.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594010.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594056.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594107.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594157.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594210.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594269.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594325.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594384.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594447.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594504.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594562.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594617.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594692.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594762.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594842.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594926.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594990.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595059.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595133.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595202.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595285.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595365.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595440.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595528.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595606.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595690.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595769.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595849.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595944.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596044.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596157.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596251.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596346.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596441.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596533.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596627.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596730.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596830.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596934.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597034.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597139.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597254.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597360.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597473.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597594.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597690.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597801.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597928.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598030.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598152.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598255.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598381.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598504.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598636.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598754.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598875.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598998.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599110.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599238.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599355.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599475.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599595.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599731.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599867.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599989.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600109.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600255.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600395.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600541.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600667.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600803.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600963.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601112.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601263.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601394.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601538.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601691.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601840.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602002.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602142.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602300.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602449.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602612.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602765.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602910.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603089.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603268.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603447.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603597.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603750.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603955.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604132.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604302.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604487.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604645.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604827.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605007.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605180.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605360.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605526.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605708.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605912.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606093.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606287.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606461.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606639.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606823.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607009.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607204.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607383.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607591.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607785.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607983.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604608186.DESKTOP-35GKUCU" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604608386.DESKTOP-35GKUCU" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/semisup_ae_trials(100)_13-10.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_10.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_100.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_15.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_20.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_25.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_30.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_35.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_40.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_45.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_5.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_50.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_55.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_60.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_65.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_70.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_75.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_80.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_85.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_90.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/13_10_20/trials_95.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.0187)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.043)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.05823)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.09065)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/bayesian_opt_model(score_0.09103)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/semisup_ae_trials.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_10.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_100.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_20.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_30.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_40.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_50.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_60.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_70.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_80.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/15_10_20/trials_90.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_model(score_0.94845)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_model(score_0.95455)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_model(score_0.96)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_model(score_0.97059)_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_modelscore_021359_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_modelscore_093578_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/bayesian_opt_modelscore_093939_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/semisup_ae_trials.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_10.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_100.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_20.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_30.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_40.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_50.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_60.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_70.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_80.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/16_10_20/trials_90.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/bayesian_opt_modelscore_000926_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/bayesian_opt_modelscore_002105_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/bayesian_opt_modelscore_017925_stats.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/semisup_ae_trials.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_10.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_100.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_110.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_120.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_130.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_140.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_150.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_160.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_20.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_30.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_40.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_50.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_60.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_70.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_80.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/17_10_20/trials_90.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/bayesianOptimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/prova.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/semisup_bo_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/sup_bo_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.0187).h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.0187)_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.043).h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.043)_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.05823).h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.05823)_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.09065).h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/15_10_20/bayesian_opt_model(score_0.09065)_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845).h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845)_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455).h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455)_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.96).h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.96)_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059).h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059)_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_modelscore_093578.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_modelscore_093578_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_modelscore_093939.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/16_10_20/bayesian_opt_modelscore_093939_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_000926.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_000926_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_002105.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_002105_scaler.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_017925.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/17_10_20/bayesian_opt_modelscore_017925_scaler.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/trials_150_default_0.0.p" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/IoTwins.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoTwins.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bayesian Hyperparameter Optimization of Gradient Boosting Machine.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 1.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Introduction to Bayesian Optimization with Hyperopt.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Process_Data_for_IoTwins.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Untitled.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-example/caravan-insurance-challenge.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/bayes_params.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/gbm_trials.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/random_params.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/trials.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/data_norm.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/semisup_ae_trials(100)_13-10.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_10.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_100.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_15.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_20.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_25.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_30.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_35.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_40.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_45.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_5.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_50.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_55.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_60.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_65.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_70.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_75.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_80.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_85.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_90.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/13_10_20/trials_95.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.0187)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.043)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.05823)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.09065)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/bayesian_opt_model(score_0.09103)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/semisup_ae_trials.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_10.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_100.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_20.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_30.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_40.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_50.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_60.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_70.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_80.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/15_10_20/trials_90.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.94845)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.95455)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.96)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_model(score_0.97059)_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_021359_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_093578_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/bayesian_opt_modelscore_093939_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/semisup_ae_trials.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_10.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_100.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_20.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_30.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_40.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_50.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_60.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_70.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_80.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/16_10_20/trials_90.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/bayesian_opt_modelscore_000926_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/bayesian_opt_modelscore_002105_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/bayesian_opt_modelscore_017925_stats.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/semisup_ae_trials.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_10.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_100.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_110.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_120.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_130.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_140.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_150.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_160.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_20.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_30.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_40.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_50.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_60.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_70.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_80.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/out/run/17_10_20/trials_90.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/Bayesian Optimization Service - Basic Example - Copy.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/bayesianOptimization.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/semisup_bo_example.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/sup_bo_example.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.0187).h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.0187)_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.043).h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.043)_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.05823).h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.05823)_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.09065).h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/15_10_20/bayesian_opt_model(score_0.09065)_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845).h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.94845)_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455).h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.95455)_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.96).h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.96)_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059).h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_model(score_0.97059)_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093578.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093578_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093939.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/16_10_20/bayesian_opt_modelscore_093939_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_000926.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_000926_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_002105.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_002105_scaler.save" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_017925.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/trained_models/run/17_10_20/bayesian_opt_modelscore_017925_scaler.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,6 +207,9 @@
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -435,7 +352,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -473,11 +390,12 @@
       <workItem from="1604315623909" duration="2537000" />
       <workItem from="1604395965863" duration="14235000" />
       <workItem from="1604572023227" duration="5625000" />
+      <workItem from="1604592943789" duration="1568000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -540,11 +458,11 @@
     </state>
     <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
     <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state x="2381" y="162" key="SettingsEditor" timestamp="1603025472205">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1604592954097">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603025472205" />
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602937524476" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604592954097" />
     <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1602238101966">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -577,9 +495,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$semisup_bo_example.coverage" NAME="semisup_bo_example Coverage Results" MODIFIED="1604253933193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$sup_bo_example.coverage" NAME="sup_bo_example Coverage Results" MODIFIED="1603721744307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
-    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$bayesianOptimization.coverage" NAME="bayesianOptimization Coverage Results" MODIFIED="1603372735629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1603711994177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$bayesianOptimization.coverage" NAME="bayesianOptimization Coverage Results" MODIFIED="1603372735629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$semisup_bo_example.coverage" NAME="semisup_bo_example Coverage Results" MODIFIED="1604253933193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
   </component>
 </project>

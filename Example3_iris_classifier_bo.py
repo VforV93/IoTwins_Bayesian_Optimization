@@ -135,7 +135,7 @@ def s_f_p(params):
 
 
 out_file = "iris_classifier_trials.csv"  # output file name of the csv file in which will be stored the <score, parameters, stats, iteration>
-t_e = 1  # total_evals
+t_e = 150  # total_evals
 best, trial_fname = bayesian_optimization(function_to_optimize=objective_function, space_func_process=s_f_p,
                                           trial_fname=out_file, space=s, total_evals=t_e, save_model_func=None,
                                           others_params=o_p)
