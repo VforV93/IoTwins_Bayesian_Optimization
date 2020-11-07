@@ -11,10 +11,11 @@ from hyperopt import tpe
 from hyperopt import Trials
 from hyperopt import fmin
 from functools import partial
-
-volume_dir = 'servises/bayesian_optimization/data'  # '../data'
-out_dir = 'servises/bayesian_optimization/out'  # '../out'
-
+import os, sys
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+volume_dir = 'servises/bayesian_optimization'  # '../data'
+out_dir = '{}/out'.format(volume_dir)  # '../out'
+trained_models_dir = '{}/trained_models'.format(volume_dir)
 
 # internal function for loading previous saved Trials object
 def _load_trials(file_name: str) -> object:
@@ -136,7 +137,6 @@ def __objective(params, function_to_optimize, trial_fname, iteration_gen, space_
 
     # Conditional logic to assign top-level keys
     processed_params = space_func_process(params) if space_func_process is not None else params
-
     start = timer()
 
     best_score, stats, others_func_params = function_to_optimize(**processed_params, **others_params)
@@ -158,7 +158,7 @@ def __objective(params, function_to_optimize, trial_fname, iteration_gen, space_
     writer.writerow([loss, params, stats, iteration, run_time])
 
     # Dictionary with information for evaluation
-    return {'loss': loss, 'params': params, 'stats': stats, 'iteration': iteration,
+    return {'loss': loss, 'params': processed_params, 'stats': stats, 'iteration': iteration,
             'train_time': run_time, 'status': STATUS_OK}
 
 

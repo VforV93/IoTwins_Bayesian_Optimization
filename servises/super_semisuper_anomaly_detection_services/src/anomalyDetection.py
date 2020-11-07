@@ -170,8 +170,7 @@ def _save_trained_model(model_name, model, stats, scaler):
     gs.serialize_py_obj(stats, ae_stats_file)
 
     # save scaler
-    ae_scaler_file = '{}{}_scaler.save'.format(trained_models_dir, 
-            model_name)
+    ae_scaler_file = '{}{}_scaler.save'.format(trained_models_dir, model_name)
     joblib.dump(scaler, ae_scaler_file)  # ERROR non dovrebbe essere anche questo un file pickle come scritto nella documentazione?
 
     return ae_model_name, ae_stats_file, ae_scaler_file  # ERROR non dovrebbe tornare ae_scaler_file come 3° parametro?

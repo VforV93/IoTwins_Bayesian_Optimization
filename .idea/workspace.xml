@@ -2,162 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593035.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593044.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593053.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593059.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593070.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593084.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593097.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593114.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593130.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593144.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593169.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593185.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593201.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593225.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593248.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593271.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593296.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593324.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593356.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593384.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593415.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593447.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593480.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593515.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593550.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593586.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593622.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593662.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593700.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593743.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593784.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593826.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593876.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593916.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604593964.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594010.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594056.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594107.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594157.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594210.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594269.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594325.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594384.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594447.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594504.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594562.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594617.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594692.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594762.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594842.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594926.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604594990.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595059.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595133.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595202.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595285.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595365.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595440.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595528.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595606.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595690.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595769.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595849.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604595944.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596044.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596157.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596251.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596346.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596441.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596533.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596627.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596730.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596830.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604596934.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597034.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597139.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597254.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597360.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597473.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597594.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597690.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597801.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604597928.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598030.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598152.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598255.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598381.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598504.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598636.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598754.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598875.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604598998.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599110.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599238.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599355.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599475.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599595.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599731.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599867.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604599989.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600109.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600255.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600395.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600541.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600667.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600803.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604600963.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601112.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601263.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601394.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601538.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601691.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604601840.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602002.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602142.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602300.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602449.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602612.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602765.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604602910.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603089.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603268.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603447.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603597.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603750.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604603955.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604132.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604302.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604487.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604645.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604604827.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605007.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605180.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605360.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605526.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605708.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604605912.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606093.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606287.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606461.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606639.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604606823.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607009.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607204.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607383.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607591.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607785.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604607983.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604608186.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604608386.DESKTOP-35GKUCU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/trials_150_default_0.0.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604660746.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604660806.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604663378.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604663405.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604663440.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604663444.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604673551.DESKTOP-51G9EC2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/iris_classifier_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/trials_150_default_0.0.p" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/IoTwins.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoTwins.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/src/bayesianOptimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/bayesianOptimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,9 +68,6 @@
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -352,7 +210,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -418,51 +276,55 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602855823746" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1604254506180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="246" key="GridCell.Tab.0.bottom" timestamp="1604685402145">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
+    <state width="1877" height="246" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
     <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1604254506180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="246" key="GridCell.Tab.0.center" timestamp="1604685402144">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371145" />
+    <state width="1877" height="246" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402144" />
     <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1604254506180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="246" key="GridCell.Tab.0.left" timestamp="1604685402144">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371145" />
+    <state width="1877" height="246" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402144" />
     <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1604254506180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="246" key="GridCell.Tab.0.right" timestamp="1604685402145">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
+    <state width="1877" height="246" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
     <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="295" key="GridCell.Tab.1.bottom" timestamp="1604254506180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="246" key="GridCell.Tab.1.bottom" timestamp="1604685402145">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
+    <state width="1877" height="246" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
     <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="295" key="GridCell.Tab.1.center" timestamp="1604254506180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="246" key="GridCell.Tab.1.center" timestamp="1604685402145">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
+    <state width="1877" height="246" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
     <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="295" key="GridCell.Tab.1.left" timestamp="1604254506180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="246" key="GridCell.Tab.1.left" timestamp="1604685402145">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
+    <state width="1877" height="246" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
     <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="295" key="GridCell.Tab.1.right" timestamp="1604254506180">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="246" key="GridCell.Tab.1.right" timestamp="1604685402145">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603723371146" />
+    <state width="1877" height="246" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
     <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1604592954097">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2381" y="162" key="SettingsEditor" timestamp="1604659218611">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603025472205" />
+    <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604659218611" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604592954097" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1604663570942">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604663570942" />
     <state x="2576" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1602238101966">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -480,6 +342,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/Anaconda3/envs/IoTwins/Lib/site-packages/hyperopt/fmin.py</url>
+          <line>457</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="javascript-exception" />
         <breakpoint enabled="true" type="django-exception">
@@ -495,9 +364,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$sup_bo_example.coverage" NAME="sup_bo_example Coverage Results" MODIFIED="1603721744307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
-    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1603711994177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
-    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$bayesianOptimization.coverage" NAME="bayesianOptimization Coverage Results" MODIFIED="1603372735629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$semisup_bo_example.coverage" NAME="semisup_bo_example Coverage Results" MODIFIED="1604253933193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$Example3_iris_classifier_bo.coverage" NAME="Example3_iris_classifier_bo Coverage Results" MODIFIED="1604663488718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$sup_bo_example.coverage" NAME="sup_bo_example Coverage Results" MODIFIED="1603721744307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$bayesianOptimization.coverage" NAME="bayesianOptimization Coverage Results" MODIFIED="1603372735629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$prova.coverage" NAME="prova Coverage Results" MODIFIED="1603711994177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
   </component>
 </project>
