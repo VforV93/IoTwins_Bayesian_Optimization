@@ -4,7 +4,6 @@ import csv
 from timeit import default_timer as timer
 from servises.super_semisuper_anomaly_detection_services.src.anomalyDetection import _save_trained_model, \
     semisup_autoencoder, semisup_detection_inference, sup_autoencoder_classr
-# from anomalyDetection import _save_trained_model, semisup_autoencoder, semisup_detection_inference, sup_autoencoder_classr
 import servises.super_semisuper_anomaly_detection_services.src.general_services as gs
 from hyperopt import STATUS_OK
 from hyperopt import tpe
@@ -12,10 +11,12 @@ from hyperopt import Trials
 from hyperopt import fmin
 from functools import partial
 import os, sys
+
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-volume_dir = 'servises/bayesian_optimization'  # '../data'
+volume_dir = MAIN_DIRECTORY = os.path.dirname(os.path.dirname(__file__))  # '../data'
 out_dir = '{}/out'.format(volume_dir)  # '../out'
 trained_models_dir = '{}/trained_models'.format(volume_dir)
+
 
 # internal function for loading previous saved Trials object
 def _load_trials(file_name: str) -> object:
@@ -267,13 +268,13 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
     header_file = ['loss', 'params', 'stats', 'iteration', 'train_time']  # default header(only choice)
     # save Trials every tot step/evaluations/iterations
     if save_trial_every is None or save_trial_every > total_evals:  # never saving trials while running the bayesian optimization
-        save_trial_every = total_evals                              # if not specified or is greater then the max number of evaluations
+        save_trial_every = total_evals  # if not specified or is greater then the max number of evaluations
     if save_trial_every <= 0:
         raise ValueError('the number of evaluations after which to save the Trials object, save_trial_every({}) '
                          'must be strictly positive'.format(save_trial_every))
 
     # Keep track of the results
-    if trials_name is None:     # starting from evaluation 0, no Trials object loaded
+    if trials_name is None:  # starting from evaluation 0, no Trials object loaded
         bayes_trials = Trials()
         count_optimization = 0
 
@@ -284,12 +285,13 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
         writer.writerow(header_file)
         of_connection.close()
         best_loss_threshold = Best_loss_in_run()
-    else:   # starting from a previous checkpoint, from a previous saved Trials object
+    else:  # starting from a previous checkpoint, from a previous saved Trials object
         bayes_trials = _load_trials('{}/{}'.format(out_dir, trials_name))  # load the Trials object
         if bayes_trials is None:
             raise ValueError('Error in loading the trials({})'.format('{}/{}'.format(out_dir, trials_name)))
         count_optimization = len(bayes_trials.trials)  # check and store the previous number of evaluations
-        best_loss_threshold = Best_loss_in_run(bayes_trials.best_trial['result']['loss'])  # check and store the previous best loss score
+        best_loss_threshold = Best_loss_in_run(
+            bayes_trials.best_trial['result']['loss'])  # check and store the previous best loss score
 
     # check if total_evals > count_optimization or not
     if total_evals <= count_optimization:
@@ -321,3 +323,84 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
     # print(bayes_trials_results[:10])
 
     return best, trial_fname
+
+
+# The following services are wrappers for the semi-supervised and supervised services already available in IoTwins
+
+# || --- Semisup_autoencoders Wrapper --- ||
+def _s_f_p(params):
+    drop_factor = params['drop_enabled'].get('drop_factor', 0.1)
+
+    # Extract the drop_enabled
+    params['drop_enabled'] = params['drop_enabled']['drop_enabled']
+    params['drop_factor'] = drop_factor
+    # Extract overcomplete
+
+    if params['overcomplete']['overcomplete']:
+        params['l1_reg'] = params['overcomplete']['l1_reg']
+        params['l1_reg'] = round(params['l1_reg'], 5)
+
+    params['nl_o'] = params['overcomplete']['nl_o']
+    params['nnl_o'] = params['overcomplete']['nnl_o']
+    params['nl_u'] = params['overcomplete']['nl_u']
+    params['nnl_u'] = params['overcomplete']['nnl_u']
+    params['overcomplete'] = params['overcomplete']['overcomplete']
+
+    params['batch_size'] = int(params['batch_size'])
+    params['nl_o'] = int(params['nl_o'])
+    params['nnl_o'] = int(params['nnl_o'])
+    params['nl_u'] = int(params['nl_u'])
+    params['nnl_u'] = int(params['nnl_u'])
+    params['drop_factor'] = round(params['drop_factor'], 2)
+
+    # 'n_percentile' not mandatory in the space dict, it can be a fixed parameter
+    if 'n_percentile' in params:
+        n_percentile = int(params['n_percentile'])
+    return {'hparams_file': params, 'n_percentile': n_percentile}
+
+
+def _semisup_autoencoder_filter_stats(**params):
+    """Objective function for SemiSup Autoencoder Hyperparameter Optimization"""
+    model, scaler, stats = semisup_autoencoder(**params)
+
+    # Filtering stats, the only stats we'll store in the csv file from the stats returned by the semisup_autoencoder IoTwins service
+    key_stats = ['precision_N', 'recall_N', 'fscore_N', 'precision_A', 'recall_A', 'fscore_A', 'precision_W',
+                 'recall_W', 'fscore_W', 'err_threshold', 'n_perc']
+    filtered_stats = {}
+    for i, (k, v) in enumerate(stats.items()):
+        if k in key_stats:
+            filtered_stats[k] = v
+
+    # score = 1 - np.max(stats['recall_A'])
+    score = stats['val_loss'][-1]
+    return score, filtered_stats, {'model': model, 'scaler': scaler}
+
+
+def semisup_autoencoder_optimization(df_fname, space, sep=',', n_percentile=-1, space_func_process=_s_f_p,
+                                     out_file='bo_semisup_ae_trials.csv', save_trial_every=None, save_model_func=-1,
+                                     total_evals=100, trials_name=None, user_id='default', task_id='0.0'):
+    # Preparing the fixed parameters for the bayesian_optimization function
+    o_p = {'df_fname': df_fname, 'sep': sep, 'save': False,
+           'user_id': user_id, 'task_id': task_id}  # others_params
+
+    # if 'n_percentile' isn't directly passed to the function because it is contained in the space dictionary =>
+    # I don't have to pass it as parameter to the 'bayesian_optimization' function through the 'others_params' dict
+    if 'n_percentile' not in space:
+        o_p['n_percentile'] = n_percentile
+
+    s_m_f_kwargs = {
+        'save_model_func': save_model_func}  # if -1 I won't pass the 'save_model_func' parameter to use the default save model function
+    # otherwise, so if the user intentionally passed a custom function, I will pass that parameter to the bayesian_optimization
+    # if 'save_model_func=None' I will pass that value to the bayesian_optimization and the models will never be saved!
+
+    s_a_f_s = _semisup_autoencoder_filter_stats
+    best, trial_fname = \
+        bayesian_optimization(function_to_optimize=s_a_f_s, trial_fname=out_file,
+                              space_func_process=space_func_process, space=space, save_trial_every=save_trial_every,
+                              total_evals=total_evals, others_params=o_p, trials_name=trials_name,
+                              **{k: v for k, v in s_m_f_kwargs.items() if v != -1})
+
+    return best, trial_fname
+
+# || --- --- --- --- --- --- --- --- --- --- ---  --- ||
+

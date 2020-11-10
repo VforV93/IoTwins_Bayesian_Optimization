@@ -32,32 +32,6 @@ out_dir = '{}/out/'.format(volume_dir)
 anomalyDetection.default_hparams_semisup::Default parameters for the
 semi-supervised autoencoder
 '''
-"""
-default_hparams_semisup = {
-    'epochs': 20,           # number of training epochs
-    'batch_size': 1,       # batch size
-    'shuffle': True,        # shuffle data during training
-    'overcomplete': True,   # the autoencoder can be overcomplete or
-                            # undercomplete
-    'nl_o': 1,              # number of layers in the overcomplete case
-    'nl_u': 1,              # number of layers in the undercomplete case
-    'nnl_o': 2,            # the number of neurons per layer in the
-                            # overcomplete autoencoder is computed as n_features
-                            # * nnl_o
-    'nnl_u': 1,             # the number of neurons per layer in the
-                            # overcomplete autoencoder is computed as n_features
-                            # // nnl_u
-    'actv': 'relu',         # activation function
-    'loss': 'mae',          # loss function
-    'l1_reg': 0.00001,      # l1 regularization factor (only for overcomplete
-                            # case)
-    'lr': 0.0001,           # learning rate
-    'optimizer': 'adam',    # optimizer
-    'drop_enabled': False,  # add Dropout layer
-    'drop_factor':0.1       # Dropout rate (only if drop==True)
-}
-
-"""
 default_hparams_semisup = {
     'epochs': 20,           # number of training epochs
     'batch_size': 32,       # batch size

@@ -14,7 +14,7 @@ from sklearn.metrics import precision_recall_fscore_support
 
 from hyperopt import hp
 
-from servises.bayesian_optimization.src.bayesianOptimization import bayesian_optimization  # import the service
+from servises.bayesian_optimization.src.bayesianOptimization import bayesian_optimization, trained_models_dir  # import the service
 
 # ||--- Data Preperation ---||
 iris = load_iris()
@@ -115,6 +115,12 @@ s = {
 o_p = {'epochs': 200, 'validation_split': 0.15, 'verbose': 0, 'input_dim': 4, 'output_dim': 3}
 
 
+def save_model_function(model_name, best_score, stats, model, history):
+    model_name_ext = '{}/{}.h5'.format(trained_models_dir, model_name)
+    model.save(model_name_ext)   # I want to save just the model(.h5 format) inside the 'trained_models' folder without take into consideration the history object
+    return True  # it can return whatever we want
+
+
 def s_f_p(params):
     drop_factor = params['drop_enabled'].get('drop_factor', 0.1)
 
@@ -135,10 +141,11 @@ def s_f_p(params):
 
 
 out_file = "iris_classifier_trials.csv"  # output file name of the csv file in which will be stored the <score, parameters, stats, iteration>
-t_e = 2  # total_evals
+t_e = 200  # total_evals
+s_t_e = 50  # save_trial_every
 best, trial_fname = bayesian_optimization(function_to_optimize=objective_function, space_func_process=s_f_p,
-                                          trial_fname=out_file, space=s, total_evals=t_e, save_model_func=None,
-                                          others_params=o_p)
+                                          trial_fname=out_file, space=s, total_evals=t_e, save_trial_every=s_t_e,
+                                          save_model_func=None, others_params=o_p)
 
 print("\n\ntrial_fname: {}".format(trial_fname))
 print("BEST parameter/s:")

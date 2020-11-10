@@ -2,22 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11291a1f-fece-49f3-a9ec-edcfd4aa44e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604660746.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604660806.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604663378.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604663405.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604663440.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604663444.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1604673551.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/iris_classifier_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/bo_semisup_ae_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/iris_classifier_trials.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/trials_100_default_0.0.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/trials_150_default_0.0.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/trials_200_default_0.0.p" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/trials_50_default_0.0.p" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/trials_150_default_0.0.p" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/IoTwins.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoTwins.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_012671.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_013506.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_016974.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_01934.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_024327.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_037753.h5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/out/trials_150_default_0.0.p" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/src/bayesianOptimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/bayesianOptimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/src/semisup_bo_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/semisup_bo_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/bayesian_opt_modelscore_019505.h5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/anomalyDetection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,11 +69,14 @@
       <recent name="C:\Users\Filippo\Documents\Python\IoTwins\servises\super_semisuper_anomaly_detection_services\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Example3_iris_classifier_bo">
+  <component name="RunManager" selected="Python.semisup_bo_example (1)">
     <configuration name="Example3_iris_classifier_bo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -105,6 +114,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="bayesianOptimization (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IoTwins" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/servises/bayesian_optimization/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/servises/bayesian_optimization/src/bayesianOptimization.py" />
+      <option name="PARAMETERS" value="1 prova" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="bayesianOptimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,22 +158,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prova" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="semisup_bo_example (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IoTwins" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/servises/bayesian_optimization/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/prova.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/servises/bayesian_optimization/src/semisup_bo_example.py" />
       <option name="PARAMETERS" value="1 prova" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -171,46 +199,24 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sup_bo_example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="IoTwins" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\Filippo\Anaconda3\envs\IoTwins\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src/sup_bo_example.py" />
-      <option name="PARAMETERS" value="1 prova" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.prova" />
       <item itemvalue="Python.bayesianOptimization" />
-      <item itemvalue="Python.sup_bo_example" />
       <item itemvalue="Python.semisup_bo_example" />
       <item itemvalue="Python.Example3_iris_classifier_bo" />
+      <item itemvalue="Python.semisup_bo_example (1)" />
+      <item itemvalue="Python.bayesianOptimization (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.semisup_bo_example (1)" />
         <item itemvalue="Python.Example3_iris_classifier_bo" />
+        <item itemvalue="Python.bayesianOptimization (1)" />
         <item itemvalue="Python.semisup_bo_example" />
         <item itemvalue="Python.bayesianOptimization" />
-        <item itemvalue="Python.sup_bo_example" />
-        <item itemvalue="Python.prova" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -249,11 +255,14 @@
       <workItem from="1604395965863" duration="14235000" />
       <workItem from="1604572023227" duration="5625000" />
       <workItem from="1604592943789" duration="1568000" />
+      <workItem from="1604753581628" duration="1127000" />
+      <workItem from="1604916268052" duration="9671000" />
+      <workItem from="1605002208727" duration="5803000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -276,45 +285,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602855823746" />
-    <state width="1877" height="246" key="GridCell.Tab.0.bottom" timestamp="1604685402145">
+    <state width="1288" height="246" key="GridCell.Tab.0.bottom" timestamp="1605013570417">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="246" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
+    <state width="1288" height="246" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605013570417" />
     <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="246" key="GridCell.Tab.0.center" timestamp="1604685402144">
+    <state width="1288" height="246" key="GridCell.Tab.0.center" timestamp="1605013570417">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="246" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402144" />
+    <state width="1288" height="246" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605013570417" />
     <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="246" key="GridCell.Tab.0.left" timestamp="1604685402144">
+    <state width="1288" height="246" key="GridCell.Tab.0.left" timestamp="1605013570417">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="246" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402144" />
+    <state width="1288" height="246" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605013570417" />
     <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="246" key="GridCell.Tab.0.right" timestamp="1604685402145">
+    <state width="1288" height="246" key="GridCell.Tab.0.right" timestamp="1605013570417">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="246" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
+    <state width="1288" height="246" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605013570417" />
     <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="246" key="GridCell.Tab.1.bottom" timestamp="1604685402145">
+    <state width="1288" height="246" key="GridCell.Tab.1.bottom" timestamp="1605013670851">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="246" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
+    <state width="1288" height="246" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605013670851" />
     <state width="1877" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="246" key="GridCell.Tab.1.center" timestamp="1604685402145">
+    <state width="1288" height="246" key="GridCell.Tab.1.center" timestamp="1605013670851">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="246" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
+    <state width="1288" height="246" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605013670851" />
     <state width="1877" height="295" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="246" key="GridCell.Tab.1.left" timestamp="1604685402145">
+    <state width="1288" height="246" key="GridCell.Tab.1.left" timestamp="1605013670851">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="246" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
+    <state width="1288" height="246" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605013670851" />
     <state width="1877" height="295" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
-    <state width="1877" height="246" key="GridCell.Tab.1.right" timestamp="1604685402145">
+    <state width="1288" height="246" key="GridCell.Tab.1.right" timestamp="1605013670851">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="246" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604685402145" />
+    <state width="1288" height="246" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605013670851" />
     <state width="1877" height="295" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604254506180" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1604659218611">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -342,13 +351,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/Anaconda3/envs/IoTwins/Lib/site-packages/hyperopt/fmin.py</url>
-          <line>457</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="javascript-exception" />
         <breakpoint enabled="true" type="django-exception">
@@ -365,6 +367,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$semisup_bo_example.coverage" NAME="semisup_bo_example Coverage Results" MODIFIED="1604253933193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
+    <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$semisup_bo_example__1_.coverage" NAME="semisup_bo_example (1) Coverage Results" MODIFIED="1605013570277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/bayesian_optimization/src" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$Example3_iris_classifier_bo.coverage" NAME="Example3_iris_classifier_bo Coverage Results" MODIFIED="1604663488718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$sup_bo_example.coverage" NAME="sup_bo_example Coverage Results" MODIFIED="1603721744307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
     <SUITE FILE_PATH="coverage/IoTwins_Bayesian_Optimization$bayesianOptimization.coverage" NAME="bayesianOptimization Coverage Results" MODIFIED="1603372735629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/servises/super_semisuper_anomaly_detection_services/src" />
