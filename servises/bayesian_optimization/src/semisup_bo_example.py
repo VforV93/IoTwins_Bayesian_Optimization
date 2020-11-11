@@ -6,7 +6,7 @@ from hyperopt import hp
 # os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 default_s = {
-        'epochs': 100,
+        'epochs': 150,
         'batch_size': hp.quniform('batch_size', 8, 64, 8),
         'shuffle': hp.choice('shuffle', [True, False]),
         'overcomplete': hp.choice('overcomplete',
@@ -17,7 +17,7 @@ default_s = {
                                    {'overcomplete': False, 'nl_o': 3, 'nnl_o': 10,
                                     'nl_u': hp.quniform('nl_u', 1, 10, 1),
                                     'nnl_u': hp.quniform('nnl_u', 1, 5, 1)}]),
-        'actv': 'sigmoid',  # 'relu',
+        'actv': 'relu',  # 'relu',
         'loss': 'binary_crossentropy',  # 'mae',
         'lr': hp.loguniform('lr', np.log(0.001), np.log(0.02)),
         'optimizer': 'adam',
@@ -29,12 +29,10 @@ default_s = {
 
 df_n = 'mammography.csv'  # dataset_fname
 s_t_e = None              # save_trial_every
-t_e = 100                 # total_evals
+t_e = 50                  # total_evals
 
 # save_model_func = None => No Keras model will never be saved during the optimization process
-semisup_autoencoder_optimization(df_n, default_s, save_model_func=None, total_evals=t_e, save_trial_every=s_t_e)
-
-'''
-bayesian_optimization(function_to_optimize=f_to_o, space_func_process=s_f_p, trial_fname=out_file, space=s,
-                      save_trial_every=s_t_e, total_evals=t_e, others_params=o_p)  # , trials_name='trials_2_default_0.0')
-'''
+best, trial_fname = semisup_autoencoder_optimization(df_n, default_s, total_evals=t_e, save_trial_every=s_t_e)
+print("\n\ntrial_fname: {}".format(trial_fname))
+print("BEST parameter/s:")
+print(best)

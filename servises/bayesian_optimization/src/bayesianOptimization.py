@@ -3,16 +3,15 @@ import numpy as np
 import csv
 from timeit import default_timer as timer
 from servises.super_semisuper_anomaly_detection_services.src.anomalyDetection import _save_trained_model, \
-    semisup_autoencoder, semisup_detection_inference, sup_autoencoder_classr
+    semisup_autoencoder, sup_autoencoder_classr
 import servises.super_semisuper_anomaly_detection_services.src.general_services as gs
 from hyperopt import STATUS_OK
 from hyperopt import tpe
 from hyperopt import Trials
 from hyperopt import fmin
 from functools import partial
-import os, sys
+import os
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 volume_dir = MAIN_DIRECTORY = os.path.dirname(os.path.dirname(__file__))  # '../data'
 out_dir = '{}/out'.format(volume_dir)  # '../out'
 trained_models_dir = '{}/trained_models'.format(volume_dir)
@@ -49,7 +48,7 @@ def _save_trials(trial: object, file_name: str) -> None:
     print('[BO] trial saved')
 
 
-# internal function for saving the Keras IoTwins model
+# internal function for saving the Keras IoTwins models returned from the IoTwins services(semisup and sup)
 def _bayesian_save_model(model_name: str, best_score: int, stats: dict, model, scaler):
     """
     bayesianOptimization._bayesian_save_model::default saving model function for applying the bayesian
@@ -174,27 +173,31 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
     This function wrap the hyperopt open source python library: https://github.com/hyperopt/hyperopt
 
     :params function_to_optimize : function
-    The objective function that must be minimized. It can be any function that returns a real value that we want to minimize.
-    (If we want to maximize the returned real value, then we just have our function return the negative of that metric.)
+        The objective function that must be minimized. It can be any function that
+        returns a real value that we want to minimize. (If we want to maximize the
+        returned real value, then we just have our function return the negative of that metric.)
 
-    must return: score, stats, {...}
-        - score: the return value of the function we want to minimize, this will be passed to the save_model_func
-        - stats: a Python dictionary containing all the objective function performance information that we want to store
-                 in the trial_fname csv file(e.g. accuracy, precision, recall etc.)
-                 this will be passed to the save_model_func
-        - {...}: a Python dictionary containing whatever we want, this will be passed to the save_model_func
-                 (e.g. the model and the scaler)
+        must return: score, stats, {...}
+            - score: the return value of the function we want to minimize, this will
+                     be passed to the save_model_func
+            - stats: a Python dictionary containing all the objective function
+                     performance information that we want to store in the trial_fname
+                     csv file(e.g. accuracy, precision, recall etc.)
+                     This will be passed to the save_model_func
+            - {...}: a Python dictionary containing whatever we want, this will be
+                     passed to the save_model_func (e.g. the model and the scaler)
 
     :params trial_fname : string
-    name of the csv file which will be created to collect data(loss, parameters, objective func stats, iteration, training time)
-    about the bayesian optimization process.
+        name of the csv file which will be created to collect data(loss, parameters,
+        objective func stats, iteration, training time) about the bayesian optimization process.
 
     :params space : Python dictionary
-    the space over which to search. A search space consists of nested function expressions, including stochastic
-    expressions. The stochastic expressions are the hyperparameters. The hyperparameter optimization algorithms
-    work by replacing normal "sampling" logic with adaptive exploration strategies, which make no attempt
-    to actually sample from the distributions specified in the search space.
-    (see: Defining a Search Space in https://github.com/hyperopt/hyperopt/wiki/FMin)
+        the space over which to search. A search space consists of nested function
+        expressions, including stochastic expressions. The stochastic expressions
+        are the hyperparameters. The hyperparameter optimization algorithms work
+        by replacing normal "sampling" logic with adaptive exploration strategies,
+        which make no attempt to actually sample from the distributions specified
+        in the search space. (see: Defining a Search Space in https://github.com/hyperopt/hyperopt/wiki/FMin)
 
     :params space_func_process : function
     a function to process the "instance" of the space hyperparameters dict that receive as input.
@@ -327,8 +330,24 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
 
 # The following services are wrappers for the semi-supervised and supervised services already available in IoTwins
 
-# || --- Semisup_autoencoders Wrapper --- ||
-def _s_f_p(params):
+# || --- Semisup_autoencoder Wrapper --- ||
+def _semisup_s_f_p(params):
+    """
+    bayesianOptimization._semisup_s_f_p::the default space function process
+    used in the semisup_autoencoder_optimization service.
+    We will use the '_semisup_s_f_p' function to adjust/modify each given
+    space instance and since the output is passed to the objective function
+    we can round or cast values, we can also format the dictionary as the
+    objective function expect it(no second level dictionary - just one level!,
+    parameters assigned to the 'hparams_file' key, etc...).
+
+    :params params : Python dictionary
+        an instance of the domain space.
+
+    :return : Python dictionary
+        the dictionary that will be passed to the 'function_to_optimize'
+        (_semisup_autoencoder_filter_stats) as input.
+    """
     drop_factor = params['drop_enabled'].get('drop_factor', 0.1)
 
     # Extract the drop_enabled
@@ -356,11 +375,39 @@ def _s_f_p(params):
     # 'n_percentile' not mandatory in the space dict, it can be a fixed parameter
     if 'n_percentile' in params:
         n_percentile = int(params['n_percentile'])
-    return {'hparams_file': params, 'n_percentile': n_percentile}
+        ret_dict = {'hparams_file': params, 'n_percentile': n_percentile}
+    else:
+        ret_dict = {'hparams_file': params}
+
+    return ret_dict
 
 
 def _semisup_autoencoder_filter_stats(**params):
-    """Objective function for SemiSup Autoencoder Hyperparameter Optimization"""
+    """
+    bayesianOptimization._semisup_autoencoder_filter_stats::Objective function for
+    SemiSup Autoencoder Hyperparameter Optimization.
+    This function "Wrap" the semisup_autoencoder service already developed in IoTwins.
+    It takes in a processed/modified instance of the domain space that will be
+    passed to the 'semisup_autoencoder' service.
+    The output of the service is filtered before storing locally the stats.
+
+    :params params : Python dictionary
+        an instance of the domain space passed from the '_semisup_s_f_p' function
+
+    :return : int
+        the return value of the function we want to minimize, this will be passed
+        to the save_model_func
+
+    :return : Python dictionary
+        a Python dictionary containing all the objective function performance
+        information that we want to store in the trial_fname csv file
+        (e.g. accuracy, precision, recall etc.).
+        This will be passed to the save_model_func
+
+    :return : Python dictionary
+        a Python dictionary containing whatever we want, this will be passed
+        to the save_model_func(e.g. the model and the scaler)
+    """
     model, scaler, stats = semisup_autoencoder(**params)
 
     # Filtering stats, the only stats we'll store in the csv file from the stats returned by the semisup_autoencoder IoTwins service
@@ -371,14 +418,126 @@ def _semisup_autoencoder_filter_stats(**params):
         if k in key_stats:
             filtered_stats[k] = v
 
-    # score = 1 - np.max(stats['recall_A'])
-    score = stats['val_loss'][-1]
+    score = model.history.history['val_loss'][-1]  # or score = 1 - np.max(stats['recall_A'])
     return score, filtered_stats, {'model': model, 'scaler': scaler}
 
 
-def semisup_autoencoder_optimization(df_fname, space, sep=',', n_percentile=-1, space_func_process=_s_f_p,
-                                     out_file='bo_semisup_ae_trials.csv', save_trial_every=None, save_model_func=-1,
-                                     total_evals=100, trials_name=None, user_id='default', task_id='0.0'):
+#  (the default is -1, which implies summation over all axes).
+def semisup_autoencoder_optimization(df_fname, space, sep=',', n_percentile=-1, trial_fname='bo_semisup_ae_trials.csv',
+                                     space_func_process=_semisup_s_f_p, save_trial_every=None, save_model_func=-1,
+                                     total_evals=100, trials_name=None, user_id='default', task_id='0.0',
+                                     function_to_optimize=_semisup_autoencoder_filter_stats):
+    """
+    bayesianOptimization.semisup_autoencoder_optimization::probabilistic model based approach for finding the best
+    hyperparameters configuration that guarantee to achieve the minimum of the semisup_autoencoder IoTwins service
+    keeping track of past evaluations.
+    This function wrap the service 'semisup_autoencoder' already developed in the IoTwins services.
+
+    :params df_fname : str
+        name of the csv file with data to be used for training and testing. One
+        column has to termed "label" and it has to contains the class of the
+        example - 0 means normal data point, any other integer number
+        corresponds to an anomalous data point.
+
+    :params space : Python dictionary
+        the space over which to search. A search space consists of nested function
+        expressions, including stochastic expressions. The stochastic expressions
+        are the hyperparameters. The hyperparameter optimization algorithms work
+        by replacing normal "sampling" logic with adaptive exploration strategies,
+        which make no attempt to actually sample from the distributions specified
+        in the search space. (see: Defining a Search Space in https://github.com/hyperopt/hyperopt/wiki/FMin)
+
+    :params sep : string, optional (the default is ',').
+        the columns separator used in the csv data file.
+
+    :params n_percentile : int, optional
+        percentile to be used to compute the detection threshold; if no
+        percentile is provided all values in the range [85, 99] will be explored
+        and the one providing the best accuracy results will be selected.
+
+    :params trial_fname : string, optional (the default is 'bo_semisup_ae_trials.csv').
+        name of the csv file which will be created to collect data(loss, parameters,
+        objective func stats, iteration, training time) about the bayesian optimization process.
+
+    :params space_func_process : function, optional (the default is the '_semisup_s_f_p' function).
+        a function to process the "instance" of the space hyperparameters dict
+        that receive as input. E.g. round off values, splitting the "main"/"big"
+        instance to different dict to pass to the function_to_optimize, etc...
+
+            must return: {...}
+                - {...}: a Python dictionary containing whatever we want, this will
+                         be passed to the function_to_optimize as input.
+
+    :params save_trial_every : int, optional (the default is None).
+        every how many iterations the Trials object file will be saved.
+        See 'The Trials Object' in https://github.com/hyperopt/hyperopt/wiki/FMin
+        Every 'save_trial_every' run a new Trials_file.p will be created containing
+        the information needed to apply the bayesian optimization.
+        An existing file can be used to continue a previous run passing the file
+        name to the 'trials_name' parameter.
+
+    :params save_model_func : function, optional
+        a function for saving the score, the stats and the others returned values
+        from the objective function not only at the end of the bayesian optimization,
+        but also every time a better hyperparameters configuration has been found.
+
+            fixed input: file_name, best_score, stats, {...}
+                - file_name: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
+                - best_score: the best score obtained in that run returned from the
+                              function_to_optimize func
+                - stats: a Python dictionary containing all the objective function
+                         performance information returned from the function_to_optimize func
+                - {...}: the optional Python dictionary returned from the function_to_optimize func
+
+            return: void (The returned values/objects never be used)
+
+    :params total_evals : int, optional (the default is 100).
+        The number of iterations/evaluations the bayesian optimization will perform.
+
+    :params trials_name : string, optional (the default is None).
+        the name of a previous Trials file saved locally. If not specified, a new
+        bayesian optimization begins. Specifying a Trials file name the bayesian
+        optimization process can continue from that 'checkpoint'.
+        NB: if the Trials file contains a previous run of N iterations/evaluations,
+        the 'total_evals' parameter must take into consideration of that and it has
+        to be greater then N otherwise the bayesian optimization will not begin/continue.
+        E.g.    'total_evals' = 10
+            after 10 evaluations the Trials object is going to be saved.
+            If we want to perform more evaluations starting from the previous "results", it is necessary to specify
+            the 'trials_name' and increment the 'total_evals'(>10)
+
+    :params user_id : str, optional (the default is 'default').
+        user identifier
+
+    :params task_id : str, optional (the default is '0.0').
+        task identifier
+
+    :params function_to_optimize : function, optional (the default is the '_semisup_autoencoder_filter_stats' function).
+        NB: This service has been meant to be a wrapper for the 'semisup_autoencoder'
+        IoTwins service. Do not use this parameter to change the function to optimize
+        but use it to change the score we want to minimize or to change the stats we
+        want to keep track during the optimization process.
+        To conclude, pass a function that uses/call the 'semisup_autoencoder' function
+        (services.super_semisuper_anomaly_detection_services.semisup_autoencoder).
+
+        If you want to optimize a generic function use the 'bayesian_optimization' service instead.
+
+        must return: score, stats, {...}
+            - score: the return value of the function we want to minimize, this will
+                     be passed to the save_model_func
+            - stats: a Python dictionary containing all the objective function performance
+                     information that we want to store
+                     in the trial_fname csv file(e.g. accuracy, precision, recall etc.)
+                     This will be passed to the save_model_func
+            - {...}: a Python dictionary containing whatever we want, this will be passed
+                     to the save_model_func (e.g. the model and the scaler)
+
+    :return : Python dictionary
+        the best hyperparameters found according to the best loss score
+    :return : string
+        name of the pickle file containing the stored Trials object
+    """
+
     # Preparing the fixed parameters for the bayesian_optimization function
     o_p = {'df_fname': df_fname, 'sep': sep, 'save': False,
            'user_id': user_id, 'task_id': task_id}  # others_params
@@ -393,14 +552,234 @@ def semisup_autoencoder_optimization(df_fname, space, sep=',', n_percentile=-1, 
     # otherwise, so if the user intentionally passed a custom function, I will pass that parameter to the bayesian_optimization
     # if 'save_model_func=None' I will pass that value to the bayesian_optimization and the models will never be saved!
 
-    s_a_f_s = _semisup_autoencoder_filter_stats
     best, trial_fname = \
-        bayesian_optimization(function_to_optimize=s_a_f_s, trial_fname=out_file,
+        bayesian_optimization(function_to_optimize=function_to_optimize, trial_fname=trial_fname,
                               space_func_process=space_func_process, space=space, save_trial_every=save_trial_every,
                               total_evals=total_evals, others_params=o_p, trials_name=trials_name,
                               **{k: v for k, v in s_m_f_kwargs.items() if v != -1})
 
     return best, trial_fname
-
 # || --- --- --- --- --- --- --- --- --- --- ---  --- ||
 
+
+# || --- Sup_autoencoder Wrapper --- ||
+
+def _sup_s_f_p(params):
+    """
+    bayesianOptimization._sup_s_f_p::the default space function process
+    used in the sup_autoencoder_optimization service.
+    We will use the '_sup_s_f_p' function to adjust/modify each given
+    space instance and since the output is passed to the objective
+    function we can round or cast values, we can also format the
+    dictionary as the objective function expect it(no second level dictionary
+    - just one level!, parameters assigned to the 'hparams_file_ae' and
+    'hparams_file_classr' keys, etc...).
+
+    :params params : Python dictionary
+    an instance of the domain space.
+
+    :return : Python dictionary
+        the dictionary that will be passed to the 'function_to_optimize'
+        (_sup_autoencoder_filter_stats) as input.
+    """
+    params_classr = {}
+    drop_factor = params['drop_enabled'].get('drop_factor', 0.1)
+
+    # Extract the drop_enabled
+    params['drop_enabled'] = params['drop_enabled']['drop_enabled']
+    params['drop_factor'] = drop_factor
+    # Extract overcomplete
+
+    if params['overcomplete']['overcomplete']:
+        params['l1_reg'] = params['overcomplete']['l1_reg']
+        params['l1_reg'] = round(params['l1_reg'], 5)
+
+    params['nl_o'] = params['overcomplete']['nl_o']
+    params['nnl_o'] = params['overcomplete']['nnl_o']
+    params['nl_u'] = params['overcomplete']['nl_u']
+    params['nnl_u'] = params['overcomplete']['nnl_u']
+    params['overcomplete'] = params['overcomplete']['overcomplete']
+
+    params['batch_size'] = int(params['batch_size'])
+    params['nl_o'] = int(params['nl_o'])
+    params['nnl_o'] = int(params['nnl_o'])
+    params['nl_u'] = int(params['nl_u'])
+    params['nnl_u'] = int(params['nnl_u'])
+    params['drop_factor'] = round(params['drop_factor'], 2)
+
+    params_classr['epochs'] = int(params.pop('epochs_classr_sup'))
+    params_classr['batch_size'] = params['batch_size']
+    params_classr['shuffle'] = params['shuffle']
+    params_classr['nl'] = int(params.pop('nl_classr_sup'))
+    params_classr['nnl'] = int(params.pop('nnl_classr_sup'))
+    params_classr['actv'] = params.pop('actv_classr_sup')
+    params_classr['loss'] = params.pop('loss_classr_sup')
+    params_classr['lr'] = params.pop('lr_classr_sup')
+    params_classr['optimizer'] = params.pop('optimizer_classr_sup')
+
+    drop_factor = params['drop_enabled_classr_sup'].get('drop_factor_classr_sup', 0.1)
+
+    # Extract the drop_enabled
+    params_classr['drop_enabled'] = params.pop('drop_enabled_classr_sup')['drop_enabled_classr_sup']
+    params_classr['drop_factor'] = drop_factor
+
+    return {'hparams_file_ae': params, 'hparams_file_classr': params_classr}
+
+
+def _sup_autoencoder_filter_stats(**params):
+    """
+    bayesianOptimization._sup_autoencoder_filter_stats::Objective function for
+    Sup Autoencoder Hyperparameter Optimization.
+    This function "Wrap" the sup_autoencoder service already developed in IoTwins.
+    It takes in a processed/modified instance of the domain space that will be
+    passed to the 'semisup_autoencoder' service.
+    The output of the service is filtered before storing locally the stats.
+
+    :params params : Python dictionary
+        an instance of the domain space passed from the '_sup_s_f_p' function
+
+    :return : int
+        the return value of the function we want to minimize, this will be passed
+        to the save_model_func
+
+    :return : Python dictionary
+        a Python dictionary containing all the objective function performance
+        information that we want to store in the trial_fname csv file
+        (e.g. accuracy, precision, recall etc.).
+        This will be passed to the save_model_func
+
+    :return : Python dictionary
+        a Python dictionary containing whatever we want, this will be passed
+        to the save_model_func(e.g. the model and the scaler)
+    """
+    model, scaler, stats = sup_autoencoder_classr(**params)
+    score = model.history.history['val_loss'][-1]
+    return score, stats, {'model': model, 'scaler': scaler}
+
+
+def sup_autoencoder_optimization(df_fname, space, sep=',', trial_fname='bo_sup_ae_trials.csv',
+                                 space_func_process=_sup_s_f_p, save_trial_every=None, save_model_func=-1,
+                                 total_evals=100, trials_name=None, user_id='default', task_id='0.0',
+                                 function_to_optimize=_sup_autoencoder_filter_stats):
+    """
+    bayesianOptimization.sup_autoencoder_optimization::probabilistic model based approach for finding the best
+    hyperparameters configuration that guarantee to achieve the minimum of the sup_autoencoder IoTwins service
+    keeping track of past evaluations.
+    This function wrap the service 'sup_autoencoder' already developed in the IoTwins services.
+
+    :params df_fname : str
+        name of the csv file with data to be used for training and testing. One
+        column has to termed "label" and it has to contains the class of the
+        example - 0 means normal data point, any other integer number
+        corresponds to an anomalous data point.
+
+    :params space : Python dictionary
+        the space over which to search. A search space consists of nested function
+        expressions, including stochastic expressions. The stochastic expressions
+        are the hyperparameters. The hyperparameter optimization algorithms work
+        by replacing normal "sampling" logic with adaptive exploration strategies,
+        which make no attempt to actually sample from the distributions specified
+        in the search space. (see: Defining a Search Space in https://github.com/hyperopt/hyperopt/wiki/FMin)
+
+    :params sep : string, optional (the default is ',').
+        the columns separator used in the csv data file.
+
+    :params trial_fname : string, optional (the default is 'bo_sup_ae_trials.csv').
+        name of the csv file which will be created to collect data(loss, parameters,
+        objective func stats, iteration, training time) about the bayesian optimization process.
+
+    :params space_func_process : function, optional (the default is the '_sup_s_f_p' function).
+        a function to process the "instance" of the space hyperparameters dict
+        that receive as input. E.g. round off values, splitting the "main"/"big"
+        instance to different dict to pass to the function_to_optimize, etc...
+
+            must return: {...}
+                - {...}: a Python dictionary containing whatever we want, this will
+                         be passed to the function_to_optimize as input.
+
+    :params save_trial_every : int, optional (the default is None).
+        every how many iterations the Trials object file will be saved.
+        See 'The Trials Object' in https://github.com/hyperopt/hyperopt/wiki/FMin
+        Every 'save_trial_every' run a new Trials_file.p will be created containing
+        the information needed to apply the bayesian optimization.
+        An existing file can be used to continue a previous run passing the file
+        name to the 'trials_name' parameter.
+
+    :params save_model_func : function, optional
+        a function for saving the score, the stats and the others returned values
+        from the objective function not only at the end of the bayesian optimization,
+        but also every time a better hyperparameters configuration has been found.
+
+            fixed input: file_name, best_score, stats, {...}
+                - file_name: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
+                - best_score: the best score obtained in that run returned from the
+                              function_to_optimize func
+                - stats: a Python dictionary containing all the objective function
+                         performance information returned from the function_to_optimize func
+                - {...}: the optional Python dictionary returned from the function_to_optimize func
+
+            return: void (The returned values/objects never be used)
+
+    :params total_evals : int, optional (the default is 100).
+        The number of iterations/evaluations the bayesian optimization will perform.
+
+    :params trials_name : string, optional (the default is None).
+        the name of a previous Trials file saved locally. If not specified, a new
+        bayesian optimization begins. Specifying a Trials file name the bayesian
+        optimization process can continue from that 'checkpoint'.
+        NB: if the Trials file contains a previous run of N iterations/evaluations,
+        the 'total_evals' parameter must take into consideration of that and it has
+        to be greater then N otherwise the bayesian optimization will not begin/continue.
+        E.g.    'total_evals' = 10
+            after 10 evaluations the Trials object is going to be saved.
+            If we want to perform more evaluations starting from the previous "results", it is necessary to specify
+            the 'trials_name' and increment the 'total_evals'(>10)
+
+    :params user_id : str, optional (the default is 'default').
+        user identifier
+
+    :params task_id : str, optional (the default is '0.0').
+        task identifier
+
+    :params function_to_optimize : function, optional (the default is the '_sup_autoencoder_filter_stats' function).
+        NB: This service has been meant to be a wrapper for the 'sup_autoencoder'
+        IoTwins service. Do not use this parameter to change the function to optimize
+        but use it to change the score we want to minimize or to change the stats we
+        want to keep track during the optimization process.
+        To conclude, pass a function that uses/call the 'sup_autoencoder' function
+        (services.super_semisuper_anomaly_detection_services.sup_autoencoder).
+
+        If you want to optimize a generic function use the 'bayesian_optimization' service instead.
+
+        must return: score, stats, {...}
+            - score: the return value of the function we want to minimize, this will
+                     be passed to the save_model_func
+            - stats: a Python dictionary containing all the objective function performance
+                     information that we want to store
+                     in the trial_fname csv file(e.g. accuracy, precision, recall etc.)
+                     This will be passed to the save_model_func
+            - {...}: a Python dictionary containing whatever we want, this will be passed
+                     to the save_model_func (e.g. the model and the scaler)
+
+    :return : Python dictionary
+        the best hyperparameters found according to the best loss score
+    :return : string
+        name of the pickle file containing the stored Trials object
+    """
+    # Preparing the fixed parameters for the bayesian_optimization function
+    o_p = {'df_fname': df_fname, 'sep': sep, 'save': False,
+           'user_id': user_id, 'task_id': task_id}  # others_params
+
+    s_m_f_kwargs = {
+        'save_model_func': save_model_func}  # if -1 I won't pass the 'save_model_func' parameter to use the default save model function
+    # otherwise, so if the user intentionally passed a custom function, I will pass that parameter to the bayesian_optimization
+    # if 'save_model_func=None' I will pass that value to the bayesian_optimization and the models will never be saved!
+
+    best, trial_fname = \
+        bayesian_optimization(function_to_optimize=function_to_optimize, trial_fname=trial_fname,
+                              space_func_process=space_func_process, space=space, save_trial_every=save_trial_every,
+                              total_evals=total_evals, others_params=o_p, trials_name=trials_name,
+                              **{k: v for k, v in s_m_f_kwargs.items() if v != -1})
+
+    return best, trial_fname
+# || --- --- --- --- --- --- --- --- --- --- ---  --- ||

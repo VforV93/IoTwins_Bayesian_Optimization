@@ -1,66 +1,12 @@
-# import os
+import os
 import numpy as np
-from bayesianOptimization import bayesian_optimization
-from anomalyDetection import sup_autoencoder_classr
+from servises.bayesian_optimization.src.bayesianOptimization import sup_autoencoder_optimization
 from hyperopt import hp
 
 # os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-
-def s_f_p(params):
-    params_classr = {}
-    drop_factor = params['drop_enabled'].get('drop_factor', 0.1)
-
-    # Extract the drop_enabled
-    params['drop_enabled'] = params['drop_enabled']['drop_enabled']
-    params['drop_factor'] = drop_factor
-    # Extract overcomplete
-
-    if params['overcomplete']['overcomplete']:
-        params['l1_reg'] = params['overcomplete']['l1_reg']
-        params['l1_reg'] = round(params['l1_reg'], 5)
-
-    params['nl_o'] = params['overcomplete']['nl_o']
-    params['nnl_o'] = params['overcomplete']['nnl_o']
-    params['nl_u'] = params['overcomplete']['nl_u']
-    params['nnl_u'] = params['overcomplete']['nnl_u']
-    params['overcomplete'] = params['overcomplete']['overcomplete']
-
-    params['batch_size'] = int(params['batch_size'])
-    params['nl_o'] = int(params['nl_o'])
-    params['nnl_o'] = int(params['nnl_o'])
-    params['nl_u'] = int(params['nl_u'])
-    params['nnl_u'] = int(params['nnl_u'])
-    params['drop_factor'] = round(params['drop_factor'], 2)
-
-    params_classr['epochs'] = int(params.pop('epochs_classr_sup'))
-    params_classr['batch_size'] = params['batch_size']
-    params_classr['shuffle'] = params['shuffle']
-    params_classr['nl'] = int(params.pop('nl_classr_sup'))
-    params_classr['nnl'] = int(params.pop('nnl_classr_sup'))
-    params_classr['actv'] = params.pop('actv_classr_sup')
-    params_classr['loss'] = params.pop('loss_classr_sup')
-    params_classr['lr'] = params.pop('lr_classr_sup')
-    params_classr['optimizer'] = params.pop('optimizer_classr_sup')
-
-    drop_factor = params['drop_enabled_classr_sup'].get('drop_factor_classr_sup', 0.1)
-
-    # Extract the drop_enabled
-    params_classr['drop_enabled'] = params.pop('drop_enabled_classr_sup')['drop_enabled_classr_sup']
-    params_classr['drop_factor'] = drop_factor
-
-    return {'hparams_file_ae': params, 'hparams_file_classr': params_classr}
-
-
-def sup_autoencoder_filter_stats(**params):
-    """Objective function for Sup Autoencoder+Classr Hyperparameter Optimization"""
-    model, scaler, stats = sup_autoencoder_classr(**params)
-    score = 1 - np.max(stats['recall'])
-    return score, stats, {'model': model, 'scaler': scaler}
-
-
-s = {
-        'epochs': 1,
+default_s = {
+        'epochs': 150,
         'batch_size': hp.quniform('batch_size', 8, 64, 8),  # same value for autoencoder and classr
         'shuffle': hp.choice('shuffle', [True, False]),  # same value for autoencoder and classr
         'overcomplete': hp.choice('overcomplete',
@@ -89,16 +35,14 @@ s = {
         'drop_enabled_classr_sup': hp.choice('drop_enabled_classr_sup',
                                   [{'drop_enabled_classr_sup': True, 'drop_factor_classr_sup': hp.quniform('drop_factor_classr_sup', 0.1, 0.9, 0.1)},
                                    {'drop_enabled_classr_sup': False, 'drop_factor_classr_sup': 0.1}])
-
     }
 
-df_n = 'train_caravan-insurance-challenge.csv'  # dataset_fname
-out_file = 'sup_ae_trials.csv'                  # trial_fname
-s_t_e = None                                    # save_trial_every
-t_e = 5                                         # total_evals
-f_to_o = sup_autoencoder_filter_stats           # function_to_optimize
-o_p = {'df_fname': df_n, 'sep': ',', 'save': False,
-       'user_id': 'default', 'task_id': '0.0'}  # others_params
+df_n = 'mammography.csv'  # dataset_fname
+s_t_e = None              # save_trial_every
+t_e = 50                  # total_evals
 
-bayesian_optimization(function_to_optimize=f_to_o, space_func_process=s_f_p, trial_fname=out_file, space=s,
-                      save_trial_every=s_t_e, total_evals=t_e, others_params=o_p)
+# save_model_func = None => No Keras model will never be saved during the optimization process
+best, trial_fname = sup_autoencoder_optimization(df_n, default_s, total_evals=t_e, save_trial_every=s_t_e)
+print("\n\ntrial_fname: {}".format(trial_fname))
+print("BEST parameter/s:")
+print(best)
