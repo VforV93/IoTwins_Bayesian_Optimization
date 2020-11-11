@@ -266,10 +266,9 @@ def semisup_autoencoder(df_fname, sep=',', user_id='default', task_id='0.0',
 
     if hparams_file == None:
         hparams = default_hparams_semisup
-    # read hyperparameters from binary file (pickle object)
-    else:
-        # hparams = gs.load_py_obj(hparams_file)  TODO just for testing purpose I can pass the params as a dictionary
-        hparams = hparams_file
+    else:  # read hyperparameters from binary file (pickle object)
+        hparams = gs.load_py_obj(hparams_file)
+        # hparams = hparams_file
 
     df.columns = df.columns.str.replace(' ', '')
     df, labels, scaler = gs._preprocess(df, 'label')
@@ -485,15 +484,15 @@ def sup_autoencoder_classr(df_fname, sep=',', user_id='default', task_id='0.0',
         hparams_ae = default_hparams_sup
     # read hyperparameters for autoencoder from binary file (pickle object)
     else:
-        # hparams_ae = gs.load_py_obj(hparams_file_ae) TODO just for testing purpose I can pass the params as a dictionary
-        hparams_ae = hparams_file_ae
+        hparams_ae = gs.load_py_obj(hparams_file_ae)
+        # hparams_ae = hparams_file_ae
 
     if hparams_file_classr == None:
         hparams_classr = default_hparams_classr_sup
     # read hyperparameters for classifier from binary file (pickle object)
     else:
-        #hparams_classr = gs.load_py_obj(hparams_file_classr) TODO just for testing purpose I can pass the params as a dictionary
-        hparams_classr = hparams_file_classr
+        hparams_classr = gs.load_py_obj(hparams_file_classr)
+        #hparams_classr = hparams_file_classr
 
     df.columns = df.columns.str.replace(' ', '')
     df, labels, scaler = gs._preprocess(df, 'label')

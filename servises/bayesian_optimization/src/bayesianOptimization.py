@@ -12,7 +12,7 @@ from hyperopt import fmin
 from functools import partial
 import os
 
-volume_dir = MAIN_DIRECTORY = os.path.dirname(os.path.dirname(__file__))  # '../data'
+volume_dir = os.path.dirname(os.path.dirname(__file__))  # '../data'
 out_dir = '{}/out'.format(volume_dir)  # '../out'
 trained_models_dir = '{}/trained_models'.format(volume_dir)
 
@@ -408,6 +408,12 @@ def _semisup_autoencoder_filter_stats(**params):
         a Python dictionary containing whatever we want, this will be passed
         to the save_model_func(e.g. the model and the scaler)
     """
+
+    # the semisup_autoencoder service accept as input the name of the hparams file, not a dictionary.
+    # So I save the hparams dictionary to a semisup_hparams.p file before passing the file name to the service.
+    hparams_fname = '{}/semisup_hparams.p'.format(volume_dir)
+    _save_trials(params['hparams_file'], hparams_fname)
+    params['hparams_file'] = hparams_fname  # switch the dictionary object to the name of the file containing the same information
     model, scaler, stats = semisup_autoencoder(**params)
 
     # Filtering stats, the only stats we'll store in the csv file from the stats returned by the semisup_autoencoder IoTwins service
@@ -652,6 +658,16 @@ def _sup_autoencoder_filter_stats(**params):
         a Python dictionary containing whatever we want, this will be passed
         to the save_model_func(e.g. the model and the scaler)
     """
+
+    # the semisup_autoencoder service accept as input the name of the hparams file, not a dictionary.
+    # So I save the hparams dictionary to a semisup_hparams.p file before passing the file name to the service.
+    # hparams_file_ae   hparams_file_classr.
+    hparams_ae_fname = '{}/sup_hparams_ae.p'.format(volume_dir)
+    hparams_classr_fname = '{}/sup_hparams_classr.p'.format(volume_dir)
+    _save_trials(params['hparams_file_ae'], hparams_ae_fname)
+    _save_trials(params['hparams_file_classr'], hparams_classr_fname)
+    params['hparams_file_ae'] = hparams_ae_fname  # switch the dictionary object to the name of the file containing the same information
+    params['hparams_file_classr'] = hparams_classr_fname  # switch the dictionary object to the name of the file containing the same information
     model, scaler, stats = sup_autoencoder_classr(**params)
     score = model.history.history['val_loss'][-1]
     return score, stats, {'model': model, 'scaler': scaler}
