@@ -1,9 +1,6 @@
-import os, sys
 import numpy as np
 from servises.bayesian_optimization.src.bayesianOptimization import semisup_autoencoder_optimization
 from hyperopt import hp
-
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 default_s = {
         'epochs': 150,

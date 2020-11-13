@@ -7,17 +7,18 @@ from servises.super_semisuper_anomaly_detection_services.src.anomalyDetection im
 import servises.super_semisuper_anomaly_detection_services.src.general_services as gs
 from hyperopt import STATUS_OK
 from hyperopt import tpe
-from hyperopt import Trials
+from hyperopt import Trials, SparkTrials
+
 from hyperopt import fmin
 from functools import partial
-import os
+import os, sys
 
 volume_dir = os.path.dirname(os.path.dirname(__file__))  # '../data'
 out_dir = '{}/out'.format(volume_dir)  # '../out'
 trained_models_dir = '{}/trained_models'.format(volume_dir)
+# sys.setProperty("hadoop.home.dir", "c:\\winutil\\")
 
-
-# internal function for loading previous saved Trials object
+# internal function for loading previous saved Trials object(also a general .p object)
 def _load_trials(file_name: str) -> object:
     """
     bayesianOptimization._load_trials::Load a Trials object already stored
@@ -34,7 +35,7 @@ def _load_trials(file_name: str) -> object:
     return ret
 
 
-# internal function for storing Trials objects
+# internal function for storing Trials objects(also a general .p object)
 def _save_trials(trial: object, file_name: str) -> None:
     """
     bayesianOptimization._save_trials::Serialize the Trials object
@@ -81,7 +82,7 @@ def _bayesian_save_model(model_name: str, best_score: int, stats: dict, model, s
     return _save_trained_model(model_name, model, stats, scaler)
 
 
-# internal generator for tracing the current number of bayesian evaluation
+# internal generator for tracing the current number of the bayesian evaluation
 def __iteration_generator(starting_value: int):
     """
     bayesianOptimization.__iteration_generator::Generator used to count properly
@@ -102,15 +103,16 @@ class Best_loss_in_run:
     bayesianOptimization.Best_loss_in_run::Python class to store the best bayesian optimization loss.
     Best_loss_in_run.update:: compare a new value with the stored one.
 
-    :params v : int
-    starting best value stored
+        :params v : int
+        starting best value stored
 
-    :params compare_lf : lambda function
-    function used if the 'new_compare_lf' parameter is None.
-    This function is used to decide when update the best loss stored with the new value passed to the update method.
+        :params compare_lf : lambda function
+        function used if the 'new_compare_lf' parameter is None.
+        This function is used to decide when update the best loss stored with the new
+        value passed to the update method.
 
-    :return : bool
-        True if the new value is greater than the stored value, False otherwise.
+        :return : bool
+            True if the new value is greater than the stored value, False otherwise.
     """
 
     def __init__(self, v=None, compare_lf=None):
@@ -129,6 +131,7 @@ class Best_loss_in_run:
 
 
 # internal objective function that "wrap" the customer/client objective function
+# the same parameters of the bayesian_optimization function
 def __objective(params, function_to_optimize, trial_fname, iteration_gen, space_func_process=None,
                 best_loss_threshold=None, others_params=None, save_model_func=_bayesian_save_model):
     if others_params is None:
@@ -199,59 +202,64 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
         which make no attempt to actually sample from the distributions specified
         in the search space. (see: Defining a Search Space in https://github.com/hyperopt/hyperopt/wiki/FMin)
 
-    :params space_func_process : function
+    :params space_func_process : function, optional (the default is None).
     a function to process the "instance" of the space hyperparameters dict that receive as input.
-    E.g. round off values, splitting the "main"/"big" instance to different dict to pass to the function_to_optimize, etc...
+    E.g. round off values, splitting the "main"/"big" instance to different dict
+    to pass to the function_to_optimize, etc...
 
         must return: {...}
-            - {...}: a Python dictionary containing whatever we want, this will be passed to the function_to_optimize as input
+            - {...}: a Python dictionary containing whatever we want, this will
+            be passed to the function_to_optimize as input
 
-    :params opt_algorithm : function
+    :params opt_algorithm : function, optional (the default is the Tree of Parzen Estimators (TPE)).
     a implemented hyperopt algorithm between: Random Search, Tree of Parzen Estimators (TPE)-default value-, Adaptive TPE
 
-    :params save_model_func : function
-    a function for saving the score, the stats and the others returned values from the objective function not only at
-    the end of the bayesian optimization, but also every time a better hyperparameters configuration has been found.
+    :params save_model_func : function, optional (the default is the _bayesian_save_model function).
+    a function for saving the score, the stats and the others returned values
+    from the objective function not only at the end of the bayesian optimization,
+    but also every time a better hyperparameters configuration has been found.
 
         fixed input: file_name, best_score, stats, {...}
             - file_name: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
-            - best_score: the best score obtained in that run returned from the function_to_optimize func
-            - stats: a Python dictionary containing all the objective function performance information returned from
-                     the function_to_optimize func
+            - best_score: the best score obtained in that run returned from the
+                          function_to_optimize func
+            - stats: a Python dictionary containing all the objective function
+                     performance information returned from the function_to_optimize func
             - {...}: the optional Python dictionary returned from the function_to_optimize func
 
         return: void
         returned values/objects never used.
 
-    :params save_trial_every : int
+    :params save_trial_every : int, optional (the default is None).
     every how many iterations the Trials object file will be saved. See 'The Trials Object' in https://github.com/hyperopt/hyperopt/wiki/FMin
-    Every 'save_trial_every' run a new Trials_file.p will be created containing the information needed to apply
-    the bayesian optimization.
-    An existing file can be used to continue a previous run passing the file name to the 'trials_name' parameter.
+    Every 'save_trial_every' run a new Trials_file.p will be created containing
+    the information needed to apply the bayesian optimization.
+    An existing file can be used to continue a previous run passing the file name
+    to the 'trials_name' parameter.
 
-    :params trials_name : string
+    :params trials_name : string, optional (the default is None).
     the name of a previous Trials file saved locally. If not specified, a new bayesian optimization begins.
     Specifying a Trials file name the bayesian optimization process can continue from that 'checkpoint'.
     NB: if the Trials file contains a previous run of N iterations/evaluations,
-    the 'total_evals' parameter must take into consideration of that and it has to be greater then N otherwise
-    the bayesian optimization will not begin/continue.
+    the 'total_evals' parameter must take into consideration of that and it has to be greater then N,
+    otherwise the bayesian optimization will not begin/continue.
     E.g.    'total_evals' = 10
         after 10 evaluations the Trials object is going to be saved.
         If we want to perform more evaluations starting from the previous "results", it is necessary to specify
         the 'trials_name' and increment the 'total_evals'(>10)
 
-    :params total_evals : int
+    :params total_evals : int, optional (the default is 100).
     The number of iterations/evaluations the bayesian optimization will perform.
 
-    :params others_params: Python dictionary
+    :params others_params: Python dictionary, optional (the default is None).
     a Python dictionary containing whatever we want, this will be passed directly to the function_to_optimize without
     being processed by the space_func_process function.
     Use this dictionary for the fixed parameters necessary for the objective function.
 
-    :params user_id : str
+    :params user_id : str, optional (the default is 'default').
         user identifier
 
-    :params task_id : str
+    :params task_id : str, optional (the default is '0.0').
         task identifier
 
 
@@ -278,7 +286,7 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
 
     # Keep track of the results
     if trials_name is None:  # starting from evaluation 0, no Trials object loaded
-        bayes_trials = Trials()
+        bayes_trials = SparkTrials()  # Trials()
         count_optimization = 0
 
         # create/overwrite the File(csv) to save the evaluations results(loss scores), parameters, stats and time

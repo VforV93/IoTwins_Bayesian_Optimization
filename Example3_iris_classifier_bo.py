@@ -1,7 +1,4 @@
-import pandas as pd
 import numpy as np
-import os
-import matplotlib.pyplot as plt
 
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -69,7 +66,7 @@ def objective_function(model_params, batch_size, shuffle, epochs, verbose, valid
 
     history_callback = model.fit(X_train, Y_train,
                                  batch_size=batch_size,
-                                 shuffle=True,
+                                 shuffle=shuffle,
                                  epochs=epochs,
                                  verbose=verbose,
                                  validation_split=validation_split,
@@ -145,7 +142,7 @@ t_e = 200  # total_evals
 s_t_e = 50  # save_trial_every
 best, trial_fname = bayesian_optimization(function_to_optimize=objective_function, space_func_process=s_f_p,
                                           trial_fname=out_file, space=s, total_evals=t_e, save_trial_every=s_t_e,
-                                          save_model_func=None, others_params=o_p)
+                                          save_model_func=save_model_function, others_params=o_p)
 
 print("\n\ntrial_fname: {}".format(trial_fname))
 print("BEST parameter/s:")
