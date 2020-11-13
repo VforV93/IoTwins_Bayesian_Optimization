@@ -7,7 +7,7 @@ from servises.super_semisuper_anomaly_detection_services.src.anomalyDetection im
 import servises.super_semisuper_anomaly_detection_services.src.general_services as gs
 from hyperopt import STATUS_OK
 from hyperopt import tpe
-from hyperopt import Trials, SparkTrials
+from hyperopt import Trials
 
 from hyperopt import fmin
 from functools import partial
@@ -286,7 +286,7 @@ def bayesian_optimization(function_to_optimize, trial_fname, space, space_func_p
 
     # Keep track of the results
     if trials_name is None:  # starting from evaluation 0, no Trials object loaded
-        bayes_trials = SparkTrials()  # Trials()
+        bayes_trials = Trials()
         count_optimization = 0
 
         # create/overwrite the File(csv) to save the evaluations results(loss scores), parameters, stats and time

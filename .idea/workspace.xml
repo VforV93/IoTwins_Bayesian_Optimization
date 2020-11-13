@@ -202,17 +202,15 @@
       <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1605214872.DESKTOP-51G9EC2" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1605215251.DESKTOP-51G9EC2" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1605215606.DESKTOP-51G9EC2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/src/prova_spark.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_01314.h5" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_017648.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_056633.h5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 1.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 2 - Rosenbrock function.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Basic Example 2 - Rosenbrock function.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Example3_iris_classifier_bo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/out/bo_semisup_ae_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/out/bo_semisup_ae_trials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/iris_classifier_trials.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/out/bo_sup_ae_trials.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/iris_classifier_trials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/iris_classifier_trials.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/trials_100_default_0.0.p" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/out/run/example3/trials_100_default_0.0.p" afterDir="false" />
@@ -228,7 +226,7 @@
       <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_016974.h5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_01934.h5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_024327.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_037753.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_037753.h5" beforeDir="false" afterPath="$PROJECT_DIR$/servises/bayesian_optimization/trained_models/run/example3/bayesian_opt_modelscore_056633.h5" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -461,7 +459,7 @@
       <workItem from="1605002208727" duration="15045000" />
       <workItem from="1605087939743" duration="15871000" />
       <workItem from="1605175488935" duration="10190000" />
-      <workItem from="1605276718119" duration="1279000" />
+      <workItem from="1605276718119" duration="2170000" />
     </task>
     <servers />
   </component>
