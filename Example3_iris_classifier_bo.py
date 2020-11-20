@@ -11,7 +11,7 @@ from sklearn.metrics import precision_recall_fscore_support
 
 from hyperopt import hp
 
-from servises.bayesian_optimization.src.bayesianOptimization import bayesian_optimization, trained_models_dir  # import the service
+from services.bayesian_optimization.src.bayesianOptimization import bayesian_optimization, trained_models_dir  # import the service
 
 # ||--- Data Preperation ---||
 iris = load_iris()
