@@ -188,7 +188,7 @@ percentile to be used to compute the detection threshold;\
 if no percentile is provided all values in the range [85, 99] will be explored
 and the one providing the best accuracy results will be selected.
 
-- **trial_fname** : _string_, optional (the default is 'bo_semisup_ae_trials.csv')\
+- **trial_fname** : _string_, optional (the default is '_bo_semisup_ae_trials.csv_')\
 name of the csv file which will be created to collect data(loss, parameters,
 objective func stats, iteration, training time) about the bayesian optimization process.
 
@@ -214,14 +214,14 @@ name to the '_trials_name_' parameter.
 a function for saving the score, the stats and the others returned values
 from the objective function not only at the end of the bayesian optimization,
 but also every time a better hyperparameters configuration has been found.
-    - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_\
-            - **file_name**: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
-            - **best_score**: the best score obtained in that run returned from the
-                              _function_to_optimize_ func
-            - **stats**: a Python dictionary containing all the objective function
-                         performance information returned from the _function_to_optimize_ func
-            - **{...}**: the optional Python dictionary returned from the _function_to_optimize_ func
-        - **return**: _void_ (The returned values/objects never be used)
+    - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_
+        - **file_name**: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
+        - **best_score**: the best score obtained in that run returned from the
+                          _function_to_optimize_ func
+        - **stats**: a Python dictionary containing all the objective function
+                     performance information returned from the _function_to_optimize_ func
+        - **{...}**: the optional Python dictionary returned from the _function_to_optimize_ func
+    - **return**: _void_ (The returned values/objects never be used)
 
 - **total_evals** : _int_, optional (the default is 100)\
 The number of iterations/evaluations the bayesian optimization will perform.
@@ -332,13 +332,13 @@ a function for saving the score, the stats and the others returned values
 from the objective function not only at the end of the bayesian optimization,
 but also every time a better hyperparameters configuration has been found.
     - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_\
-            - **file_name**: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
-            - **best_score**: the best score obtained in that run returned from the
-                              _function_to_optimize_ func
-            - **stats**: a Python dictionary containing all the objective function
-                         performance information returned from the _function_to_optimize_ func
-            - **{...}**: the optional Python dictionary returned from the _function_to_optimize_ func
-        - **return**: _void_ (The returned values/objects never be used)
+        - **file_name**: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
+        - **best_score**: the best score obtained in that run returned from the
+                          _function_to_optimize_ func
+        - **stats**: a Python dictionary containing all the objective function
+                     performance information returned from the _function_to_optimize_ func
+        - **{...}**: the optional Python dictionary returned from the _function_to_optimize_ func
+    - **return**: _void_ (The returned values/objects never be used)
 
 - **total_evals** : _int_, optional (the default is 100)\
 The number of iterations/evaluations the bayesian optimization will perform.
