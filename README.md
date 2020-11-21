@@ -1,5 +1,5 @@
 # IoTwins_Bayesian_Optimization
-Filippo Lo Bue - Project of Work in Intelligent System
+Filippo Lo Bue - Project of Work in Intelligent Systems
 
 ## Getting Started
 
@@ -14,32 +14,35 @@ Python Version 3.6
 Anaconda 1.9.12
 ```
 
-### Installing the environment from the yml file
+### Installing the environment from the yml file using <a href="https://www.anaconda.com/products/individual">Anaconda</a>
 
-Open the _conda prompt_ and navigate to the root folder of the project.\
-Open the _IoTwins_env.yml_ file and replace '_<put here the %CONDA_PREFIX%>_' with the absolute path of your anaconda environments folder(_C:\Users\\$USER$\Anaconda3_), so you should have `prefix: C:\Users\$USER$\Anaconda3\envs\IoTwins` as last row.\
+Open the **_conda prompt_** and navigate to the root folder of the project.\
+Open the _IoTwins_env.yml_ file and replace '_<put here the %CONDA_PREFIX%>_' with the absolute path of your anaconda environments folder(_C:\Users\\$USER$\Anaconda3_), so you should have\
+`prefix: C:\Users\$USER$\Anaconda3\envs\IoTwins` as last row.\
 \
 Create the conda environment from the yml file
 ```
 (base) C:\Users\%USER%\IoTwins_Bayesian_Optimization> conda env create -f IoTwins_env.yml
 ```
 
+You have just created the _IoTwins_ environment with all the packages in needed to run the examples and use the _bayesian_optimization_ service.
+
 ## Bayesian Optimization Service
-The bayesian_optimization service developed in IoTwins is meant to support and allow clients to make hyperparameter fine-tuning.\
+The **_bayesian_optimization_** service developed in IoTwins is meant to support and allow clients to make hyperparameter fine-tuning.\
 This service can be used to automatically improve the performances of the already existing services as well as future services that will be developed and added in the IoTwins context.\
 Why was this service developed? The IoTwins services are applicable in across a wide range of contexts and specifically in the area of anomaly detection.\
-To work best, these services need specific and not always easy to find configurations that usually involve experts' work. The bayesian_optimization aims to remove this gap and allow any clients to automatically individuate the best hyperparameters configuration in an acceptable time.\
+To work best, these services need specific and not always easy to find configurations that usually involve experts' work. The _bayesian_optimization_ aims to remove this gap and allow any clients to automatically individuate the best hyperparameters configuration in an acceptable time.\
 \
-The bayesian_optimization service is a wrapper of the <a href="https://github.com/hyperopt/hyperopt">Hyperopt</a> python library for serial and parallel optimization over awkward search spaces, which may include real-valued, discrete, and conditional dimensions.\
+The _bayesian_optimization_ service is a wrapper of the <a href="https://github.com/hyperopt/hyperopt">Hyperopt</a> python library for serial and parallel optimization over awkward search spaces, which may include real-valued, discrete, and conditional dimensions.\
 To conclude, the purpose of the service is to facilitate the use of the IoTwins services and make hyperparameter fine-tuning in the context of the client in the easiest and fastest manner.\
 \
 Formulating an optimization problem requires four main parts, two of which completly managed from the service:
 - **Objective Function**[mandatory]: takes in an input and returns a loss to minimize.
 - **Domain space**[mandatory]: the range of input values to evaluate.
-- **Optimization Algorithm**[default tpe]: the method used to construct the surrogate function and choose the next values to evaluate. **Use the default value!**
+- **Optimization Algorithm**[default tpe]: the method used to construct the surrogate function and choose the next values to evaluate. **Managed by the service. Use the default value!**
 - **Results**[not mandatory]: score, value pairs that the algorithm uses to build the model. **Managed by the service.**
  
-##How to use the Bayesian Optimization service
+## How to use the Bayesian Optimization service
 #### Example 1 - Basic example [Bayesian Optimization Service - Basic Example 1.ipynb]
 How to optimize a polynomial function using the IoTwins optimization service.
 
