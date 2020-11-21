@@ -67,12 +67,12 @@ Probabilistic model based approach for finding the best hyperparameters configur
 The objective function that must be minimized. It can be any function that
 returns a real value that we want to minimize. (If we want to maximize the
 returned real value, we should have our function return the negative of that metric.)
-    - must return: _score, stats, {...}_
+    - must return: _score_, _stats_, _{...}_
         - **score**: the return value of the function we want to minimize, this will
                      be passed to the _save_model_func_
         - **stats**: a Python dictionary containing all the objective function
-                     performance information that we want to store in the trial_fname
-                     csv file(e.g. accuracy, precision, recall etc.)
+                     performance information that we want to store in the _trial_fname_
+                     csv file(e.g. accuracy, precision, recall etc.).\
                      This will be passed to the _save_model_func_
         - **{...}**: a Python dictionary containing whatever we want, this will be
                      passed to the _save_model_func_ (e.g. the model and the scaler)
@@ -102,10 +102,10 @@ but also every time a better hyperparameters configuration has been found.
     - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_\
         - **file_name**: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
         - **best_score**: the best score obtained in that run returned from the
-                          function_to_optimize func
+                          _function_to_optimize_ func
         - **stats**: a Python dictionary containing all the objective function
-                     performance information returned from the function_to_optimize func
-        - **{...}**: the optional Python dictionary returned from the function_to_optimize func
+                     performance information returned from the _function_to_optimize_ func
+        - **{...}**: the optional Python dictionary returned from the _function_to_optimize_ func
     - **return**: _void_ (The returned values/objects never be used)
     
 - **save_trial_every** : _int_, optional (the default is None).\
@@ -148,7 +148,7 @@ the best hyperparameters found according to the best loss score
 - **return** : _string_
 name of the pickle file containing the stored Trials object
 
-###The bayesianOptimization.semisup_autoencoder_optimization service
+### The bayesianOptimization.semisup_autoencoder_optimization service
 Probabilistic model based approach for finding the best
 hyperparameters configuration that guarantee to achieve 
 the minimum of the semisup_autoencoder IoTwins service
@@ -217,7 +217,7 @@ but also every time a better hyperparameters configuration has been found.
     - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_\
             - **file_name**: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
             - **best_score**: the best score obtained in that run returned from the
-                              function_to_optimize func
+                              _function_to_optimize_ func
             - **stats**: a Python dictionary containing all the objective function
                          performance information returned from the _function_to_optimize_ func
             - **{...}**: the optional Python dictionary returned from the _function_to_optimize_ func
@@ -258,7 +258,7 @@ If you want to optimize a generic function use the '_bayesian_optimization_' ser
         - **score**: the return value of the function we want to minimize, this will
                      be passed to the _save_model_func_
         - **stats**: a Python dictionary containing all the objective function performance
-                     information that we want to store in the trial_fname csv file(e.g. accuracy, precision, recall etc.)\
+                     information that we want to store in the _trial_fname_ csv file(e.g. accuracy, precision, recall etc.)\
                      This will be passed to the _save_model_func_              
         - **{...}**: a Python dictionary containing whatever we want, this will be passed
                      to the _save_model_func_ (e.g. the model and the scaler)
@@ -336,7 +336,7 @@ but also every time a better hyperparameters configuration has been found.
             - **best_score**: the best score obtained in that run returned from the
                               _function_to_optimize_ func
             - **stats**: a Python dictionary containing all the objective function
-                         performance information returned from the function_to_optimize func
+                         performance information returned from the _function_to_optimize_ func
             - **{...}**: the optional Python dictionary returned from the _function_to_optimize_ func
         - **return**: _void_ (The returned values/objects never be used)
 
@@ -375,7 +375,7 @@ If you want to optimize a generic function use the '_bayesian_optimization_' ser
         - **score**: the return value of the function we want to minimize, this will
                      be passed to the _save_model_func_
         - **stats**: a Python dictionary containing all the objective function performance
-                     information that we want to store in the trial_fname csv file(e.g. accuracy, precision, recall etc.)\
+                     information that we want to store in the _trial_fname_ csv file(e.g. accuracy, precision, recall etc.)\
                      This will be passed to the _save_model_func_              
         - **{...}**: a Python dictionary containing whatever we want, this will be passed
                      to the _save_model_func_ (e.g. the model and the scaler)
