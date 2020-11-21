@@ -252,7 +252,7 @@ want to keep track during the optimization process.\
 To conclude, pass a function that uses/call the '_semisup_autoencoder_' function
 (services.super_semisuper_anomaly_detection_services.semisup_autoencoder).\
 \
-If you want to optimize a generic function use the '_bayesian_optimization_' service instead.
+If you want to optimize a generic function use the '**_bayesian_optimization_**' service instead.
 
     - must return: _score_, _stats_, _{...}_
         - **score**: the return value of the function we want to minimize, this will
@@ -271,7 +271,7 @@ the best hyperparameters found according to the best loss score
 name of the pickle file containing the stored Trials object
 
 
-###The bayesianOptimization.sup_autoencoder_optimization service
+### The bayesianOptimization.sup_autoencoder_optimization service
 probabilistic model based approach for finding the best
 hyperparameters configuration that guarantee to achieve the minimum of the sup_autoencoder IoTwins service
 keeping track of past evaluations.\
@@ -305,7 +305,7 @@ in the search space. (see: Defining a Search Space in https://github.com/hyperop
 - **sep** : _string_, optional (the default is ',')\
 the columns separator used in the csv data file.
 
-- **trial_fname** : _string_, optional (the default is 'bo_sup_ae_trials.csv')\
+- **trial_fname** : _string_, optional (the default is '_bo_sup_ae_trials.csv_')\
 name of the csv file which will be created to collect data(loss, parameters,
 objective func stats, iteration, training time) about the bayesian optimization process.
 
@@ -331,7 +331,7 @@ name to the '_trials_name_' parameter.
 a function for saving the score, the stats and the others returned values
 from the objective function not only at the end of the bayesian optimization,
 but also every time a better hyperparameters configuration has been found.
-    - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_\
+    - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_
         - **file_name**: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
         - **best_score**: the best score obtained in that run returned from the
                           _function_to_optimize_ func
@@ -357,19 +357,19 @@ E.g. &nbsp; 'total_evals' = 10\
 - **user_id** : _string_, optional (the default is 'default').\
 user identifier
 
-- **task_id** : _string_, optional (the default is '0.0').
+- **task_id** : _string_, optional (the default is '0.0').\
 task identifier
 
-- **function_to_optimize** : _function_, optional (the default is the '_sup_autoencoder_filter_stats' function)\
+- **function_to_optimize** : _function_, optional (the default is the '_\_sup_autoencoder_filter_stats_' function)\
 NB: This service has been meant to be a wrapper for the '_sup_autoencoder_'
 IoTwins service.\
 Do not use this parameter to change the function to optimize
 but use it to change the score we want to minimize or to change the stats we
 want to keep track during the optimization process.\
-To conclude, pass a function that uses/call the '_sup_autoencoder_' function
+To conclude, pass a function that uses/calls the '_sup_autoencoder_' function
 (services.super_semisuper_anomaly_detection_services.sup_autoencoder).\
 \
-If you want to optimize a generic function use the '_bayesian_optimization_' service instead.
+If you want to optimize a generic function use the '**_bayesian_optimization_**' service instead.
 
     - must return: _score_, _stats_, _{...}_
         - **score**: the return value of the function we want to minimize, this will
@@ -382,10 +382,10 @@ If you want to optimize a generic function use the '_bayesian_optimization_' ser
 
 
 **Return**
-- **return** : _Python dictionary_
+- **return** : _Python dictionary_\
 the best hyperparameters found according to the best loss score
 
-- **return** : _string_
+- **return** : _string_\
 name of the pickle file containing the stored Trials object
 
 ### References
