@@ -99,7 +99,7 @@ a implemented hyperopt algorithm between: Random Search, Tree of Parzen Estimato
 a function for saving the score, the stats and the others returned values
 from the objective function not only at the end of the bayesian optimization,
 but also every time a better hyperparameters configuration has been found.
-    - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_\
+    - **fixed input**: _file_name_, _best_score_, _stats_, _{...}_
         - **file_name**: 'bayesian_opt_model(score_{})'.format(round(best_score, 5))
         - **best_score**: the best score obtained in that run returned from the
                           _function_to_optimize_ func
@@ -130,28 +130,28 @@ E.g. &nbsp; 'total_evals' = 10\
 - **total_evals** : _int_, optional (the default is 100).\
 The number of iterations/evaluations the bayesian optimization will perform.
 
-- **others_params**: _Python dictionary_, optional (the default is None).
+- **others_params**: _Python dictionary_, optional (the default is None).\
 a Python dictionary containing whatever we want, this will be passed directly to the _function_to_optimize_ without
 being processed by the _space_func_process_ function.\
 Use this dictionary for the fixed parameters necessary for the objective function.
 
-- **user_id** : _str_, optional (the default is 'default').\
+- **user_id** : _string_, optional (the default is 'default').\
 user identifier
 
-- **task_id** : _str_, optional (the default is '0.0').
+- **task_id** : _string_, optional (the default is '0.0').
 task identifier
 
 **Return**
-- **return** : _Python dictionary_
+- **return** : _Python dictionary_\
 the best hyperparameters found according to the best loss score
 
-- **return** : _string_
+- **return** : _string_\
 name of the pickle file containing the stored Trials object
 
 ### The bayesianOptimization.semisup_autoencoder_optimization service
 Probabilistic model based approach for finding the best
 hyperparameters configuration that guarantee to achieve 
-the minimum of the semisup_autoencoder IoTwins service
+the minimum of the **_semisup_autoencoder_** IoTwins service
 keeping track of past evaluations.\
 This function wrap the service '_semisup_autoencoder_' already developed in the IoTwins services.
 
@@ -166,7 +166,7 @@ services.bayesian_optimization.src.bayesianOptimization.semisup_autoencoder_opti
 ```
 \
 **Arguments**
-- **df_fname** : _str_\
+- **df_fname** : _string_\
 name of the csv file with data to be used for training and testing. One
 column has to termed "label" and it has to contains the class of the
 example - 0 means normal data point, any other integer number
@@ -237,10 +237,10 @@ E.g. &nbsp; 'total_evals' = 10\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If we want to perform more evaluations starting from the previous "results",\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it is necessary to specify the 'trials_name' and increment the 'total_evals'(>10)
 
-- **user_id** : _str_, optional (the default is 'default').\
+- **user_id** : _string_, optional (the default is 'default').\
 user identifier
 
-- **task_id** : _str_, optional (the default is '0.0').
+- **task_id** : _string_, optional (the default is '0.0').
 task identifier
 
 - **function_to_optimize** : _function_, optional (the default is the '_semisup_autoencoder_filter_stats' function)\
@@ -288,7 +288,7 @@ services.bayesian_optimization.src.bayesianOptimization.sup_autoencoder_optimiza
 ```
 \
 **Arguments**
-- **df_fname** : _str_\
+- **df_fname** : _string_\
 name of the csv file with data to be used for training and testing. One
 column has to termed "label" and it has to contains the class of the
 example - 0 means normal data point, any other integer number
@@ -354,10 +354,10 @@ E.g. &nbsp; 'total_evals' = 10\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If we want to perform more evaluations starting from the previous "results",\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it is necessary to specify the 'trials_name' and increment the 'total_evals'(>10)
 
-- **user_id** : _str_, optional (the default is 'default').\
+- **user_id** : _string_, optional (the default is 'default').\
 user identifier
 
-- **task_id** : _str_, optional (the default is '0.0').
+- **task_id** : _string_, optional (the default is '0.0').
 task identifier
 
 - **function_to_optimize** : _function_, optional (the default is the '_sup_autoencoder_filter_stats' function)\
