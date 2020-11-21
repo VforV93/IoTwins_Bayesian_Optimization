@@ -49,7 +49,7 @@ How to optimize the Rosenbrock function using the IoTwins optimization service.
 #### Example 3 - Iris Classifier [Bayesian Optimization Service - Example 3 - Machine Learning Model Example.ipynb]
 How to optimize a Keras Classifier applied on the <a href="https://archive.ics.uci.edu/ml/datasets/iris">Iris</a> Dataset.
 
-###The bayesianOptimization.bayesian_optimization service
+### The bayesianOptimization.bayesian_optimization service
 Import the _bayesian_optimization_ service from 'services/bayesian_optimization/src/bayesianOptimization.py' and use it following the documentation below:
     
 ```python
@@ -386,12 +386,9 @@ the best hyperparameters found according to the best loss score
 name of the pickle file containing the stored Trials object
 
 ### References
-- [Exhaustive approaches to 2D rectangular perfect packings](https://www.eecs.harvard.edu/~michaelm/postscripts/ipl2004.pdf)
-- [2008-Search Strategies for Rectangle Packing-Helmut Simonis and Barry O’Sullivan](https://link.springer.com/chapter/10.1007/978-3-540-85958-1_4)
-- [A new constraint programming approach for the orthogonal packing problem](http://vmk.ugatu.ac.ru/c%26p/article/new_2009/2D_OPP_clautiaux_constraint_progr.pdf)
-- [Optimal Rectangle Packing: An Absolute Placement Approach](https://arxiv.org/ftp/arxiv/papers/1402/1402.0557.pdf)
-- [The SMT-LIB Standard](http://smtlib.cs.uiowa.edu/papers/smt-lib-reference-v2.0-r10.12.21.pdf)
-- [A SAT-based Method for Solving the Two-dimensional Strip Packing Problem](http://ceur-ws.org/Vol-451/paper16soh.pdf)
-- [Introduction to SMT Solving CSP’s with SMT](https://www.cs.upc.edu/~erodri/webpage/papers/bergen2.pdf)
+- [Hyperopt Github Page](https://github.com/hyperopt/hyperopt)
+- [A Conceptual Explanation of Bayesian Hyperparameter Optimization for Machine Learning](https://towardsdatascience.com/a-conceptual-explanation-of-bayesian-model-based-hyperparameter-optimization-for-machine-learning-b8172278050f)
+- [An Introductory Example of Bayesian Optimization in Python with Hyperopt](https://towardsdatascience.com/an-introductory-example-of-bayesian-optimization-in-python-with-hyperopt-aae40fff4ff0)
+
 ## Author
 * **Filippo Lo Bue**
